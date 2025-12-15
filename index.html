@@ -214,6 +214,75 @@
         </ul>
     </div>
 </section>
+<section id="products">
+    <h2>Moje produkty</h2>
+
+    <div class="product-box">
+        <h3>Paczka Montażysty Basic <span style="text-decoration: line-through; color: #ff5555;">30 zł</span> 20 zł</h3>
+        <p>Specjalnie dla początkujących montażystów, takich jak ja kiedy zaczynałem. W paczce znajdziesz:</p>
+        <ul>
+            <li>10 animacji gotowych do użycia</li>
+            <li>Ponad 18 piosenek do montażu</li>
+            <li>1 kurs wprowadzający do paczki</li>
+            <li>1 poradnik "Jak zacząć od podstaw jako montażysta"</li>
+            <li>wiele więcej ale to sam musisz odkryć! </li>
+        </ul>
+        <p>Dostęp do paczki jest stały a paczka będzie stopniowo rozszerzana.  
+        <strong>Dostępna od 21 grudnia, promocja trwa do 3 stycznia!</strong></p>
+    </div>
+
+    <div class="product-box">
+        <h3>Produkt w przygotowaniu (???)</h3>
+        <p>Nad tym jeszcze pracuję. Szczegóły pojawią się wkrótce!</p>
+    </div>
+
+    <style>
+        #products {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .product-box {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 2px solid #333;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .product-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 59, 59, 0.3);
+        }
+
+        .product-box h3 {
+            margin-top: 0;
+            font-size: 22px;
+            color: #ff8c42; /* wyróżniający kolor nagłówka */
+        }
+
+        .product-box ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .product-box ul li {
+            margin-bottom: 6px;
+        }
+
+        .product-box p {
+            margin-top: 10px;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .product-box span {
+            font-weight: bold;
+        }
+    </style>
+</section>
 
 <section id="contact">
     <h2>Kontakt</h2>
@@ -240,3 +309,4 @@ setInterval(() => {
 
 </body>
 </html>
+
