@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Portfolio – Krzysztof</title>
-
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #0f0f0f;
-            color: #ffffff;
+            background: linear-gradient(135deg,#0f0f0f,#1a1a1a);
+            color: #fff;
             line-height: 1.6;
         }
 
@@ -17,7 +16,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 15, 15, 0.95);
+            background: rgba(0,0,0,0.85);
             padding: 15px 0;
             z-index: 100;
         }
@@ -36,28 +35,27 @@
                 text-decoration: none;
                 font-size: 15px;
                 opacity: 0.85;
-                transition: all 0.3s;
+                transition: opacity 0.3s;
             }
 
                 nav a:hover {
                     opacity: 1;
-                    color: #ff3b3b;
                 }
 
         section {
             max-width: 900px;
             margin: auto;
-            padding: 80px 20px;
-            background: rgba(30,30,30,0.5);
-            border-radius: 12px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            padding: 100px 20px;
         }
 
         .hero {
             padding-top: 160px;
             padding-bottom: 40px;
             text-align: center;
+            background: linear-gradient(120deg,#ff3b3b,#ff7b3b);
+            border-radius: 12px;
+            margin: 20px auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
 
             .hero h1 {
@@ -66,63 +64,83 @@
             }
 
             .hero p {
-                font-size: 20px;
-                opacity: 0.8;
+                font-size: 22px;
+                opacity: 0.85;
             }
 
         .promo {
             text-align: center;
             color: #ff3b3b;
-            font-size: 22px;
-            margin-bottom: 20px;
+            font-size: 24px;
+            margin: 20px 0;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%,100% {
+                opacity: 0.9;
+            }
+
+            50% {
+                opacity: 1;
+            }
         }
 
         .timer {
-            font-size: 18px;
+            font-size: 20px;
             text-align: center;
             margin-bottom: 40px;
-            opacity: 0.9;
+            font-weight: bold;
+            letter-spacing: 1px;
         }
 
         h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
+            font-size: 36px;
+            margin-bottom: 25px;
         }
 
-        .about p, .experience p, .pricing-note {
+        p {
             font-size: 18px;
             opacity: 0.9;
         }
 
         .portfolio iframe {
             width: 100%;
-            max-width: 360px;
-            height: 640px;
+            max-width: 400px;
+            height: 720px;
+            border-radius: 14px;
             display: block;
             margin: auto;
-            border-radius: 14px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
         }
 
+            .portfolio iframe:hover {
+                transform: scale(1.03);
+            }
+
         .pricing-box {
-            background: #151515;
-            border-radius: 12px;
+            background: linear-gradient(135deg,#1a1a1a,#111);
+            border-radius: 14px;
             padding: 25px;
             margin-bottom: 25px;
-            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
             .pricing-box:hover {
-                background: #1f1f1f;
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             }
 
             .pricing-box h3 {
                 margin-top: 0;
-                font-size: 22px;
+                font-size: 24px;
             }
 
             .pricing-box ul {
                 padding-left: 20px;
+                margin: 0;
             }
 
             .pricing-box li {
@@ -132,12 +150,16 @@
         .contact a {
             color: white;
             text-decoration: none;
-            transition: all 0.3s;
         }
 
             .contact a:hover {
-                color: #ff3b3b;
+                text-decoration: underline;
             }
+
+        .pricing-note {
+            margin-top: 10px;
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
@@ -160,26 +182,23 @@
     <div class="promo">Do 3 stycznia -15% na 1 zlecenie</div>
     <div class="timer" id="timer"></div>
 
-    <section id="about" class="about">
+    <section id="about">
         <h2>O mnie</h2>
         <p>Nazywam się Krzysztof i mam 14 lat. Zajmuję się montażem filmów, shortów oraz innych krótkich form wideo.</p>
         <p>Tworzę głównie z pasji, ale każde zlecenie traktuję profesjonalnie. Interesuję się wszystkim, co związane z internetem i komputerami od montażu i animacji po programowanie i tworzenie gier.</p>
-        <p>Aktualnie skupiam się na rozwijaniu umiejętności montażu i animacji, dbając o tempo, dynamikę i estetykę materiałów.</p>
     </section>
 
-    <section id="portfolio" class="portfolio">
+    <section id="portfolio">
         <h2>Prace (więcej wkrótce)</h2>
-        <iframe src="https://www.youtube.com/embed/J3iVQNGJ6II" 
-                title="Short" frameborder="0" allowfullscreen>
-        </iframe>
+        <iframe src="https://www.youtube.com/embed/J3iVQNGJ6II" title="YouTube Short" allowfullscreen></iframe>
     </section>
 
-    <section id="experience" class="experience">
+    <section id="experience">
         <h2>Doświadczenie</h2>
         <p>Moje doświadczenie w montażu sięga około 5 lat, a na poważnie zacząłem około półtora roku temu.</p>
-        <p>W programach korzystałem głównie z CapCut na telefonie, a potem trochę na PC, co nauczyło mnie wprowadzać dynamikę, hook i storytelling, choć nie uczyło efektów zaawansowanych czy color gradingu.</p>
-        <p>Od niedawna uczę się Davinci Resolve i praktycznie wszystko w nim tworzę, ale czasem wracam do CapCut, gdy potrzebuję przyspieszyć pracę i nie mam czasu na nauke nowej funkcji.</p>
-        <p>Aktualnie wszystko, co zarabiam z montażu, zbieram lub wydaję na poradniki i naukę. Planuję również nauczyć się pracy w Adobe After Effects i Premiere Pro, gdy bardziej opanuję DaVinci Resolve.</p>
+        <p>W programach korzystałem głównie z CapCut, co nauczyło mnie dynamiki i storytellingu.</p>
+        <p>Od niedawna uczę się DaVinci Resolve i praktycznie wszystko w nim tworzę, czasem wracam do CapCut, gdy potrzebuję szybkości.</p>
+        <p>Aktualnie wszystko, co zarabiam z montażu, zbieram lub wydaję na poradniki i naukę. Planuję również nauczyć się Adobe After Effects i Premiere Pro.</p>
     </section>
 
     <section id="pricing">
@@ -210,7 +229,8 @@
                 <li>Czas realizacji: 3–14 dni roboczych</li>
                 <li>Ekspres 2–5 dni: +50% ceny końcowej</li>
             </ul>
-            <p class="note">Finalna kwota ustalana przed rozpoczęciem montażu, zależy od materiału i ilości pracy.</p>
+            <p class="pricing-note">Finalna kwota ustalana przed rozpoczęciem montażu, zależy od materiału i ilości pracy.</p>
+            <p class="pricing-note">Ceny zawsze aktualne i na ich podstawie obliczam koszt realizacji.</p>
         </div>
 
         <div class="pricing-box">
@@ -222,11 +242,9 @@
                 <li>Płatność: Blik / przelew / PayPal / Skrill</li>
             </ul>
         </div>
-
-        <p class="pricing-note">Ceny zawsze aktualne i na ich podstawie obliczam koszt realizacji.</p>
     </section>
 
-    <section id="contact" class="contact">
+    <section id="contact">
         <h2>Kontakt</h2>
         <p>Gmail: <a href="mailto:krzysztoflesniewskibiznes@gmail.com">krzysztoflesniewskibiznes@gmail.com</a></p>
         <p>Instagram: <a href="https://www.instagram.com/_lesniuczek_/" target="_blank">@_lesniuczek_</a></p>
@@ -237,22 +255,15 @@
     <script>
         const targetDate = new Date('2026-01-03T00:00:00').getTime();
         const timerEl = document.getElementById('timer');
-
         setInterval(() => {
-            const now = new Date().getTime();
-            const diff = targetDate - now;
-
-            if (diff <= 0) {
-                timerEl.textContent = 'Promocja zakończona';
-                return;
-            }
-
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            const minutes = Math.floor((diff / (1000 * 60)) % 60);
-            const seconds = Math.floor((diff / 1000) % 60);
-
-            timerEl.textContent = `${days} dni ${hours}h ${minutes}m ${seconds}s`;
+        const now = new Date().getTime();
+        const diff = targetDate - now;
+        if (diff <= 0) { timerEl.textContent = 'Promocja zakończona'; return; }
+        const days = Math.floor(diff / (1000*60*60*24));
+        const hours = Math.floor((diff / (1000*60*60)) % 24);
+        const minutes = Math.floor((diff / (1000*60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+        timerEl.textContent = `${days} dni ${hours}h ${minutes}m ${seconds}s`;
         }, 1000);
     </script>
 
