@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio – Krzysztof</title>
+
+    <style>
+        @font-face {
+            font-family: 'IkeaSans';
+            src: url('caption/ikea-sans-2.ttf');
+        }
+
+        body {
+            margin: 0;
+            font-family: 'IkeaSans', Arial, sans-serif;
+            background-color: #0f0f0f;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 15, 0.95);
+            padding: 15px 0;
+            z-index: 100;
+        }
+
+            nav ul {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                gap: 35px;
+                padding: 0;
+                margin: 0;
+            }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                font-size: 15px;
+                opacity: 0.85;
+            }
+
+                nav a:hover {
+                    opacity: 1;
+                }
+
+        section {
+            max-width: 900px;
+            margin: auto;
+            padding: 80px 20px;
+        }
+
+        .hero {
+            padding-top: 160px;
+            padding-bottom: 40px;
+            text-align: center;
+        }
+
+            .hero h1 {
+                font-family: 'IkeaSans', Arial, sans-serif;
+                font-size: 56px;
+                margin-bottom: 10px;
+            }
+
+            .hero p {
+                font-size: 20px;
+                opacity: 0.8;
+            }
+
+        .promo {
+            text-align: center;
+            color: #ff3b3b;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .timer {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        h2 {
+            font-family: 'IkeaSans', Arial, sans-serif;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .about p, .experience p, .pricing-note {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .portfolio video {
+            width: 100%;
+            max-width: 360px;
+            border-radius: 14px;
+            display: block;
+            margin: auto;
+        }
+
+        .pricing-box {
+            background: #151515;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+            .pricing-box h3 {
+                margin-top: 0;
+                font-size: 22px;
+            }
+
+            .pricing-box ul {
+                padding-left: 20px;
+            }
+
+            .pricing-box li {
+                margin-bottom: 8px;
+            }
+
+        .contact a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#about">O mnie</a></li>
+            <li><a href="#portfolio">Prace</a></li>
+            <li><a href="#experience">Doświadczenie</a></li>
+            <li><a href="#pricing">Cennik</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h1>Cześć, jestem Krzysztof</h1>
+        <p>Montaż wideo • Shorty • Animacje</p>
+    </div>
+
+    <div class="promo">Do 3 stycznia -15% na 1 zlecenie</div>
+    <div class="timer" id="timer"></div>
+
+    <section id="about" class="about">
+        <h2>O mnie</h2>
+        <p>Nazywam się Krzysztof i mam 14 lat. Zajmuję się montażem filmów, shortów oraz innych krótkich form wideo.</p>
+        <p>Tworzę głównie z pasji, ale każde zlecenie traktuję profesjonalnie. Interesuję się wszystkim, co związane z internetem i komputerami od montażu i animacji po programowanie i tworzenie gier.</p>
+        <p>Aktualnie skupiam się na rozwijaniu umiejętności montażu i animacji, dbając o tempo, dynamikę i estetykę materiałów.</p>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <h2>Prace (więcej wkrótce)</h2>
+        <video controls poster="poster.png">
+            <source src="short.mp4" type="video/mp4">
+            Twoja przeglądarka nie obsługuje wideo.
+        </video>
+    </section>
+
+    <section id="experience" class="experience">
+        <h2>Doświadczenie</h2>
+        <p>Moje doświadczenie w montażu sięga około 5 lat, a na poważnie zacząłem około półtora roku temu.</p>
+        <p>W programach korzystałem głównie z CapCut na telefonie, a potem trochę na PC, co nauczyło mnie wprowadzać dynamikę, hook i storytelling, choć nie uczyło efektów zaawansowanych czy color gradingu.</p>
+        <p>Od niedawna uczę się Davinci Resolve i praktycznie wszystko w nim tworzę, ale czasem wracam do CapCut, gdy potrzebuję przyspieszyć pracę i nie mam czasu na nauke nowej funkcji.</p>
+        <p>Aktualnie wszystko, co zarabiam z montażu, zbieram lub wydaję na poradniki i naukę. Planuję również nauczyć się pracy w Adobe After Effects i Premiere Pro, gdy bardziej opanuję DaVinci Resolve.</p>
+    </section>
+
+
+    <section id="pricing">
+        <h2>Cennik</h2>
+
+        <div class="pricing-box">
+            <h3>Filmy</h3>
+            <ul>
+                <li>1 minuta filmu: 8 zł (w cenie 1h surowego materiału)</li>
+                <li>Każda dodatkowa godzina surowego materiału: +20 zł</li>
+                <li>Napisy automatyczne + korekta: +10 zł</li>
+                <li>Poprawki po eksporcie: 5 zł za każdą</li>
+            </ul>
+        </div>
+
+        <div class="pricing-box">
+            <h3>Shorty / Rolki</h3>
+            <ul>
+                <li>Cena: 16 – 80 zł</li>
+                <li>Ustalenia szczegółowe przed rozpoczęciem pracy</li>
+            </ul>
+        </div>
+
+        <div class="pricing-box">
+            <h3>Dodatkowe informacje</h3>
+            <ul>
+                <li>Miniaturka prosta: 15–25 zł</li>
+                <li>Czas realizacji: 3–14 dni roboczych</li>
+                <li>Ekspres 2–5 dni: +50% ceny końcowej</li>
+            </ul>
+            <p class="note">Finalna kwota ustalana przed rozpoczęciem montażu, zależy od materiału i ilości pracy.</p>
+        </div>
+
+        <div class="pricing-box">
+            <h3>Zaliczki / płatności</h3>
+            <ul>
+                <li>Rolki: 40% zaliczki</li>
+                <li>Filmy: 50% zaliczki</li>
+                <li>Pełna płatność z góry: możliwa</li>
+                <li>Płatność: Blik / przelew / PayPal / Skrill</li>
+            </ul>
+        </div>
+
+        <p class="pricing-note">Ceny zawsze aktualne i na ich podstawie obliczam koszt realizacji.</p>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Kontakt</h2>
+        <p>Gmail: <a href="mailto:krzysztoflesniewskibiznes@gmail.com">krzysztoflesniewskibiznes@gmail.com</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/_lesniuczek_/" target="_blank">@_lesniuczek_</a></p>
+        <p>Facebook / Messenger: <a href="https://www.facebook.com/profile.php?id=100086658516095" target="_blank">Profil</a></p>
+        <p>NAJSZYBCIEJ ODPOWIADAM NA IG/MES</p>
+    </section>
+
+    <script>
+        const targetDate = new Date('2026-01-03T00:00:00').getTime();
+        const timerEl = document.getElementById('timer');
+
+        setInterval(() => {
+        const now = new Date().getTime();
+        const diff = targetDate - now;
+
+        if (diff <= 0) {
+        timerEl.textContent = 'Promocja zakończona';
+        return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        timerEl.textContent = `${days} dni ${hours}h ${minutes}m ${seconds}s`;
+        }, 1000);
+    </script>
+
+</body>
+</html>
