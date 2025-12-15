@@ -1,18 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
     <title>Portfolio – Krzysztof</title>
 
     <style>
-        @font-face {
-            font-family: 'IkeaSans';
-            src: url('ikea-sans-2.ttf');
-        }
-
         body {
             margin: 0;
-            font-family: 'IkeaSans', Arial, sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #0f0f0f;
             color: #ffffff;
             line-height: 1.6;
@@ -41,16 +36,22 @@
                 text-decoration: none;
                 font-size: 15px;
                 opacity: 0.85;
+                transition: all 0.3s;
             }
 
                 nav a:hover {
                     opacity: 1;
+                    color: #ff3b3b;
                 }
 
         section {
             max-width: 900px;
             margin: auto;
             padding: 80px 20px;
+            background: rgba(30,30,30,0.5);
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
 
         .hero {
@@ -60,7 +61,6 @@
         }
 
             .hero h1 {
-                font-family: 'IkeaSans', Arial, sans-serif;
                 font-size: 56px;
                 margin-bottom: 10px;
             }
@@ -85,7 +85,6 @@
         }
 
         h2 {
-            font-family: 'IkeaSans', Arial, sans-serif;
             font-size: 32px;
             margin-bottom: 20px;
         }
@@ -95,12 +94,14 @@
             opacity: 0.9;
         }
 
-        .portfolio video {
+        .portfolio iframe {
             width: 100%;
             max-width: 360px;
-            border-radius: 14px;
+            height: 640px;
             display: block;
             margin: auto;
+            border-radius: 14px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.6);
         }
 
         .pricing-box {
@@ -108,7 +109,12 @@
             border-radius: 12px;
             padding: 25px;
             margin-bottom: 25px;
+            transition: all 0.3s;
         }
+
+            .pricing-box:hover {
+                background: #1f1f1f;
+            }
 
             .pricing-box h3 {
                 margin-top: 0;
@@ -126,7 +132,12 @@
         .contact a {
             color: white;
             text-decoration: none;
+            transition: all 0.3s;
         }
+
+            .contact a:hover {
+                color: #ff3b3b;
+            }
     </style>
 </head>
 <body>
@@ -158,10 +169,9 @@
 
     <section id="portfolio" class="portfolio">
         <h2>Prace (więcej wkrótce)</h2>
-        <video controls poster="poster.png">
-            <source src="short.mp4" type="video/mp4">
-            Twoja przeglądarka nie obsługuje wideo.
-        </video>
+        <iframe src="https://www.youtube.com/embed/J3iVQNGJ6II" 
+                title="Short" frameborder="0" allowfullscreen>
+        </iframe>
     </section>
 
     <section id="experience" class="experience">
@@ -171,7 +181,6 @@
         <p>Od niedawna uczę się Davinci Resolve i praktycznie wszystko w nim tworzę, ale czasem wracam do CapCut, gdy potrzebuję przyspieszyć pracę i nie mam czasu na nauke nowej funkcji.</p>
         <p>Aktualnie wszystko, co zarabiam z montażu, zbieram lub wydaję na poradniki i naukę. Planuję również nauczyć się pracy w Adobe After Effects i Premiere Pro, gdy bardziej opanuję DaVinci Resolve.</p>
     </section>
-
 
     <section id="pricing">
         <h2>Cennik</h2>
@@ -230,23 +239,22 @@
         const timerEl = document.getElementById('timer');
 
         setInterval(() => {
-        const now = new Date().getTime();
-        const diff = targetDate - now;
+            const now = new Date().getTime();
+            const diff = targetDate - now;
 
-        if (diff <= 0) {
-        timerEl.textContent = 'Promocja zakończona';
-        return;
-        }
+            if (diff <= 0) {
+                timerEl.textContent = 'Promocja zakończona';
+                return;
+            }
 
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((diff / (1000 * 60)) % 60);
-        const seconds = Math.floor((diff / 1000) % 60);
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
 
-        timerEl.textContent = `${days} dni ${hours}h ${minutes}m ${seconds}s`;
+            timerEl.textContent = `${days} dni ${hours}h ${minutes}m ${seconds}s`;
         }, 1000);
     </script>
 
 </body>
-
 </html>
