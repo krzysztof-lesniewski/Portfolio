@@ -21,26 +21,26 @@
             z-index: 100;
         }
 
-            nav ul {
-                list-style: none;
-                display: flex;
-                justify-content: center;
-                gap: 35px;
-                padding: 0;
-                margin: 0;
-            }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            padding: 0;
+            margin: 0;
+        }
 
-            nav a {
-                color: white;
-                text-decoration: none;
-                font-size: 15px;
-                opacity: 0.85;
-                transition: opacity 0.3s;
-            }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            opacity: 0.85;
+            transition: opacity 0.3s;
+        }
 
-                nav a:hover {
-                    opacity: 1;
-                }
+        nav a:hover {
+            opacity: 1;
+        }
 
         section {
             max-width: 900px;
@@ -58,15 +58,15 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
 
-            .hero h1 {
-                font-size: 56px;
-                margin-bottom: 10px;
-            }
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 10px;
+        }
 
-            .hero p {
-                font-size: 22px;
-                opacity: 0.85;
-            }
+        .hero p {
+            font-size: 22px;
+            opacity: 0.85;
+        }
 
         .promo {
             text-align: center;
@@ -77,13 +77,8 @@
         }
 
         @keyframes pulse {
-            0%,100% {
-                opacity: 0.9;
-            }
-
-            50% {
-                opacity: 1;
-            }
+            0%,100%{opacity:0.9;}
+            50%{opacity:1;}
         }
 
         .timer {
@@ -99,10 +94,7 @@
             margin-bottom: 25px;
         }
 
-        p {
-            font-size: 18px;
-            opacity: 0.9;
-        }
+        p {font-size:18px; opacity:0.9;}
 
         .portfolio iframe {
             width: 100%;
@@ -115,9 +107,9 @@
             transition: transform 0.3s;
         }
 
-            .portfolio iframe:hover {
-                transform: scale(1.03);
-            }
+        .portfolio iframe:hover {
+            transform: scale(1.03);
+        }
 
         .pricing-box {
             background: linear-gradient(135deg,#1a1a1a,#111);
@@ -128,144 +120,123 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-            .pricing-box:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            }
-
-            .pricing-box h3 {
-                margin-top: 0;
-                font-size: 24px;
-            }
-
-            .pricing-box ul {
-                padding-left: 20px;
-                margin: 0;
-            }
-
-            .pricing-box li {
-                margin-bottom: 8px;
-            }
-
-        .contact a {
-            color: white;
-            text-decoration: none;
+        .pricing-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
 
-            .contact a:hover {
-                text-decoration: underline;
-            }
-
-        .pricing-note {
-            margin-top: 10px;
-            opacity: 0.8;
-        }
+        .pricing-box h3 {margin-top:0; font-size:24px;}
+        .pricing-box ul {padding-left: 20px; margin:0;}
+        .pricing-box li {margin-bottom: 8px;}
+        .contact a {color:white; text-decoration:none;}
+        .contact a:hover {text-decoration:underline;}
+        .pricing-note {margin-top:10px; opacity:0.8;}
     </style>
 </head>
 <body>
 
-    <nav>
-        <ul>
-            <li><a href="#about">O mnie</a></li>
-            <li><a href="#portfolio">Prace</a></li>
-            <li><a href="#experience">Doświadczenie</a></li>
-            <li><a href="#pricing">Cennik</a></li>
-            <li><a href="#contact">Kontakt</a></li>
-        </ul>
-    </nav>
+<nav>
+    <ul>
+        <li><a href="#about">O mnie</a></li>
+        <li><a href="#portfolio">Prace</a></li>
+        <li><a href="#experience">Doświadczenie</a></li>
+        <li><a href="#pricing">Cennik</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+    </ul>
+</nav>
 
-    <div class="hero">
-        <h1>Cześć, jestem Krzysztof</h1>
-        <p>Montaż wideo • Shorty • Animacje</p>
+<div class="hero">
+    <h1>Cześć, jestem Krzysztof</h1>
+    <p>Montaż wideo • Shorty • Animacje</p>
+</div>
+
+<div class="promo">Do 3 stycznia -15% na 1 zlecenie</div>
+<div class="timer" id="timer"></div>
+
+<section id="about">
+    <h2>O mnie</h2>
+    <p>Nazywam się Krzysztof i mam 14 lat. Zajmuję się montażem filmów, shortów oraz innych krótkich form wideo.</p>
+    <p>Tworzę głównie z pasji, ale każde zlecenie traktuję profesjonalnie. Interesuję się wszystkim, co związane z internetem i komputerami od montażu i animacji po programowanie i tworzenie gier.</p>
+</section>
+
+<section id="portfolio">
+    <h2>Prace (więcej wkrótce)</h2>
+    <iframe src="https://www.youtube.com/embed/J3iVQNGJ6II" title="YouTube Short" allowfullscreen></iframe>
+</section>
+
+<section id="experience">
+    <h2>Doświadczenie</h2>
+    <p>Moje doświadczenie w montażu sięga około 5 lat, a na poważnie zacząłem około półtora roku temu.</p>
+    <p>W programach korzystałem głównie z CapCut, co nauczyło mnie dynamiki i storytellingu.</p>
+    <p>Od niedawna uczę się DaVinci Resolve i praktycznie wszystko w nim tworzę, czasem wracam do CapCut, gdy potrzebuję szybkości.</p>
+    <p>Aktualnie wszystko, co zarabiam z montażu, zbieram lub wydaję na poradniki i naukę. Planuję również nauczyć się Adobe After Effects i Premiere Pro.</p>
+</section>
+
+<section id="pricing">
+    <h2>Cennik</h2>
+
+    <div class="pricing-box">
+        <h3>Filmy</h3>
+        <ul>
+            <li>1 minuta filmu: 8 zł (w cenie 1h surowego materiału)</li>
+            <li>Każda dodatkowa godzina surowego materiału: +20 zł</li>
+            <li>Napisy automatyczne + korekta: +10 zł</li>
+            <li>Poprawki po eksporcie: 5 zł za każdą</li>
+        </ul>
     </div>
 
-    <div class="promo">Do 3 stycznia -15% na 1 zlecenie</div>
-    <div class="timer" id="timer"></div>
+    <div class="pricing-box">
+        <h3>Shorty / Rolki</h3>
+        <ul>
+            <li>Cena: 16 – 80 zł</li>
+            <li>Ustalenia szczegółowe przed rozpoczęciem pracy</li>
+        </ul>
+    </div>
 
-    <section id="about">
-        <h2>O mnie</h2>
-        <p>Nazywam się Krzysztof i mam 14 lat. Zajmuję się montażem filmów, shortów oraz innych krótkich form wideo.</p>
-        <p>Tworzę głównie z pasji, ale każde zlecenie traktuję profesjonalnie. Interesuję się wszystkim, co związane z internetem i komputerami od montażu i animacji po programowanie i tworzenie gier.</p>
-    </section>
+    <div class="pricing-box">
+        <h3>Dodatkowe informacje</h3>
+        <ul>
+            <li>Miniaturka prosta: 15–25 zł</li>
+            <li>Czas realizacji: 3–14 dni roboczych</li>
+            <li>Ekspres 2–5 dni: +50% ceny końcowej</li>
+        </ul>
+        <p class="pricing-note">Finalna kwota ustalana przed rozpoczęciem montażu, zależy od materiału i ilości pracy.</p>
+        <p class="pricing-note">Ceny zawsze aktualne i na ich podstawie obliczam koszt realizacji.</p>
+    </div>
 
-    <section id="portfolio">
-        <h2>Prace (więcej wkrótce)</h2>
-        <iframe src="https://www.youtube.com/embed/J3iVQNGJ6II" title="YouTube Short" allowfullscreen></iframe>
-    </section>
+    <div class="pricing-box">
+        <h3>Zaliczki / płatności</h3>
+        <ul>
+            <li>Rolki: 40% zaliczki</li>
+            <li>Filmy: 50% zaliczki</li>
+            <li>Pełna płatność z góry: możliwa</li>
+            <li>Płatność: Blik / przelew / PayPal / Skrill</li>
+        </ul>
+    </div>
+</section>
 
-    <section id="experience">
-        <h2>Doświadczenie</h2>
-        <p>Moje doświadczenie w montażu sięga około 5 lat, a na poważnie zacząłem około półtora roku temu.</p>
-        <p>W programach korzystałem głównie z CapCut, co nauczyło mnie dynamiki i storytellingu.</p>
-        <p>Od niedawna uczę się DaVinci Resolve i praktycznie wszystko w nim tworzę, czasem wracam do CapCut, gdy potrzebuję szybkości.</p>
-        <p>Aktualnie wszystko, co zarabiam z montażu, zbieram lub wydaję na poradniki i naukę. Planuję również nauczyć się Adobe After Effects i Premiere Pro.</p>
-    </section>
+<section id="contact">
+    <h2>Kontakt</h2>
+    <p>Gmail: <a href="mailto:krzysztoflesniewskibiznes@gmail.com">krzysztoflesniewskibiznes@gmail.com</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/_lesniuczek_/" target="_blank">@_lesniuczek_</a></p>
+    <p>Facebook / Messenger: <a href="https://www.facebook.com/profile.php?id=100086658516095" target="_blank">Profil</a></p>
+    <p>NAJSZYBCIEJ ODPOWIADAM NA IG/MES</p>
+</section>
 
-    <section id="pricing">
-        <h2>Cennik</h2>
-
-        <div class="pricing-box">
-            <h3>Filmy</h3>
-            <ul>
-                <li>1 minuta filmu: 8 zł (w cenie 1h surowego materiału)</li>
-                <li>Każda dodatkowa godzina surowego materiału: +20 zł</li>
-                <li>Napisy automatyczne + korekta: +10 zł</li>
-                <li>Poprawki po eksporcie: 5 zł za każdą</li>
-            </ul>
-        </div>
-
-        <div class="pricing-box">
-            <h3>Shorty / Rolki</h3>
-            <ul>
-                <li>Cena: 16 – 80 zł</li>
-                <li>Ustalenia szczegółowe przed rozpoczęciem pracy</li>
-            </ul>
-        </div>
-
-        <div class="pricing-box">
-            <h3>Dodatkowe informacje</h3>
-            <ul>
-                <li>Miniaturka prosta: 15–25 zł</li>
-                <li>Czas realizacji: 3–14 dni roboczych</li>
-                <li>Ekspres 2–5 dni: +50% ceny końcowej</li>
-            </ul>
-            <p class="pricing-note">Finalna kwota ustalana przed rozpoczęciem montażu, zależy od materiału i ilości pracy.</p>
-            <p class="pricing-note">Ceny zawsze aktualne i na ich podstawie obliczam koszt realizacji.</p>
-        </div>
-
-        <div class="pricing-box">
-            <h3>Zaliczki / płatności</h3>
-            <ul>
-                <li>Rolki: 40% zaliczki</li>
-                <li>Filmy: 50% zaliczki</li>
-                <li>Pełna płatność z góry: możliwa</li>
-                <li>Płatność: Blik / przelew / PayPal / Skrill</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Kontakt</h2>
-        <p>Gmail: <a href="mailto:krzysztoflesniewskibiznes@gmail.com">krzysztoflesniewskibiznes@gmail.com</a></p>
-        <p>Instagram: <a href="https://www.instagram.com/_lesniuczek_/" target="_blank">@_lesniuczek_</a></p>
-        <p>Facebook / Messenger: <a href="https://www.facebook.com/profile.php?id=100086658516095" target="_blank">Profil</a></p>
-        <p>NAJSZYBCIEJ ODPOWIADAM NA IG/MES</p>
-    </section>
-
-    <script>
-        const targetDate = new Date('2026-01-03T00:00:00').getTime();
-        const timerEl = document.getElementById('timer');
-        setInterval(() => {
-        const now = new Date().getTime();
-        const diff = targetDate - now;
-        if (diff <= 0) { timerEl.textContent = 'Promocja zakończona'; return; }
-        const days = Math.floor(diff / (1000*60*60*24));
-        const hours = Math.floor((diff / (1000*60*60)) % 24);
-        const minutes = Math.floor((diff / (1000*60)) % 60);
-        const seconds = Math.floor((diff / 1000) % 60);
-        timerEl.textContent = `${days} dni ${hours}h ${minutes}m ${seconds}s`;
-        }, 1000);
-    </script>
+<script>
+const targetDate = new Date('2026-01-03T00:00:00').getTime();
+const timerEl = document.getElementById('timer');
+setInterval(() => {
+    const now = new Date().getTime();
+    const diff = targetDate - now;
+    if (diff <= 0) { timerEl.textContent = 'Promocja zakończona'; return; }
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff / (1000*60*60)) % 24);
+    const minutes = Math.floor((diff / (1000*60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    timerEl.textContent = `${days} dni ${hours}h ${minutes}m ${seconds}s`;
+}, 1000);
+</script>
 
 </body>
 </html>
