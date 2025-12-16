@@ -17,6 +17,7 @@
             background: #0f0f0f;
             color: #fff;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         a {
@@ -35,27 +36,27 @@
             box-shadow: 0 2px 15px rgba(0,0,0,0.4);
         }
 
-            nav ul {
-                list-style: none;
-                display: flex;
-                justify-content: center;
-                gap: 40px;
-                padding: 15px 0;
-            }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 15px 0;
+        }
 
-            nav a {
-                font-weight: 500;
-                font-size: 16px;
-                padding: 6px 10px;
-                border-radius: 6px;
-                transition: 0.3s;
-            }
+        nav a {
+            font-weight: 500;
+            font-size: 16px;
+            padding: 6px 10px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
 
-                nav a:hover {
-                    background: #ff3b3b;
-                    color: #fff;
-                    transform: scale(1.1);
-                }
+        nav a:hover {
+            background: #ff3b3b;
+            color: #fff;
+            transform: scale(1.1);
+        }
 
         /* ---- Hero ---- */
         .hero {
@@ -71,24 +72,24 @@
             overflow: hidden;
         }
 
-            .hero h1 {
-                font-size: 60px;
-                font-weight: 700;
-                margin-bottom: 12px;
-                text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
-            }
+        .hero h1 {
+            font-size: 60px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+        }
 
-            .hero p {
-                font-size: 24px;
-                opacity: 0.9;
-            }
+        .hero p {
+            font-size: 24px;
+            opacity: 0.9;
+        }
 
-            .hero .subtext {
-                font-size: 18px;
-                color: #fff8;
-                margin-top: 6px;
-                font-weight: 500;
-            }
+        .hero .subtext {
+            font-size: 18px;
+            color: #fff8;
+            margin-top: 6px;
+            font-weight: 500;
+        }
 
         /* ---- Promo ---- */
         .promo {
@@ -102,13 +103,8 @@
         }
 
         @keyframes pulse {
-            0%,100% {
-                opacity: 0.9;
-            }
-
-            50% {
-                opacity: 1;
-            }
+            0%,100% {opacity: 0.9;}
+            50% {opacity: 1;}
         }
 
         /* ---- Timer ---- */
@@ -137,11 +133,7 @@
             text-shadow: 1px 1px 8px rgba(0,0,0,0.5);
         }
 
-        p {
-            font-size: 18px;
-            opacity: 0.9;
-            margin-bottom: 12px;
-        }
+        p { font-size: 18px; opacity: 0.9; margin-bottom: 12px; }
 
         /* ---- Portfolio ---- */
         .portfolio iframe {
@@ -155,98 +147,61 @@
             transition: transform 0.3s;
         }
 
-            .portfolio iframe:hover {
-                transform: scale(1.05);
-            }
+        .portfolio iframe:hover { transform: scale(1.05); }
 
         /* ---- Pricing ---- */
+        .pricing-section { margin-bottom: 40px; }
+        .pricing-header {
+            cursor: pointer;
+            background: #1a1a1a;
+            padding: 15px 20px;
+            border-radius: 12px;
+            font-size: 24px;
+            color: #ff8c42;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            transition: 0.3s;
+        }
+
+        .pricing-header:hover { background: #222; }
+
+        .pricing-content {
+            display: none;
+            margin-top: 15px;
+            overflow: hidden;
+            animation: slideDown 0.4s ease forwards;
+        }
+
+        @keyframes slideDown {
+            0% { height: 0; opacity: 0; }
+            100% { height: auto; opacity: 1; }
+        }
+
         .pricing-box {
             background: linear-gradient(145deg,#1a1a1a,#111);
             border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 30px;
+            padding: 20px;
+            margin-bottom: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.6);
             transition: 0.3s;
         }
 
-            .pricing-box:hover {
-                transform: translateY(-6px);
-                box-shadow: 0 15px 40px rgba(255,59,59,0.5);
-            }
-
-            .pricing-box h3 {
-                margin-top: 0;
-                font-size: 26px;
-                color: #ff8c42;
-            }
-
-            .pricing-box ul {
-                padding-left: 20px;
-                margin-top: 15px;
-            }
-
-            .pricing-box li {
-                margin-bottom: 10px;
-                font-size: 17px;
-            }
-
-        .pricing-note {
-            margin-top: 12px;
-            opacity: 0.8;
+        .pricing-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(255,59,59,0.5);
         }
 
-        /* ---- Produkty ---- */
-        .product-box {
-            background: linear-gradient(145deg,#1a1a1a,#111);
-            border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 25px;
-            border: 2px solid #333;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+        .pricing-box h3 { margin-top: 0; font-size: 22px; color: #ff8c42; }
 
-            .product-box:hover {
-                transform: translateY(-6px);
-                box-shadow: 0 12px 30px rgba(255, 59, 59, 0.4);
-            }
+        .pricing-box ul { padding-left: 20px; margin-top: 10px; }
+        .pricing-box li { margin-bottom: 8px; font-size: 16px; }
+        .pricing-box p { margin-top: 8px; font-size: 14px; opacity: 0.8; }
 
-            .product-box h3 {
-                margin-top: 0;
-                font-size: 24px;
-                color: #ff8c42;
-            }
+        .contact a { color: #ff7b3b; transition: 0.3s; }
+        .contact a:hover { text-decoration: underline; color: #ff3b3b; }
 
-            .product-box ul {
-                padding-left: 20px;
-                margin-top: 12px;
-            }
-
-                .product-box ul li {
-                    margin-bottom: 8px;
-                }
-
-            .product-box p {
-                margin-top: 12px;
-                font-size: 16px;
-                opacity: 0.9;
-            }
-
-            .product-box span {
-                font-weight: bold;
-            }
-
-        /* ---- Kontakt ---- */
-        .contact a {
-            color: #ff7b3b;
-            transition: 0.3s;
-        }
-
-            .contact a:hover {
-                text-decoration: underline;
-                color: #ff3b3b;
-            }
-
-        /* ---- Footer ---- */
         footer {
             text-align: center;
             padding: 25px 20px;
@@ -256,67 +211,76 @@
             margin-top: 50px;
         }
 
-        /* ---- Responsywność ---- */
-        @media(max-width: 600px) {
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            .hero p {
-                font-size: 20px;
-            }
-
-            h2 {
-                font-size: 32px;
-            }
-
-            .timer {
-                font-size: 20px;
-            }
+        @media(max-width: 600px){
+            .hero h1 { font-size: 42px; }
+            .hero p { font-size: 20px; }
+            h2 { font-size: 32px; }
+            .timer { font-size: 20px; }
+            .pricing-box h3 { font-size: 20px; }
+            .pricing-header { font-size: 20px; }
         }
+
+        .pricing-note-global { font-size: 14px; opacity: 0.7; margin-top: 20px; }
+        .unavailable { color: red; font-weight: bold; }
+
+        /* ---- Animacja śniegu ---- */
+        .snowflake {
+            position: fixed;
+            top: -50px;
+            font-size: 24px;
+            color: #fff;
+            z-index: 9999;
+            user-select: none;
+            pointer-events: none;
+        }
+
     </style>
 </head>
 <body>
 
-    <nav>
-        <ul>
-            <li><a href="#about">O mnie</a></li>
-            <li><a href="#portfolio">Prace</a></li>
-            <li><a href="#experience">Doświadczenie</a></li>
-            <li><a href="#pricing">Cennik</a></li>
-            <li><a href="#contact">Kontakt</a></li>
-        </ul>
-    </nav>
+<nav>
+    <ul>
+        <li><a href="#about">O mnie</a></li>
+        <li><a href="#portfolio">Prace</a></li>
+        <li><a href="#experience">Doświadczenie</a></li>
+        <li><a href="#pricing">Cennik</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+    </ul>
+</nav>
 
-    <div class="hero">
-        <h1>Cześć, jestem Krzysztof</h1>
-        <p>Dynamiczny montaż pod TikTok / Shorts / Reels</p>
-        <p class="subtext">Pomagam shortom łapać większe zasięgi!!!</p>
-    </div>
+<div class="hero">
+    <h1>Cześć, jestem Krzysztof</h1>
+    <p>Dynamiczny montaż pod TikTok / Shorts / Reels</p>
+    <p class="subtext">Pomagam shortom łapać większe zasięgi!!!</p>
+</div>
 
-    <div class="promo">Do 3 stycznia -15% na 1 zlecenie</div>
-    <div class="timer" id="timer"></div>
+<div class="promo">Do 3 stycznia -15% na 1 zlecenie</div>
+<div class="timer" id="timer"></div>
 
-    <section id="about">
-        <h2>O mnie</h2>
-        <p>Nazywam się Krzysztof i mam 14 lat. Zajmuję się montażem filmów, shortów oraz innych krótkich form wideo.</p>
-        <p>Tworzę głównie z pasji, ale każde zlecenie traktuję profesjonalnie. Interesuję się wszystkim, co związane z internetem i komputerami od montażu i animacji po programowanie i tworzenie gier.</p>
-        <p>Jeżeli tu jesteś, najpewniej zastanawiasz się, dlaczego ja? 1) moje ceny są atrakcyjne do jakości, 2) często oferuję zniżki dla nowych klientów i nie tylko, 3) szybka realizacja, 4) indywidualne podejście do każdego projektu.</p>
-    </section>
+<section id="about">
+    <h2>O mnie</h2>
+    <p>Nazywam się Krzysztof i mam 14 lat. Zajmuję się montażem filmów, shortów oraz innych krótkich form wideo.</p>
+    <p>Tworzę głównie z pasji, ale każde zlecenie traktuję profesjonalnie. Interesuję się wszystkim, co związane z internetem i komputerami od montażu i animacji po programowanie i tworzenie gier.</p>
+    <p>Jeżeli tu jesteś, najpewniej zastanawiasz się, dlaczego ja? 1) moje ceny są atrakcyjne do jakości, 2) często oferuję zniżki dla nowych klientów i nie tylko, 3) szybka realizacja, 4) indywidualne podejście do każdego projektu.</p>
+</section>
 
-    <section id="portfolio">
-        <h2>Prace (więcej wkrótce)</h2>
-        <iframe src="https://www.youtube.com/embed/J3iVQNGJ6II" title="YouTube Short" allowfullscreen></iframe>
-    </section>
+<section id="portfolio">
+    <h2>Prace (więcej wkrótce)</h2>
+    <iframe src="https://www.youtube.com/embed/J3iVQNGJ6II" title="YouTube Short" allowfullscreen></iframe>
+</section>
 
-    <section id="experience">
-        <h2>Doświadczenie</h2>
-        <p>Moje doświadczenie w montażu sięga około 5 lat, a na poważnie zacząłem około półtora roku temu. W programach korzystałem głównie z CapCut, co nauczyło mnie dynamiki i storytellingu. Od niedawna tworzę w DaVinci Resolve już od 2 miesięcy i praktycznie wszystko w nim aktualnie tworzę. Aktualnie wszystko, co zarabiam z montażu, zbieram lub wydaję na poradniki i naukę. Planuję również nauczyć się Adobe After Effects i Premiere Pro. Na swoim koncie mam już zmontowane ponad 50 rolek oraz kilka dłuższych filmów.</p>
-    </section>
+<section id="experience">
+    <h2>Doświadczenie</h2>
+    <p>Moje doświadczenie w montażu sięga około 5 lat, a na poważnie zacząłem około półtora roku temu. W programach korzystałem głównie z CapCut, co nauczyło mnie dynamiki i storytellingu. Od niedawna tworzę w DaVinci Resolve już od 2 miesięcy i praktycznie wszystko w nim aktualnie tworzę. Aktualnie wszystko, co zarabiam z montażu, zbieram lub wydaję na poradniki i naukę. Planuję również nauczyć się Adobe After Effects i Premiere Pro. Na swoim koncie mam już zmontowane ponad 50 rolek oraz kilka dłuższych filmów.</p>
+</section>
 
-    <section id="pricing">
-        <h2>Cennik</h2>
+<section id="pricing">
+<h2>Cennik</h2>
 
+<!-- Video -->
+<div class="pricing-section">
+    <div class="pricing-header">Video</div>
+    <div class="pricing-content">
         <div class="pricing-box">
             <h3>Filmy</h3>
             <ul>
@@ -338,77 +302,98 @@
         <div class="pricing-box">
             <h3>Shoty z live'ów</h3>
             <ul>
-                <li>Za każdego shota z streama: 50–120 zł (w zależności od długości,materiału i czy sam musze szukać)</li>
-                <li>Jeżeli jest to gotowy moment który zostanie mi wysłany liczy się jako shorts</li>
+                <li>Za każdą godzinę streama: 50–120 zł (w zależności od długości i materiału)</li>
                 <li>Więcej szczegółów ustalamy prywatnie | nie zawsze mam na to czas |</li>
             </ul>
         </div>
+    </div>
+</div>
 
-
+<!-- Graficzne -->
+<div class="pricing-section">
+    <div class="pricing-header">Graficzne</div>
+    <div class="pricing-content">
+        <div class="pricing-box">
+            <h3>Profilowe</h3>
+            <ul>
+                <li>Zwykłe: 20 zł</li>
+                <li>Kolorowe: 25 zł (dopłacasz 5 zł za 3 różne kolory tła profilu)</li>
+            </ul>
+        </div>
 
         <div class="pricing-box">
-            <h3>Dodatkowe informacje</h3>
+            <h3>Banery (YT / Facebook / itp.)</h3>
+            <ul>
+                <li>Cena: 30 zł</li>
+                <li>Różne formaty i dostosowanie do platform</li>
+            </ul>
+        </div>
+
+        <div class="pricing-box">
+            <h3>Napisy (Twitch / Kick / YT) <span class="unavailable">Chwilowo niedostępne</span></h3>
+            <ul>
+                <li>Pełny zestaw z Twoją nazwą w 2 stylach</li>
+                <li>2 napisy animowane do Twitch i Kick</li>
+                <li>Cena: 60 zł</li>
+            </ul>
+        </div>
+
+        <div class="pricing-box">
+            <h3>Miniaturki</h3>
             <ul>
                 <li>Miniaturka prosta: 15–25 zł</li>
-                <li>Czas realizacji: 3–14 dni roboczych</li>
-                <li>Ekspres 2–5 dni: +50% ceny końcowej</li>
             </ul>
-            <p class="pricing-note">Finalna kwota ustalana przed rozpoczęciem montażu, zależy od materiału i ilości pracy.</p>
-            <p class="pricing-note">Ceny zawsze aktualne i na ich podstawie obliczam koszt realizacji.</p>
         </div>
+    </div>
+</div>
 
+<!-- Dodatkowe -->
+<div class="pricing-section">
+    <div class="pricing-header">Dodatkowe</div>
+    <div class="pricing-content">
         <div class="pricing-box">
-            <h3>Zaliczki / płatności</h3>
+            <h3>Strona wizytówka / portfolio</h3>
             <ul>
-                <li>Rolki: 40% zaliczki</li>
-                <li>Filmy: 50% zaliczki</li>
-                <li>Pełna płatność z góry: możliwa</li>
-                <li>Płatność: Blik / przelew / PayPal / Skrill</li>
+                <li>Cena: 400 zł</li>
+                <li>Może być wizytówka lub portfolio z ważnymi informacjami</li>
+                <li>Każda kolejna zmiana: dodatkowy koszt zależny od ilości zmian</li>
+                <li>Domena: jeśli chcesz sam musisz opłacać, ja pomagam prowadzić stronę</li>
             </ul>
         </div>
-    </section>
+    </div>
+</div>
 
-    <section id="products">
-        <h2>Moje produkty</h2>
+<div class="pricing-box">
+    <h3>Zaliczki / płatności</h3>
+    <ul>
+        <li>Rolki: 40% zaliczki</li>
+        <li>Filmy: 50% zaliczki</li>
+        <li>Pełna płatność z góry: możliwa</li>
+        <li>Płatność: Blik / przelew / PayPal / Skrill</li>
+    </ul>
+</div>
 
-        <div class="product-box">
-            <h3>Paczka Montażysty Basic <span style="text-decoration: line-through; color: #ff5555;">30 zł</span> 20 zł</h3>
-            <p>Specjalnie dla początkujących montażystów, takich jak ja kiedy zaczynałem. W paczce znajdziesz:</p>
-            <ul>
-                <li>6 animacji gotowych do użycia</li>
-                <li>Ponad 15 piosenek do montażu</li>
-                <li>1 kurs wprowadzający do paczki</li>
-                <li>1 poradnik "Jak zacząć od podstaw jako montażysta"</li>
-                <li>wiele więcej ale to sam musisz odkryć! </li>
-            </ul>
-            <p>
-                Dostęp do paczki jest stały a paczka będzie stopniowo rozszerzana.
-                <strong>Dostępna od 21 grudnia, promocja trwa do 3 stycznia!</strong>
-            </p>
-        </div>
+<p class="pricing-note-global">
+    Czas realizacji: 3–14 dni roboczych | Ekspres 2–5 dni: +50% ceny końcowej | Finalna kwota ustalana przed rozpoczęciem montażu, zależy od materiału i ilości pracy
+</p>
+</section>
 
-        <div class="product-box">
-            <h3>Produkt w przygotowaniu (???)</h3>
-            <p>Nad tym jeszcze pracuję. Szczegóły pojawią się wkrótce!</p>
-        </div>
-    </section>
+<section id="contact">
+    <h2>Kontakt</h2>
+    <p>Gmail: <a href="mailto:krzysztoflesniewskibiznes@gmail.com">krzysztoflesniewskibiznes@gmail.com</a></p>
+    <p>Instagram: <a href="https://www.instagram.com/_lesniuczek_/" target="_blank">@_lesniuczek_</a></p>
+    <p>Facebook / Messenger: <a href="https://www.facebook.com/profile.php?id=100086658516095" target="_blank">Profil</a></p>
+    <p>NAJSZYBCIEJ ODPOWIADAM NA IG/MES</p>
+</section>
 
-    <section id="contact">
-        <h2>Kontakt</h2>
-        <p>Gmail: <a href="mailto:krzysztoflesniewskibiznes@gmail.com">krzysztoflesniewskibiznes@gmail.com</a></p>
-        <p>Instagram: <a href="https://www.instagram.com/_lesniuczek_/" target="_blank">@_lesniuczek_</a></p>
-        <p>Facebook / Messenger: <a href="https://www.facebook.com/profile.php?id=100086658516095" target="_blank">Profil</a></p>
-        <p>NAJSZYBCIEJ ODPOWIADAM NA IG/MES</p>
-    </section>
+<footer>
+    <p>Copyright © 2025 Krzysztof Leśniewski. All Rights Reserved.</p>
+</footer>
 
-    <footer>
-        <p>Copyright © 2025 Krzysztof Leśniewski. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        const targetDate = new Date('2026-01-03T00:00:00').getTime();
-        const timerEl = document.getElementById('timer');
-        setInterval(() => {
+<script>
+    const targetDate = new Date('2026-01-03T00:00:00').getTime();
+    const timerEl = document.getElementById('timer');
+    setInterval(() => {
         const now = new Date().getTime();
         const diff = targetDate - now;
         if (diff <= 0) { timerEl.textContent = 'Promocja zakończona'; return; }
@@ -417,9 +402,44 @@
         const minutes = Math.floor((diff / (1000*60)) % 60);
         const seconds = Math.floor((diff / 1000) % 60);
         timerEl.textContent = `${days} dni ${hours}h ${minutes}m ${seconds}s`;
-        }, 1000);
-    </script>
+    }, 1000);
+
+    // Rozwijanie / zwijanie cennika
+    const headers = document.querySelectorAll('.pricing-header');
+    headers.forEach(header => {
+        header.addEventListener('click', () => {
+            const content = header.nextElementSibling;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+
+    // Spadający śnieg ❄️ (8-28 grudnia)
+    const today = new Date();
+    const year = today.getFullYear();
+    const snowStart = new Date(year,11,8);  // 8 grudnia
+    const snowEnd = new Date(year,11,28);   // 28 grudnia
+    if(today >= snowStart && today <= snowEnd){
+        function createSnowflake(){
+            const snow = document.createElement('div');
+            snow.classList.add('snowflake');
+            snow.textContent = '❄️';
+            snow.style.left = Math.random()*window.innerWidth + 'px';
+            snow.style.fontSize = 12 + Math.random()*24 + 'px';
+            document.body.appendChild(snow);
+            let top = -50;
+            const speed = 1 + Math.random()*2;
+            function fall(){
+                top += speed;
+                snow.style.top = top + 'px';
+                if(top < window.innerHeight){
+                    requestAnimationFrame(fall);
+                } else { snow.remove(); }
+            }
+            fall();
+        }
+        setInterval(createSnowflake, 500);
+    }
+</script>
 
 </body>
 </html>
-
