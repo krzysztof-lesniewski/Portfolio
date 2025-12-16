@@ -3,169 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <title>Portfolio – Krzysztof</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
+        /* ---- Reset i podstawowe ---- */
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg,#0f0f0f,#1a1a1a);
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0f0f0f;
             color: #fff;
             line-height: 1.6;
         }
 
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ---- Nawigacja ---- */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(0,0,0,0.85);
-            padding: 15px 0;
+            background: rgba(15,15,15,0.95);
+            backdrop-filter: blur(8px);
             z-index: 100;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.4);
         }
 
-            nav ul {
-                list-style: none;
-                display: flex;
-                justify-content: center;
-                gap: 35px;
-                padding: 0;
-                margin: 0;
-            }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 15px 0;
+        }
 
-            nav a {
-                color: white;
-                text-decoration: none;
-                font-size: 15px;
-                opacity: 0.85;
-                transition: opacity 0.3s;
-            }
+        nav a {
+            font-weight: 500;
+            font-size: 16px;
+            padding: 6px 10px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
 
-                nav a:hover {
-                    opacity: 1;
-                }
+        nav a:hover {
+            background: #ff3b3b;
+            color: #fff;
+            transform: scale(1.1);
+        }
 
+        /* ---- Hero ---- */
+        .hero {
+            padding-top: 180px;
+            padding-bottom: 60px;
+            text-align: center;
+            background: linear-gradient(120deg,#ff3b3b,#ff7b3b);
+            border-radius: 16px;
+            margin: 20px auto;
+            max-width: 900px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 24px;
+            opacity: 0.9;
+        }
+
+        .hero .subtext {
+            font-size: 18px;
+            color: #fff8;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        /* ---- Promo ---- */
+        .promo {
+            text-align: center;
+            color: #ff3b3b;
+            font-size: 24px;
+            margin: 25px 0;
+            font-weight: 600;
+            animation: pulse 1.5s infinite;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        }
+
+        @keyframes pulse {
+            0%,100% {opacity: 0.9;}
+            50% {opacity: 1;}
+        }
+
+        /* ---- Timer ---- */
+        .timer {
+            font-size: 22px;
+            text-align: center;
+            margin-bottom: 50px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ff7b3b;
+            text-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+        }
+
+        /* ---- Sekcje ---- */
         section {
             max-width: 900px;
             margin: auto;
             padding: 100px 20px;
         }
 
-        .hero {
-            padding-top: 160px;
-            padding-bottom: 40px;
-            text-align: center;
-            background: linear-gradient(120deg,#ff3b3b,#ff7b3b);
-            border-radius: 12px;
-            margin: 20px auto;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        }
-
-            .hero h1 {
-                font-size: 56px;
-                margin-bottom: 10px;
-            }
-
-            .hero p {
-                font-size: 22px;
-                opacity: 0.85;
-            }
-
-            .hero .subtext {
-                font-size: 18px;
-                opacity: 0.8;
-                margin-top: 8px;
-            }
-
-        .promo {
-            text-align: center;
-            color: #ff3b3b;
-            font-size: 24px;
-            margin: 20px 0;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0%,100% {
-                opacity: 0.9;
-            }
-
-            50% {
-                opacity: 1;
-            }
-        }
-
-        .timer {
-            font-size: 20px;
-            text-align: center;
-            margin-bottom: 40px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
         h2 {
-            font-size: 36px;
-            margin-bottom: 25px;
+            font-size: 40px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #ff8c42;
+            text-shadow: 1px 1px 8px rgba(0,0,0,0.5);
         }
 
         p {
             font-size: 18px;
             opacity: 0.9;
+            margin-bottom: 12px;
         }
 
+        /* ---- Portfolio ---- */
         .portfolio iframe {
             width: 100%;
-            max-width: 400px;
-            height: 720px;
-            border-radius: 14px;
+            max-width: 480px;
+            height: 800px;
+            border-radius: 16px;
             display: block;
-            margin: auto;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            margin: 30px auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
             transition: transform 0.3s;
         }
 
-            .portfolio iframe:hover {
-                transform: scale(1.03);
-            }
+        .portfolio iframe:hover {
+            transform: scale(1.05);
+        }
 
+        /* ---- Pricing ---- */
         .pricing-box {
-            background: linear-gradient(135deg,#1a1a1a,#111);
-            border-radius: 14px;
-            padding: 25px;
+            background: linear-gradient(145deg,#1a1a1a,#111);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            transition: 0.3s;
+        }
+
+        .pricing-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(255,59,59,0.5);
+        }
+
+        .pricing-box h3 {
+            margin-top: 0;
+            font-size: 26px;
+            color: #ff8c42;
+        }
+
+        .pricing-box ul {
+            padding-left: 20px;
+            margin-top: 15px;
+        }
+
+        .pricing-box li {
+            margin-bottom: 10px;
+            font-size: 17px;
+        }
+
+        .pricing-note {
+            margin-top: 12px;
+            opacity: 0.8;
+        }
+
+        /* ---- Produkty ---- */
+        .product-box {
+            background: linear-gradient(145deg,#1a1a1a,#111);
+            border-radius: 16px;
+            padding: 30px;
             margin-bottom: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border: 2px solid #333;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-            .pricing-box:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            }
+        .product-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(255, 59, 59, 0.4);
+        }
 
-            .pricing-box h3 {
-                margin-top: 0;
-                font-size: 24px;
-            }
+        .product-box h3 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #ff8c42;
+        }
 
-            .pricing-box ul {
-                padding-left: 20px;
-                margin: 0;
-            }
+        .product-box ul {
+            padding-left: 20px;
+            margin-top: 12px;
+        }
 
-            .pricing-box li {
-                margin-bottom: 8px;
-            }
+        .product-box ul li {
+            margin-bottom: 8px;
+        }
 
+        .product-box p {
+            margin-top: 12px;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .product-box span {
+            font-weight: bold;
+        }
+
+        /* ---- Kontakt ---- */
         .contact a {
-            color: white;
-            text-decoration: none;
+            color: #ff7b3b;
+            transition: 0.3s;
         }
 
-            .contact a:hover {
-                text-decoration: underline;
-            }
-
-        .pricing-note {
-            margin-top: 10px;
-            opacity: 0.8;
+        .contact a:hover {
+            text-decoration: underline;
+            color: #ff3b3b;
         }
+
+        /* ---- Footer ---- */
+        footer {
+            text-align: center;
+            padding: 25px 20px;
+            opacity: 0.7;
+            font-size: 15px;
+            border-top: 1px solid #333;
+            margin-top: 50px;
+        }
+
+        /* ---- Responsywność ---- */
+        @media(max-width: 600px){
+            .hero h1 { font-size: 42px; }
+            .hero p { font-size: 20px; }
+            h2 { font-size: 32px; }
+            .timer { font-size: 20px; }
+        }
+
     </style>
 </head>
 <body>
@@ -272,53 +365,6 @@
             <h3>Produkt w przygotowaniu (???)</h3>
             <p>Nad tym jeszcze pracuję. Szczegóły pojawią się wkrótce!</p>
         </div>
-
-        <style>
-            #products {
-                max-width: 900px;
-                margin: auto;
-                padding: 40px 20px;
-            }
-
-            .product-box {
-                background: #1a1a1a;
-                border-radius: 12px;
-                padding: 25px;
-                margin-bottom: 20px;
-                border: 2px solid #333;
-                transition: transform 0.2s, box-shadow 0.2s;
-            }
-
-                .product-box:hover {
-                    transform: translateY(-5px);
-                    box-shadow: 0 8px 20px rgba(255, 59, 59, 0.3);
-                }
-
-                .product-box h3 {
-                    margin-top: 0;
-                    font-size: 22px;
-                    color: #ff8c42; /* wyróżniający kolor nagłówka */
-                }
-
-                .product-box ul {
-                    padding-left: 20px;
-                    margin-top: 10px;
-                }
-
-                    .product-box ul li {
-                        margin-bottom: 6px;
-                    }
-
-                .product-box p {
-                    margin-top: 10px;
-                    font-size: 16px;
-                    opacity: 0.9;
-                }
-
-                .product-box span {
-                    font-weight: bold;
-                }
-        </style>
     </section>
 
     <section id="contact">
@@ -329,7 +375,7 @@
         <p>NAJSZYBCIEJ ODPOWIADAM NA IG/MES</p>
     </section>
 
-    <footer style="text-align:center; padding:20px; opacity:0.7;">
+    <footer>
         <p>Copyright © 2025 Krzysztof Leśniewski. All Rights Reserved.</p>
     </footer>
 
