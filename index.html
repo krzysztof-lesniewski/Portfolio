@@ -2,6 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio – Krzysztof</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -44,6 +45,7 @@
                 justify-content: center;
                 gap: 40px;
                 padding: 15px 0;
+                flex-wrap: wrap;
             }
 
             nav a {
@@ -153,7 +155,7 @@
         /* ---- Sekcje ---- */
         section {
             max-width: 900px;
-            margin: auto;
+            margin: 0 auto;
             padding: 100px 20px;
         }
 
@@ -209,6 +211,15 @@
                 background: #222;
             }
 
+            .pricing-header::after {
+                content: '+';
+                font-size: 28px;
+            }
+
+            .pricing-header.active::after {
+                content: '−';
+            }
+
         .pricing-content {
             display: none;
             margin-top: 15px;
@@ -239,6 +250,10 @@
 
             .pricing-box:hover {
                 transform: translateY(-6px);
+                box-shadow: 0 15px 40px rgba(255,59,59,0.5);
+            }
+
+            .pricing-box.event-hover:hover {
                 box-shadow: 0 15px 40px rgba(0,102,255,0.5);
             }
 
@@ -281,41 +296,10 @@
             margin-top: 50px;
         }
 
-        @media(max-width: 600px) {
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            .hero p {
-                font-size: 20px;
-            }
-
-            h2 {
-                font-size: 32px;
-            }
-
-            .timer {
-                font-size: 20px;
-            }
-
-            .pricing-box h3 {
-                font-size: 20px;
-            }
-
-            .pricing-header {
-                font-size: 20px;
-            }
-        }
-
-        .pricing-note-global {
-            font-size: 14px;
-            opacity: 0.7;
-            margin-top: 20px;
-        }
-
-        .unavailable {
-            color: red;
+        .special-offer {
+            color: #ff3b3b;
             font-weight: bold;
+            font-size: 18px;
         }
 
         /* ---- Animacja śniegu ---- */
@@ -327,6 +311,89 @@
             z-index: 9999;
             user-select: none;
             pointer-events: none;
+        }
+
+        /* ---- Responsywność ---- */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 20px;
+                padding: 12px 0;
+            }
+
+            nav a {
+                font-size: 15px;
+                padding: 6px 8px;
+            }
+
+            .hero {
+                padding-top: 140px;
+                padding-bottom: 50px;
+                margin: 15px 10px;
+            }
+
+                .hero h1 {
+                    font-size: 48px;
+                }
+
+                .hero p {
+                    font-size: 22px;
+                }
+
+                .hero .subtext {
+                    font-size: 17px;
+                }
+
+            section {
+                padding: 80px 15px;
+            }
+
+            h2 {
+                font-size: 34px;
+            }
+
+            .promo {
+                font-size: 20px;
+            }
+
+            .timer {
+                font-size: 19px;
+            }
+
+            .pricing-header {
+                font-size: 20px;
+                padding: 12px 15px;
+            }
+
+            .pricing-box h3 {
+                font-size: 20px;
+            }
+
+            .portfolio iframe {
+                height: 600px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -366,7 +433,7 @@
 
     <section id="experience">
         <h2>Doświadczenie</h2>
-        <p>Moje doświadczenie w montażu sięga około 5 lat, a na poważnie zacząłem około półtora roku temu. W programach korzystałem głównie z CapCut, co nauczyło mnie dynamiki i storytellingu. Od niedawna tworzę w DaVinci Resolve już od 2 miesięcy i praktycznie wszystko w nim aktualnie tworzę. Aktualnie wszystko, co zarabiam z montażu, zbieram lub wydaję na poradniki i naukę. Planuję również nauczyć się Adobe After Effects i Premiere Pro. Na swoim koncie mam już zmontowane ponad 50 rolek oraz kilka dłuższych filmów.</p>
+        <p>Moje doświadczenie w montażu sięga około 5 lat, a na poważnie zacząłem około półtora roku temu. W programach korzystałem głównie z CapCut, co nauczyło mnie dynamiki i storytellingu. Od niedawna tworzę w DaVinci Resolve już od 1 miesiąca i praktycznie wszystko w nim aktualnie tworzę. Aktualnie wszystko, co zarabiam z montażu, zbieram lub wydaję na poradniki i naukę. Planuję również nauczyć się Adobe After Effects i Premiere Pro. Na swoim koncie mam już zmontowane ponad 50 rolek oraz kilka dłuższych filmów.</p>
     </section>
 
     <section id="pricing">
@@ -387,9 +454,9 @@
                 </div>
 
                 <div class="pricing-box">
-                    <h3>Shorty / Rolki</h3>
+                    <h3>Shorty / Rolki <span class="special-offer">TYLKO TERAZ</span></h3>
                     <ul>
-                        <li>Cena: 16 – 80 zł</li>
+                        <li><s>16 – 80 zł</s> → <strong>10 zł</strong></li>
                         <li>Ustalenia szczegółowe przed rozpoczęciem pracy</li>
                     </ul>
                 </div>
@@ -425,7 +492,7 @@
                 </div>
 
                 <div class="pricing-box">
-                    <h3>Napisy (Twitch / Kick / YT) <span class="unavailable">Chwilowo niedostępne</span></h3>
+                    <h3>Napisy (Twitch / Kick / YT) <span style="color: red; font-weight: bold;">Chwilowo niedostępne</span></h3>
                     <ul>
                         <li>Pełny zestaw z Twoją nazwą w 2 stylach</li>
                         <li>2 napisy animowane do Twitch i Kick</li>
@@ -446,15 +513,6 @@
         <div class="pricing-section">
             <div class="pricing-header">Dodatkowe</div>
             <div class="pricing-content">
-                <div class="pricing-box">
-                    <h3>Strona wizytówka / portfolio</h3>
-                    <ul>
-                        <li>Cena: 400 zł</li>
-                        <li>Może być wizytówka lub portfolio z ważnymi informacjami</li>
-                        <li>Każda kolejna zmiana: dodatkowy koszt zależny od ilości zmian</li>
-                        <li>Domena: jeśli chcesz sam musisz opłacać, ja pomagam prowadzić stronę</li>
-                    </ul>
-                </div>
                 <div class="pricing-box">
                     <h3>Paczka montażysty basic <span style="text-decoration: line-through;">30zł</span> 21zł (30% zniżki)</h3>
                     <ul>
@@ -500,9 +558,9 @@
     <script>
         const now = new Date();
         const year = now.getFullYear();
-        const eventStart = new Date(year,11,6);
-        const eventEnd = new Date(year,11,28);
-        let isEvent = now >= eventStart && now <= eventEnd;
+        const eventStart = new Date(year,11,6);  // 6 grudnia
+        const eventEnd = new Date(year,11,17);   // 28 grudnia
+        const isEvent = now >= eventStart && now <= eventEnd;
 
         // Timer promocji
         const promoEl = document.getElementById('promo');
@@ -522,16 +580,18 @@
         setInterval(updateTimer,1000);
         }
 
-        // Cennik rozwijanie
+        // Rozwijanie cennika + ikona +/-
         const headers = document.querySelectorAll('.pricing-header');
         headers.forEach(header => {
         header.addEventListener('click', () => {
         const content = header.nextElementSibling;
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        const isOpen = content.style.display === 'block';
+        content.style.display = isOpen ? 'none' : 'block';
+        header.classList.toggle('active', !isOpen);
         });
         });
 
-        // Event kolorystyka i hero
+        // Event – kolorystyka i efekty
         if(isEvent){
         document.body.style.background = "#0a0f1f";
         document.body.style.color = "#cce6ff";
@@ -541,6 +601,11 @@
         document.querySelectorAll('.pricing-header').forEach(ph => ph.style.color = "#66ccff");
         document.querySelectorAll('.pricing-box h3').forEach(b => b.style.color = "#66ccff");
         document.querySelectorAll('.contact a').forEach(a => a.style.color = "#66ccff");
+
+        // Niebieski hover podczas eventu
+        document.querySelectorAll('.pricing-box').forEach(box => {
+        box.classList.add('event-hover');
+        });
 
         // Hero gradient
         const hero = document.querySelector('.hero');
@@ -558,7 +623,7 @@
         }
         }
 
-        // Śnieg
+        // Śnieg (zmniejszona intensywność o ~30%)
         function createSnowflake(){
         const snow = document.createElement('div');
         snow.classList.add('snowflake');
@@ -579,13 +644,12 @@
         }
 
         if(isEvent){
-        if(window.innerWidth > 600){ // PC
-        setInterval(createSnowflake,500);
-        } else { // Mobile
-        setInterval(createSnowflake,1200);
+        if(window.innerWidth > 600){
+        setInterval(createSnowflake, 714);
+        } else {
+        setInterval(createSnowflake, 1714);
         }
         }
-
     </script>
 
 </body>
