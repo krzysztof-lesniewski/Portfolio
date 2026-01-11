@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dynamiczny montaż shortów TikTok / Reels / YouTube Shorts - Krzysztof - atrakcyjne ceny - szybka realizacja">
+    <meta name="color-scheme" content="dark light">
     <title>Portfolio – Krzysztof</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎥</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         /* ---- Reset i podstawowe ---- */
@@ -12,7 +15,6 @@
             margin: 0;
             padding: 0;
         }
-
         body {
             font-family: 'Poppins', sans-serif;
             background: #0f0f0f;
@@ -21,12 +23,29 @@
             overflow-x: hidden;
             transition: background 0.5s, color 0.5s;
         }
-
         a {
             text-decoration: none;
             color: inherit;
         }
-
+        /* ---- Subtelne przypomnienie o Discordzie ---- */
+        .discord-reminder {
+            position: fixed;
+            top: 68px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(88,101,242,0.14);
+            backdrop-filter: blur(8px);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 99;
+            border: 1px solid rgba(88,101,242,0.3);
+            pointer-events: auto;
+        }
+        .discord-reminder:hover {
+            background: rgba(88,101,242,0.24);
+        }
         /* ---- Nawigacja ---- */
         nav {
             position: fixed;
@@ -38,7 +57,6 @@
             box-shadow: 0 2px 15px rgba(0,0,0,0.4);
             transition: background 0.5s;
         }
-
             nav ul {
                 list-style: none;
                 display: flex;
@@ -47,7 +65,6 @@
                 padding: 15px 0;
                 flex-wrap: wrap;
             }
-
             nav a {
                 font-weight: 500;
                 font-size: 16px;
@@ -55,13 +72,11 @@
                 border-radius: 6px;
                 transition: 0.3s;
             }
-
                 nav a:hover {
                     background: #ff3b3b;
                     color: #fff;
                     transform: scale(1.1);
                 }
-
         /* ---- Hero ---- */
         .hero {
             padding-top: 180px;
@@ -76,26 +91,22 @@
             overflow: hidden;
             transition: background 0.5s;
         }
-
             .hero h1 {
                 font-size: 60px;
                 font-weight: 700;
                 margin-bottom: 12px;
                 text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
             }
-
             .hero p {
                 font-size: 24px;
                 opacity: 0.9;
             }
-
             .hero .subtext {
                 font-size: 18px;
                 color: #fff8;
                 margin-top: 6px;
                 font-weight: 500;
             }
-
             .hero .snow-emojis {
                 position: absolute;
                 bottom: 0;
@@ -104,23 +115,15 @@
                 height: 100%;
                 pointer-events: none;
             }
-
                 .hero .snow-emojis span {
                     position: absolute;
                     font-size: 30px;
                     animation: bounce 3s infinite alternate;
                 }
-
         @keyframes bounce {
-            0% {
-                transform: translateY(0);
-            }
-
-            100% {
-                transform: translateY(-15px);
-            }
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-15px); }
         }
-
         /* ---- Promo / Timer ---- */
         .promo {
             text-align: center;
@@ -131,17 +134,10 @@
             text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
             transition: color 0.5s;
         }
-
         @keyframes pulse {
-            0%,100% {
-                opacity: 0.9;
-            }
-
-            50% {
-                opacity: 1;
-            }
+            0%,100% { opacity: 0.9; }
+            50% { opacity: 1; }
         }
-
         .timer {
             font-size: 22px;
             text-align: center;
@@ -151,14 +147,12 @@
             text-shadow: 1px 1px 10px rgba(0,0,0,0.5);
             transition: color 0.5s;
         }
-
         /* ---- Sekcje ---- */
         section {
             max-width: 900px;
             margin: 0 auto;
             padding: 100px 20px;
         }
-
         h2 {
             font-size: 40px;
             margin-bottom: 30px;
@@ -166,13 +160,11 @@
             text-shadow: 1px 1px 8px rgba(0,0,0,0.5);
             transition: color 0.5s;
         }
-
         p {
             font-size: 18px;
             opacity: 0.9;
             margin-bottom: 12px;
         }
-
         /* ---- Portfolio ---- */
         .portfolio iframe {
             width: 100%;
@@ -184,16 +176,13 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.7);
             transition: transform 0.3s;
         }
-
             .portfolio iframe:hover {
                 transform: scale(1.05);
             }
-
         /* ---- Pricing ---- */
         .pricing-section {
             margin-bottom: 40px;
         }
-
         .pricing-header {
             cursor: pointer;
             background: #1a1a1a;
@@ -206,39 +195,26 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.5);
             transition: 0.3s, color 0.5s, background 0.5s;
         }
-
             .pricing-header:hover {
                 background: #222;
             }
-
             .pricing-header::after {
                 content: '+';
                 font-size: 28px;
             }
-
             .pricing-header.active::after {
                 content: '−';
             }
-
         .pricing-content {
             display: none;
             margin-top: 15px;
             overflow: hidden;
             animation: slideDown 0.4s ease forwards;
         }
-
         @keyframes slideDown {
-            0% {
-                height: 0;
-                opacity: 0;
-            }
-
-            100% {
-                height: auto;
-                opacity: 1;
-            }
+            0% { height: 0; opacity: 0; }
+            100% { height: auto; opacity: 1; }
         }
-
         .pricing-box {
             background: linear-gradient(145deg,#1a1a1a,#111);
             border-radius: 16px;
@@ -247,46 +223,37 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.6);
             transition: 0.3s;
         }
-
             .pricing-box:hover {
                 transform: translateY(-6px);
                 box-shadow: 0 15px 40px rgba(255,59,59,0.5);
             }
-
             .pricing-box.event-hover:hover {
                 box-shadow: 0 15px 40px rgba(0,102,255,0.5);
             }
-
             .pricing-box h3 {
                 margin-top: 0;
                 font-size: 22px;
                 transition: color 0.5s;
             }
-
             .pricing-box ul {
                 padding-left: 20px;
                 margin-top: 10px;
             }
-
             .pricing-box li {
                 margin-bottom: 8px;
                 font-size: 16px;
             }
-
             .pricing-box p {
                 margin-top: 8px;
                 font-size: 14px;
                 opacity: 0.8;
             }
-
         .contact a {
             transition: 0.3s, color 0.5s;
         }
-
             .contact a:hover {
                 text-decoration: underline;
             }
-
         footer {
             text-align: center;
             padding: 25px 20px;
@@ -295,13 +262,11 @@
             border-top: 1px solid #333;
             margin-top: 50px;
         }
-
         .special-offer {
             color: #ff3b3b;
             font-weight: bold;
             font-size: 18px;
         }
-
         /* ---- Animacja śniegu ---- */
         .snowflake {
             position: fixed;
@@ -312,92 +277,36 @@
             user-select: none;
             pointer-events: none;
         }
-
         /* ---- Responsywność ---- */
         @media (max-width: 768px) {
-            nav ul {
-                gap: 20px;
-                padding: 12px 0;
-            }
-
-            nav a {
-                font-size: 15px;
-                padding: 6px 8px;
-            }
-
-            .hero {
-                padding-top: 140px;
-                padding-bottom: 50px;
-                margin: 15px 10px;
-            }
-
-                .hero h1 {
-                    font-size: 48px;
-                }
-
-                .hero p {
-                    font-size: 22px;
-                }
-
-                .hero .subtext {
-                    font-size: 17px;
-                }
-
-            section {
-                padding: 80px 15px;
-            }
-
-            h2 {
-                font-size: 34px;
-            }
-
-            .promo {
-                font-size: 20px;
-            }
-
-            .timer {
-                font-size: 19px;
-            }
-
-            .pricing-header {
-                font-size: 20px;
-                padding: 12px 15px;
-            }
-
-            .pricing-box h3 {
-                font-size: 20px;
-            }
-
-            .portfolio iframe {
-                height: 600px;
-            }
+            nav ul { gap: 20px; padding: 12px 0; }
+            nav a { font-size: 15px; padding: 6px 8px; }
+            .hero { padding-top: 140px; padding-bottom: 50px; margin: 15px 10px; }
+                .hero h1 { font-size: 48px; }
+                .hero p { font-size: 22px; }
+                .hero .subtext { font-size: 17px; }
+            section { padding: 80px 15px; }
+            h2 { font-size: 34px; }
+            .promo { font-size: 20px; }
+            .timer { font-size: 19px; }
+            .pricing-header { font-size: 20px; padding: 12px 15px; }
+            .pricing-box h3 { font-size: 20px; }
+            .portfolio iframe { height: 600px; }
         }
-
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 40px;
-            }
-
-            .hero p {
-                font-size: 20px;
-            }
-
-            h2 {
-                font-size: 30px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            nav a {
-                font-size: 16px;
-            }
+            .hero h1 { font-size: 40px; }
+            .hero p { font-size: 20px; }
+            h2 { font-size: 30px; }
+            nav ul { flex-direction: column; gap: 10px; }
+            nav a { font-size: 16px; }
         }
     </style>
 </head>
 <body>
+    <!-- Subtelne przypomnienie o Discordzie -->
+    <div class="discord-reminder">
+        Dołącz do naszej społeczności → <strong>discord.gg/YMazKjeg3g</strong>
+    </div>
 
     <nav>
         <ul>
@@ -428,7 +337,9 @@
 
     <section id="portfolio">
         <h2>Prace (więcej wkrótce)</h2>
-        <iframe src="https://www.youtube.com/embed/J3iVQNGJ6II" title="YouTube Short" allowfullscreen></iframe>
+        <div class="portfolio">
+            <iframe src="https://www.youtube.com/embed/J3iVQNGJ6II" title="YouTube Short" allowfullscreen loading="lazy"></iframe>
+        </div>
     </section>
 
     <section id="experience">
@@ -452,7 +363,6 @@
                         <li>Poprawki po eksporcie: 5 zł za każdą</li>
                     </ul>
                 </div>
-
                 <div class="pricing-box">
                     <h3>Shorty / Rolki <span class="special-offer">TYLKO TERAZ</span></h3>
                     <ul>
@@ -460,7 +370,6 @@
                         <li>Ustalenia szczegółowe przed rozpoczęciem pracy</li>
                     </ul>
                 </div>
-
                 <div class="pricing-box">
                     <h3>Shoty z live'ów</h3>
                     <ul>
@@ -470,6 +379,9 @@
                 </div>
             </div>
         </div>
+
+        <!-- 
+        === UKRYTE SEKCJE - można przywrócić wycinając ten komentarz i wklejając przed blokiem Zaliczki ===
 
         <!-- Graficzne -->
         <div class="pricing-section">
@@ -482,7 +394,6 @@
                         <li>Kolorowe: 25 zł (dopłacasz 5 zł za 3 różne kolory tła profilu)</li>
                     </ul>
                 </div>
-
                 <div class="pricing-box">
                     <h3>Banery (YT / Facebook / itp.)</h3>
                     <ul>
@@ -490,7 +401,6 @@
                         <li>Różne formaty i dostosowanie do platform</li>
                     </ul>
                 </div>
-
                 <div class="pricing-box">
                     <h3>Napisy (Twitch / Kick / YT) <span style="color: red; font-weight: bold;">Chwilowo niedostępne</span></h3>
                     <ul>
@@ -499,7 +409,6 @@
                         <li>Cena: 60 zł</li>
                     </ul>
                 </div>
-
                 <div class="pricing-box">
                     <h3>Miniaturki</h3>
                     <ul>
@@ -528,6 +437,9 @@
             </div>
         </div>
 
+        === KONIEC UKRYTYCH SEKCJI ===
+        -->
+
         <div class="pricing-box">
             <h3>Zaliczki / płatności</h3>
             <ul>
@@ -549,110 +461,105 @@
         <p>Instagram: <a href="https://www.instagram.com/_lesniuczek_/" target="_blank">@_lesniuczek_</a></p>
         <p>Facebook / Messenger: <a href="https://www.facebook.com/profile.php?id=100086658516095" target="_blank">Profil</a></p>
         <p>NAJSZYBCIEJ ODPOWIADAM NA IG/MES</p>
+        <p style="margin-top: 25px; text-align: center; font-size: 1.1rem; opacity: 0.9;">
+            Zapraszam również na naszego Discorda:<br>
+            <strong><a href="https://discord.gg/YMazKjeg3g" target="_blank">discord.gg/YMazKjeg3g</a></strong>
+        </p>
     </section>
 
     <footer>
-        <p>Copyright © 2025 Krzysztof Leśniewski. All Rights Reserved.</p>
+        <p>Copyright © 2026 Krzysztof Leśniewski. All Rights Reserved.</p>
     </footer>
 
     <script>
         const now = new Date();
         const year = now.getFullYear();
-        const eventStart = new Date(year,11,6);  // 6 grudnia
-        const eventEnd = new Date(year,11,28);   // 28 grudnia
+        const eventStart = new Date(year,11,6); // 6 grudnia
+        const eventEnd = new Date(year,11,28); // 28 grudnia
         const isEvent = now >= eventStart && now <= eventEnd;
 
-        // Timer promocji
         const promoEl = document.getElementById('promo');
         const timerEl = document.getElementById('timer');
+
         if(isEvent){
-        promoEl.style.display = 'block';
-        function updateTimer(){
-        const diff = eventEnd - new Date();
-        if(diff <= 0){ timerEl.textContent = 'Promocja zakończona'; return; }
-        const days = Math.floor(diff / (1000*60*60*24));
-        const hours = Math.floor((diff / (1000*60*60)) % 24);
-        const minutes = Math.floor((diff / (1000*60)) % 60);
-        const seconds = Math.floor((diff / 1000) % 60);
-        timerEl.textContent = `${days} dni ${hours}h ${minutes}m ${seconds}s`;
-        }
-        updateTimer();
-        setInterval(updateTimer,1000);
+            promoEl.style.display = 'block';
+            function updateTimer(){
+                const diff = eventEnd - new Date();
+                if(diff <= 0){ timerEl.textContent = 'Promocja zakończona'; return; }
+                const days = Math.floor(diff / (1000*60*60*24));
+                const hours = Math.floor((diff / (1000*60*60)) % 24);
+                const minutes = Math.floor((diff / (1000*60)) % 60);
+                const seconds = Math.floor((diff / 1000) % 60);
+                timerEl.textContent = `${days} dni ${hours}h ${minutes}m ${seconds}s`;
+            }
+            updateTimer();
+            setInterval(updateTimer,1000);
         }
 
-        // Rozwijanie cennika + ikona +/-
         const headers = document.querySelectorAll('.pricing-header');
         headers.forEach(header => {
-        header.addEventListener('click', () => {
-        const content = header.nextElementSibling;
-        const isOpen = content.style.display === 'block';
-        content.style.display = isOpen ? 'none' : 'block';
-        header.classList.toggle('active', !isOpen);
-        });
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const isOpen = content.style.display === 'block';
+                content.style.display = isOpen ? 'none' : 'block';
+                header.classList.toggle('active', !isOpen);
+            });
         });
 
-        // Event – kolorystyka i efekty
         if(isEvent){
-        document.body.style.background = "#0a0f1f";
-        document.body.style.color = "#cce6ff";
-        document.querySelectorAll('h2').forEach(h => h.style.color = "#66ccff");
-        document.querySelectorAll('.promo').forEach(p => p.style.color = "#66ccff");
-        document.querySelectorAll('.timer').forEach(t => t.style.color = "#66ccff");
-        document.querySelectorAll('.pricing-header').forEach(ph => ph.style.color = "#66ccff");
-        document.querySelectorAll('.pricing-box h3').forEach(b => b.style.color = "#66ccff");
-        document.querySelectorAll('.contact a').forEach(a => a.style.color = "#66ccff");
+            document.body.style.background = "#0a0f1f";
+            document.body.style.color = "#cce6ff";
+            document.querySelectorAll('h2').forEach(h => h.style.color = "#66ccff");
+            document.querySelectorAll('.promo').forEach(p => p.style.color = "#66ccff");
+            document.querySelectorAll('.timer').forEach(t => t.style.color = "#66ccff");
+            document.querySelectorAll('.pricing-header').forEach(ph => ph.style.color = "#66ccff");
+            document.querySelectorAll('.pricing-box h3').forEach(b => b.style.color = "#66ccff");
+            document.querySelectorAll('.contact a').forEach(a => a.style.color = "#66ccff");
 
-        // Niebieski hover podczas eventu
-        document.querySelectorAll('.pricing-box').forEach(box => {
-        box.classList.add('event-hover');
-        });
+            document.querySelectorAll('.pricing-box').forEach(box => {
+                box.classList.add('event-hover');
+            });
 
-        // Hero gradient
-        const hero = document.querySelector('.hero');
-        hero.style.background = "linear-gradient(120deg,#66ccff,#ffffff)";
+            const hero = document.querySelector('.hero');
+            hero.style.background = "linear-gradient(120deg,#66ccff,#ffffff)";
 
-        // 6 odbijających się ⛄
-        const container = document.querySelector('.snow-emojis');
-        for(let i=0;i<6;i++){
-        const emoji = document.createElement('span');
-        emoji.textContent = '⛄';
-        emoji.style.left = (10 + i*15) + "%";
-        emoji.style.bottom = "0";
-        emoji.style.animationDelay = (i*0.3) + "s";
-        container.appendChild(emoji);
-        }
+            const container = document.querySelector('.snow-emojis');
+            for(let i=0;i<6;i++){
+                const emoji = document.createElement('span');
+                emoji.textContent = '⛄';
+                emoji.style.left = (10 + i*15) + "%";
+                emoji.style.bottom = "0";
+                emoji.style.animationDelay = (i*0.3) + "s";
+                container.appendChild(emoji);
+            }
         }
 
-        // Śnieg (zmniejszona intensywność o ~30%)
         function createSnowflake(){
-        const snow = document.createElement('div');
-        snow.classList.add('snowflake');
-        snow.textContent = '❄️';
-        snow.style.left = Math.random()*window.innerWidth + 'px';
-        snow.style.fontSize = 12 + Math.random()*24 + 'px';
-        document.body.appendChild(snow);
-        let top = -50;
-        const speed = 1 + Math.random()*2;
-        function fall(){
-        top += speed;
-        snow.style.top = top + 'px';
-        if(top < window.innerHeight){
-        requestAnimationFrame(fall);
-        } else { snow.remove(); }
-        }
-        fall();
+            const snow = document.createElement('div');
+            snow.classList.add('snowflake');
+            snow.textContent = '❄️';
+            snow.style.left = Math.random()*window.innerWidth + 'px';
+            snow.style.fontSize = 12 + Math.random()*24 + 'px';
+            document.body.appendChild(snow);
+            let top = -50;
+            const speed = 1 + Math.random()*2;
+            function fall(){
+                top += speed;
+                snow.style.top = top + 'px';
+                if(top < window.innerHeight){
+                    requestAnimationFrame(fall);
+                } else { snow.remove(); }
+            }
+            fall();
         }
 
         if(isEvent){
-        if(window.innerWidth > 600){
-        setInterval(createSnowflake, 714);
-        } else {
-        setInterval(createSnowflake, 1714);
-        }
+            if(window.innerWidth > 600){
+                setInterval(createSnowflake, 714);
+            } else {
+                setInterval(createSnowflake, 1714);
+            }
         }
     </script>
-
 </body>
 </html>
-
-
