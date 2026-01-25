@@ -107,46 +107,6 @@
                 margin-top: 6px;
                 font-weight: 500;
             }
-            .hero .snow-emojis {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                pointer-events: none;
-            }
-                .hero .snow-emojis span {
-                    position: absolute;
-                    font-size: 30px;
-                    animation: bounce 3s infinite alternate;
-                }
-        @keyframes bounce {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-15px); }
-        }
-        /* ---- Promo / Timer ---- */
-        .promo {
-            text-align: center;
-            font-size: 24px;
-            margin: 25px 0;
-            font-weight: 600;
-            animation: pulse 1.5s infinite;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-            transition: color 0.5s;
-        }
-        @keyframes pulse {
-            0%,100% { opacity: 0.9; }
-            50% { opacity: 1; }
-        }
-        .timer {
-            font-size: 22px;
-            text-align: center;
-            margin-bottom: 50px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 10px rgba(0,0,0,0.5);
-            transition: color 0.5s;
-        }
         /* ---- Sekcje ---- */
         section {
             max-width: 900px;
@@ -227,9 +187,6 @@
                 transform: translateY(-6px);
                 box-shadow: 0 15px 40px rgba(255,59,59,0.5);
             }
-            .pricing-box.event-hover:hover {
-                box-shadow: 0 15px 40px rgba(0,102,255,0.5);
-            }
             .pricing-box h3 {
                 margin-top: 0;
                 font-size: 22px;
@@ -267,16 +224,6 @@
             font-weight: bold;
             font-size: 18px;
         }
-        /* ---- Animacja śniegu ---- */
-        .snowflake {
-            position: fixed;
-            top: -50px;
-            font-size: 24px;
-            color: #fff;
-            z-index: 9999;
-            user-select: none;
-            pointer-events: none;
-        }
         /* ---- Responsywność ---- */
         @media (max-width: 768px) {
             nav ul { gap: 20px; padding: 12px 0; }
@@ -287,8 +234,6 @@
                 .hero .subtext { font-size: 17px; }
             section { padding: 80px 15px; }
             h2 { font-size: 34px; }
-            .promo { font-size: 20px; }
-            .timer { font-size: 19px; }
             .pricing-header { font-size: 20px; padding: 12px 15px; }
             .pricing-box h3 { font-size: 20px; }
             .portfolio iframe { height: 600px; }
@@ -310,10 +255,10 @@
 
     <nav>
         <ul>
+            <li><a href="/">Strona Główna</a></li>
             <li><a href="#about">O mnie</a></li>
-            <li><a href="#portfolio">Prace</a></li>
-            <li><a href="#experience">Doświadczenie</a></li>
-            <li><a href="#pricing">Cennik</a></li>
+            <li><a href="/wszystkiefilmy/index.html">Wszystkie Prace</a></li>
+            <li><a href="/cennik/index.html">Cennik</a></li>
             <li><a href="#contact">Kontakt</a></li>
         </ul>
     </nav>
@@ -322,11 +267,7 @@
         <h1>Cześć, jestem Krzysztof</h1>
         <p>Dynamiczny montaż pod TikTok / Shorts / Reels</p>
         <p class="subtext">Pomagam shortom łapać większe zasięgi!!!</p>
-        <div class="snow-emojis"></div>
     </div>
-
-    <div class="promo" id="promo" style="display:none;">Świąteczna promocja -15% na pierwsze zlecenie</div>
-    <div class="timer" id="timer"></div>
 
     <section id="about">
         <h2>O mnie</h2>
@@ -335,63 +276,21 @@
         <p>Jeżeli tu jesteś, najpewniej zastanawiasz się, dlaczego ja? 1) moje ceny są atrakcyjne do jakości, 2) często oferuję zniżki dla nowych klientów i nie tylko, 3) szybka realizacja, 4) indywidualne podejście do każdego projektu.</p>
     </section>
 
-    <section id="portfolio">
-        <h2>Prace (więcej wkrótce)</h2>
-        <div class="portfolio">
-            <iframe src="https://www.youtube.com/embed/J3iVQNGJ6II" title="YouTube Short" allowfullscreen loading="lazy"></iframe>
-        </div>
-    </section>
-
     <section id="experience">
         <h2>Doświadczenie</h2>
         <p>Moje doświadczenie w montażu sięga około 5 lat, a na poważnie zacząłem około półtora roku temu. W programach korzystałem głównie z CapCut, co nauczyło mnie dynamiki i storytellingu. Od niedawna tworzę w DaVinci Resolve już od 1 miesiąca i praktycznie wszystko w nim aktualnie tworzę. Aktualnie wszystko, co zarabiam z montażu, zbieram lub wydaję na poradniki i naukę. Planuję również nauczyć się Adobe After Effects i Premiere Pro. Na swoim koncie mam już zmontowane ponad 50 rolek oraz kilka dłuższych filmów.</p>
     </section>
 
-    <section id="pricing">
-        <h2>Cennik</h2>
-
-        <!-- Video -->
-        <div class="pricing-section">
-            <div class="pricing-header">Video</div>
-            <div class="pricing-content">
-                <div class="pricing-box">
-                    <h3>Filmy</h3>
-                    <ul>
-                        <li>1 minuta filmu: <s>8 zł</s> → <strong>7 zł</strong></li>
-                        <li>Każda dodatkowa godzina surowego materiału: +20 zł</li>
-                        <li>Napisy automatyczne + korekta: +10 zł</li>
-                        <li>Poprawki po eksporcie: 5 zł za każdą</li>
-                    </ul>
-                </div>
-                <div class="pricing-box">
-                    <h3>Shorty / Rolki <span class="special-offer">TYLKO TERAZ</span></h3>
-                    <ul>
-                        <li><s>20 – 80 zł</s> → <strong>20 - 65 zł</strong></li>
-                        <li>Ustalenia szczegółowe przed rozpoczęciem pracy</li>
-                    </ul>
-                </div>
-                <div class="pricing-box">
-                    <h3>Shoty z live'ów</h3>
-                    <ul>
-                        <li>Za każdą godzinę streama: 50–120 zł</li>
-                        <li>Więcej szczegółów ustalamy prywatnie | nie zawsze mam na to czas |</li>
-                    </ul>
-                </div>
-            </div>
+    <section id="portfolio">
+        <h2>Wybrane Prace (więcej na podstronie)</h2>
+        <div class="portfolio">
+            <!-- Wprowadzający film -->
+            <iframe src="https://www.youtube.com/embed/J3iVQNGJ6II" title="Wprowadzający YouTube Short" allowfullscreen loading="lazy"></iframe>
+            <!-- 3 najlepsze filmy - przykłady, zmień na rzeczywiste -->
+            <iframe src="https://www.youtube.com/embed/EXAMPLE1" title="Najlepszy Short 1" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.youtube.com/embed/EXAMPLE2" title="Najlepszy Short 2" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.youtube.com/embed/EXAMPLE3" title="Najlepszy Short 3" allowfullscreen loading="lazy"></iframe>
         </div>
-        <div class="pricing-box">
-            <h3>Zaliczki / płatności</h3>
-            <ul>
-                <li>Rolki: 40% zaliczki</li>
-                <li>Filmy: 50% zaliczki</li>
-                <li>Pełna płatność z góry: możliwa</li>
-                <li>Płatność: Blik / przelew / PayPal / Skrill</li>
-            </ul>
-        </div>
-
-        <p class="pricing-note-global">
-            Czas realizacji: 3–14 dni roboczych | Ekspres 2–5 dni: +50% ceny końcowej | Finalna kwota ustalana przed rozpoczęciem montażu, zależy od materiału i ilości pracy
-        </p>
     </section>
 
     <section id="contact">
@@ -411,30 +310,6 @@
     </footer>
 
     <script>
-        const now = new Date();
-        const year = now.getFullYear();
-        const eventStart = new Date(year,11,6); // 6 grudnia
-        const eventEnd = new Date(year,11,28); // 28 grudnia
-        const isEvent = now >= eventStart && now <= eventEnd;
-
-        const promoEl = document.getElementById('promo');
-        const timerEl = document.getElementById('timer');
-
-        if(isEvent){
-            promoEl.style.display = 'block';
-            function updateTimer(){
-                const diff = eventEnd - new Date();
-                if(diff <= 0){ timerEl.textContent = 'Promocja zakończona'; return; }
-                const days = Math.floor(diff / (1000*60*60*24));
-                const hours = Math.floor((diff / (1000*60*60)) % 24);
-                const minutes = Math.floor((diff / (1000*60)) % 60);
-                const seconds = Math.floor((diff / 1000) % 60);
-                timerEl.textContent = `${days} dni ${hours}h ${minutes}m ${seconds}s`;
-            }
-            updateTimer();
-            setInterval(updateTimer,1000);
-        }
-
         const headers = document.querySelectorAll('.pricing-header');
         headers.forEach(header => {
             header.addEventListener('click', () => {
@@ -444,64 +319,6 @@
                 header.classList.toggle('active', !isOpen);
             });
         });
-
-        if(isEvent){
-            document.body.style.background = "#0a0f1f";
-            document.body.style.color = "#cce6ff";
-            document.querySelectorAll('h2').forEach(h => h.style.color = "#66ccff");
-            document.querySelectorAll('.promo').forEach(p => p.style.color = "#66ccff");
-            document.querySelectorAll('.timer').forEach(t => t.style.color = "#66ccff");
-            document.querySelectorAll('.pricing-header').forEach(ph => ph.style.color = "#66ccff");
-            document.querySelectorAll('.pricing-box h3').forEach(b => b.style.color = "#66ccff");
-            document.querySelectorAll('.contact a').forEach(a => a.style.color = "#66ccff");
-
-            document.querySelectorAll('.pricing-box').forEach(box => {
-                box.classList.add('event-hover');
-            });
-
-            const hero = document.querySelector('.hero');
-            hero.style.background = "linear-gradient(120deg,#66ccff,#ffffff)";
-
-            const container = document.querySelector('.snow-emojis');
-            for(let i=0;i<6;i++){
-                const emoji = document.createElement('span');
-                emoji.textContent = '⛄';
-                emoji.style.left = (10 + i*15) + "%";
-                emoji.style.bottom = "0";
-                emoji.style.animationDelay = (i*0.3) + "s";
-                container.appendChild(emoji);
-            }
-        }
-
-        function createSnowflake(){
-            const snow = document.createElement('div');
-            snow.classList.add('snowflake');
-            snow.textContent = '❄️';
-            snow.style.left = Math.random()*window.innerWidth + 'px';
-            snow.style.fontSize = 12 + Math.random()*24 + 'px';
-            document.body.appendChild(snow);
-            let top = -50;
-            const speed = 1 + Math.random()*2;
-            function fall(){
-                top += speed;
-                snow.style.top = top + 'px';
-                if(top < window.innerHeight){
-                    requestAnimationFrame(fall);
-                } else { snow.remove(); }
-            }
-            fall();
-        }
-
-        if(isEvent){
-            if(window.innerWidth > 600){
-                setInterval(createSnowflake, 714);
-            } else {
-                setInterval(createSnowflake, 1714);
-            }
-        }
     </script>
 </body>
 </html>
-
-
-
