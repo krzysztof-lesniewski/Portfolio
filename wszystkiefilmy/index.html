@@ -77,36 +77,6 @@
                     color: #fff;
                     transform: scale(1.1);
                 }
-        /* ---- Hero ---- */
-        .hero {
-            padding-top: 180px;
-            padding-bottom: 60px;
-            text-align: center;
-            background: linear-gradient(120deg,#ff3b3b,#ff7b3b);
-            border-radius: 16px;
-            margin: 20px auto;
-            max-width: 900px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-            position: relative;
-            overflow: hidden;
-            transition: background 0.5s;
-        }
-            .hero h1 {
-                font-size: 60px;
-                font-weight: 700;
-                margin-bottom: 12px;
-                text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
-            }
-            .hero p {
-                font-size: 24px;
-                opacity: 0.9;
-            }
-            .hero .subtext {
-                font-size: 18px;
-                color: #fff8;
-                margin-top: 6px;
-                font-weight: 500;
-            }
         /* ---- Sekcje ---- */
         section {
             max-width: 900px;
@@ -120,25 +90,44 @@
             text-shadow: 1px 1px 8px rgba(0,0,0,0.5);
             transition: color 0.5s;
         }
+        h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
         p {
             font-size: 18px;
             opacity: 0.9;
             margin-bottom: 12px;
         }
         /* ---- Portfolio ---- */
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
         .portfolio iframe {
             width: 100%;
-            max-width: 480px;
-            height: 800px;
+            height: 600px;
             border-radius: 16px;
-            display: block;
-            margin: 30px auto;
             box-shadow: 0 20px 40px rgba(0,0,0,0.7);
             transition: transform 0.3s;
         }
             .portfolio iframe:hover {
                 transform: scale(1.05);
             }
+        .sort-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sort-container select {
+            padding: 10px;
+            font-size: 16px;
+            background: #1a1a1a;
+            color: #fff;
+            border: 1px solid #333;
+            border-radius: 8px;
+        }
         /* ---- Pricing ---- */
         .pricing-section {
             margin-bottom: 40px;
@@ -228,10 +217,6 @@
         @media (max-width: 768px) {
             nav ul { gap: 20px; padding: 12px 0; }
             nav a { font-size: 15px; padding: 6px 8px; }
-            .hero { padding-top: 140px; padding-bottom: 50px; margin: 15px 10px; }
-                .hero h1 { font-size: 48px; }
-                .hero p { font-size: 22px; }
-                .hero .subtext { font-size: 17px; }
             section { padding: 80px 15px; }
             h2 { font-size: 34px; }
             .pricing-header { font-size: 20px; padding: 12px 15px; }
@@ -239,11 +224,10 @@
             .portfolio iframe { height: 600px; }
         }
         @media (max-width: 480px) {
-            .hero h1 { font-size: 40px; }
-            .hero p { font-size: 20px; }
             h2 { font-size: 30px; }
             nav ul { flex-direction: column; gap: 10px; }
             nav a { font-size: 16px; }
+            .portfolio { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -263,28 +247,30 @@
         </ul>
     </nav>
 
-    <div class="hero">
-        <h1>Cześć, jestem Krzysztof</h1>
-        <p>Dynamiczny montaż pod TikTok / Shorts / Reels</p>
-        <p class="subtext">Pomagam shortom łapać większe zasięgi!!!</p>
-    </div>
-
     <section id="portfolio">
         <h2>Wszystkie Prace</h2>
+        <div class="sort-container">
+            <label for="sort-order">Sortuj według:</label>
+            <select id="sort-order">
+                <option value="newest">Od najnowszych</option>
+                <option value="oldest">Od najstarszych</option>
+            </select>
+        </div>
         <h3>Filmy Długie</h3>
-        <div class="portfolio">
-            <!-- Dodaj iframe'y dla długich filmów - przykłady, zmień na rzeczywiste -->
-            <iframe src="https://www.youtube.com/embed/LONG_EXAMPLE1" title="Długi Film 1" allowfullscreen loading="lazy"></iframe>
-            <iframe src="https://www.youtube.com/embed/LONG_EXAMPLE2" title="Długi Film 2" allowfullscreen loading="lazy"></iframe>
-            <!-- Dodawaj więcej w miarę potrzeb -->
+        <div class="portfolio long-films">
+            <!-- Dodaj iframe'y dla długich filmów z data-date="YYYY-MM-DD" - przykłady, zmień na rzeczywiste i dodawaj z datami -->
+            <iframe data-date="2026-01-01" src="https://www.youtube.com/embed/LONG_EXAMPLE1" title="Długi Film 1" allowfullscreen loading="lazy"></iframe>
+            <iframe data-date="2025-12-01" src="https://www.youtube.com/embed/LONG_EXAMPLE2" title="Długi Film 2" allowfullscreen loading="lazy"></iframe>
+            <iframe data-date="2025-11-01" src="https://www.youtube.com/embed/LONG_EXAMPLE3" title="Długi Film 3" allowfullscreen loading="lazy"></iframe>
+            <!-- Dodawaj więcej w miarę potrzeb z data-date -->
         </div>
         <h3>Filmy Krótkie</h3>
-        <div class="portfolio">
-            <!-- Dodaj iframe'y dla krótkich filmów - przykłady, zmień na rzeczywiste -->
-            <iframe src="https://www.youtube.com/embed/J3iVQNGJ6II" title="Krótki Film 1" allowfullscreen loading="lazy"></iframe>
-            <iframe src="https://www.youtube.com/embed/SHORT_EXAMPLE2" title="Krótki Film 2" allowfullscreen loading="lazy"></iframe>
-            <iframe src="https://www.youtube.com/embed/SHORT_EXAMPLE3" title="Krótki Film 3" allowfullscreen loading="lazy"></iframe>
-            <!-- Dodawaj więcej w miarę potrzeb -->
+        <div class="portfolio short-films">
+            <!-- Dodaj iframe'y dla krótkich filmów z data-date="YYYY-MM-DD" - przykłady, zmień na rzeczywiste i dodawaj z datami -->
+            <iframe data-date="2026-01-15" src="https://www.youtube.com/embed/J3iVQNGJ6II" title="Krótki Film 1" allowfullscreen loading="lazy"></iframe>
+            <iframe data-date="2025-12-15" src="https://www.youtube.com/embed/SHORT_EXAMPLE2" title="Krótki Film 2" allowfullscreen loading="lazy"></iframe>
+            <iframe data-date="2025-11-15" src="https://www.youtube.com/embed/SHORT_EXAMPLE3" title="Krótki Film 3" allowfullscreen loading="lazy"></iframe>
+            <!-- Dodawaj więcej w miarę potrzeb z data-date -->
         </div>
     </section>
 
@@ -314,6 +300,27 @@
                 header.classList.toggle('active', !isOpen);
             });
         });
+
+        // Sortowanie
+        const sortSelect = document.getElementById('sort-order');
+        sortSelect.addEventListener('change', sortVideos);
+
+        function sortVideos() {
+            const order = sortSelect.value;
+            const containers = document.querySelectorAll('.portfolio');
+            containers.forEach(container => {
+                let videos = Array.from(container.querySelectorAll('iframe'));
+                videos.sort((a, b) => {
+                    const dateA = new Date(a.dataset.date);
+                    const dateB = new Date(b.dataset.date);
+                    return order === 'newest' ? dateB - dateA : dateA - dateB;
+                });
+                videos.forEach(video => container.appendChild(video));
+            });
+        }
+
+        // Inicialne sortowanie
+        sortVideos();
     </script>
 </body>
 </html>
