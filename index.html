@@ -1,3 +1,5 @@
+## STRONA GLOWNA
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -77,6 +79,33 @@
                     color: #fff;
                     transform: scale(1.1);
                 }
+        /* ---- Hamburger Menu ---- */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            padding: 15px;
+            position: absolute;
+            top: 0;
+            right: 20px;
+        }
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background: #fff;
+            transition: 0.3s;
+        }
         /* ---- Hero ---- */
         .hero {
             padding-top: 180px;
@@ -237,6 +266,27 @@
             .pricing-header { font-size: 20px; padding: 12px 15px; }
             .pricing-box h3 { font-size: 20px; }
             .portfolio iframe { height: 600px; }
+            /* Hamburger dla mobile */
+            .hamburger {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+                background: rgba(15,15,15,0.95);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            .discord-reminder {
+                top: 80px;
+            }
         }
         @media (max-width: 480px) {
             .hero h1 { font-size: 40px; }
@@ -252,8 +302,12 @@
     <div class="discord-reminder">
         Dołącz do naszej społeczności → <strong>discord.gg/YMazKjeg3g</strong>
     </div>
-
     <nav>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
         <ul>
             <li><a href="/Portfolio/">Strona Główna</a></li>
             <li><a href="#about">O mnie</a></li>
@@ -262,34 +316,28 @@
             <li><a href="#contact">Kontakt</a></li>
         </ul>
     </nav>
-
     <div class="hero">
         <h1>Cześć, jestem Krzysztof</h1>
         <p>Dynamiczny montaż pod TikTok / Shorts / Reels</p>
         <p class="subtext">Pomagam shortom łapać większe zasięgi!!!</p>
     </div>
-
     <section id="about">
        <h2>O mnie</h2>
          <p>Zajmuję się montażem filmów, shortów oraz innych krótkich form wideo. Tworzę głównie z pasji, ale każde zlecenie traktuję profesjonalnie.</p>
          <p>Interesuję się wszystkim, co związane z internetem i komputerami od montażu i animacji po programowanie i tworzenie gier. Dzięki temu mogę podejść do projektu kreatywnie i kompleksowo.</p>
          <p>Dlaczego warto ze mną współpracować? Moje ceny są atrakcyjne w stosunku do jakości, często oferuję zniżki dla nowych klientów, realizacja jest szybka, a każde zlecenie traktuję indywidualnie.</p>
-
     </section>
-
     <section id="experience">
      <h2>Doświadczenie</h2>
 <p>Mam około 5 lat doświadczenia w montażu wideo. Przez długi czas pracowałem głównie w CapCut, co dało mi solidne podstawy i pozwoliło zrozumieć dynamikę oraz storytelling. Zrezygnowałem z CapCut, szukając bardziej profesjonalnego narzędzia, dlatego od około 2–3 miesięcy intensywnie rozwijam swoje umiejętności w DaVinci Resolve i obecnie większość projektów realizuję w tym programie. Jestem dyspozycyjny w obu programach, ale domyślnie wybieram DaVinci, ponieważ praca w nim jest przyjemniejsza i daje większe możliwości.</p>
 <p>Na swoim koncie mam ponad 50 zrealizowanych rolek oraz kilka dłuższych projektów, a cały czas uczę się nowych technik, aby oferować coraz lepszą jakość.</p>
     </section>
-
     <section id="portfolio">
         <h2> Najlepsze prace (według mnie) więcej na |Wszystkie prace|</h2>
         <div class="portfolio">
             <iframe src="https://www.youtube.com/embed/FzoQpwnChuI" title="Najlepszy Short 1" allowfullscreen loading="lazy"></iframe>
         </div>
     </section>
-
     <section id="contact">
         <h2>Kontakt</h2>
         <p>Gmail: <a href="mailto:krzysztoflesniewskibiznes@gmail.com">krzysztoflesniewskibiznes@gmail.com</a></p>
@@ -301,11 +349,9 @@
             <strong><a href="https://discord.gg/YMazKjeg3g" target="_blank">discord.gg/YMazKjeg3g</a></strong>
         </p>
     </section>
-
     <footer>
         <p>Copyright © 2026 Krzysztof Leśniewski. All Rights Reserved.</p>
     </footer>
-
     <script>
         const headers = document.querySelectorAll('.pricing-header');
         headers.forEach(header => {
@@ -316,14 +362,13 @@
                 header.classList.toggle('active', !isOpen);
             });
         });
+        // Hamburger menu
+        const hamburger = document.querySelector('.hamburger');
+        const navUl = document.querySelector('nav ul');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navUl.classList.toggle('active');
+        });
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
