@@ -1,3 +1,5 @@
+## PODSTRONA 2
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -77,6 +79,33 @@
                     color: #fff;
                     transform: scale(1.1);
                 }
+        /* ---- Hamburger Menu ---- */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            padding: 15px;
+            position: absolute;
+            top: 0;
+            right: 20px;
+        }
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background: #fff;
+            transition: 0.3s;
+        }
         /* ---- Sekcje ---- */
         section {
             max-width: 900px;
@@ -203,6 +232,27 @@
             .pricing-header { font-size: 20px; padding: 12px 15px; }
             .pricing-box h3 { font-size: 20px; }
             .portfolio iframe { height: 600px; }
+            /* Hamburger dla mobile */
+            .hamburger {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+                background: rgba(15,15,15,0.95);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            .discord-reminder {
+                top: 80px;
+            }
         }
         @media (max-width: 480px) {
             h2 { font-size: 30px; }
@@ -216,8 +266,12 @@
     <div class="discord-reminder">
         Dołącz do naszej społeczności → <strong>discord.gg/YMazKjeg3g</strong>
     </div>
-
     <nav>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
         <ul>
             <li><a href="../">Strona Główna</a></li>
             <li><a href="../#about">O mnie</a></li>
@@ -226,10 +280,8 @@
             <li><a href="#contact">Kontakt</a></li>
         </ul>
     </nav>
-
     <section id="pricing">
         <h2>Cennik</h2>
-
         <!-- Video -->
         <div class="pricing-section">
             <div class="pricing-header">Video</div>
@@ -268,12 +320,10 @@
                 <li>Płatność: Blik / przelew / PayPal / Skrill</li>
             </ul>
         </div>
-
         <p class="pricing-note-global">
             Czas realizacji: 3–14 dni roboczych | Ekspres 2–5 dni: +50% ceny końcowej | Finalna kwota ustalana przed rozpoczęciem montażu, zależy od materiału i ilości pracy
         </p>
     </section>
-
     <section id="contact">
         <h2>Kontakt</h2>
         <p>Gmail: <a href="mailto:krzysztoflesniewskibiznes@gmail.com">krzysztoflesniewskibiznes@gmail.com</a></p>
@@ -285,11 +335,9 @@
             <strong><a href="https://discord.gg/YMazKjeg3g" target="_blank">discord.gg/YMazKjeg3g</a></strong>
         </p>
     </section>
-
     <footer>
         <p>Copyright © 2026 Krzysztof Leśniewski. All Rights Reserved.</p>
     </footer>
-
     <script>
         const headers = document.querySelectorAll('.pricing-header');
         headers.forEach(header => {
@@ -299,6 +347,13 @@
                 content.style.display = isOpen ? 'none' : 'block';
                 header.classList.toggle('active', !isOpen);
             });
+        });
+        // Hamburger menu
+        const hamburger = document.querySelector('.hamburger');
+        const navUl = document.querySelector('nav ul');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navUl.classList.toggle('active');
         });
     </script>
 </body>
