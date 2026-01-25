@@ -1,3 +1,5 @@
+## PODSTRONA 1
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -77,6 +79,33 @@
                     color: #fff;
                     transform: scale(1.1);
                 }
+        /* ---- Hamburger Menu ---- */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            padding: 15px;
+            position: absolute;
+            top: 0;
+            right: 20px;
+        }
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background: #fff;
+            transition: 0.3s;
+        }
         /* ---- Sekcje ---- */
         section {
             max-width: 900px;
@@ -127,6 +156,24 @@
             color: #fff;
             border: 1px solid #333;
             border-radius: 8px;
+        }
+        .show-more {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background: #ff3b3b;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .show-more:hover {
+            background: #ff7b3b;
+        }
+        iframe.hidden {
+            display: none;
         }
         /* ---- Pricing ---- */
         .pricing-section {
@@ -222,6 +269,35 @@
             .pricing-header { font-size: 20px; padding: 12px 15px; }
             .pricing-box h3 { font-size: 20px; }
             .portfolio iframe { height: 600px; }
+            /* Hamburger dla mobile */
+            .hamburger {
+                display: block;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+                background: rgba(15,15,15,0.95);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            .discord-reminder {
+                top: 80px;
+            }
+            .portfolio {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (min-width: 769px) {
+            .portfolio {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
         @media (max-width: 480px) {
             h2 { font-size: 30px; }
@@ -236,8 +312,12 @@
     <div class="discord-reminder">
         Dołącz do naszej społeczności → <strong>discord.gg/YMazKjeg3g</strong>
     </div>
-
     <nav>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
         <ul>
             <li><a href="../">Strona Główna</a></li>
             <li><a href="../#about">O mnie</a></li>
@@ -246,7 +326,6 @@
             <li><a href="#contact">Kontakt</a></li>
         </ul>
     </nav>
-
     <section id="portfolio">
         <h2>Wszystkie Prace</h2>
         <div class="sort-container">
@@ -261,7 +340,6 @@
     <iframe data-date="2025-01-04" src="https://www.youtube.com/embed/FafpZ1_jbSU" title="Długi Film 1" allowfullscreen loading="lazy"></iframe>
     <iframe data-date="2024-12-17" src="https://www.youtube.com/embed/28PyzVIzUYc" title="Długi Film 2" allowfullscreen loading="lazy"></iframe>
 </div>
-
 <h3>Filmy Krótkie</h3>
 <div class="portfolio short-films">
     <iframe data-date="2025-12-15" src="https://www.youtube.com/embed/J3iVQNGJ6II" title="Krótki Film 1" allowfullscreen loading="lazy"></iframe>
@@ -269,9 +347,8 @@
     <iframe data-date="2025-06-11" src="https://www.youtube.com/embed/8GJ1GAJf18o" title="Krótki Film 3" allowfullscreen loading="lazy"></iframe>
     <iframe data-date="2024-12-30" src="https://www.youtube.com/embed/FzoQpwnChuI" title="Krótki Film 4" allowfullscreen loading="lazy"></iframe>
 </div>
-
+        <button class="show-more" style="display: none;">Pokaż więcej</button>
     </section>
-
     <section id="contact">
         <h2>Kontakt</h2>
         <p>Gmail: <a href="mailto:krzysztoflesniewskibiznes@gmail.com">krzysztoflesniewskibiznes@gmail.com</a></p>
@@ -283,11 +360,9 @@
             <strong><a href="https://discord.gg/YMazKjeg3g" target="_blank">discord.gg/YMazKjeg3g</a></strong>
         </p>
     </section>
-
     <footer>
         <p>Copyright © 2026 Krzysztof Leśniewski. All Rights Reserved.</p>
     </footer>
-
     <script>
         const headers = document.querySelectorAll('.pricing-header');
         headers.forEach(header => {
@@ -298,11 +373,16 @@
                 header.classList.toggle('active', !isOpen);
             });
         });
-
+        // Hamburger menu
+        const hamburger = document.querySelector('.hamburger');
+        const navUl = document.querySelector('nav ul');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navUl.classList.toggle('active');
+        });
         // Sortowanie
         const sortSelect = document.getElementById('sort-order');
         sortSelect.addEventListener('change', sortVideos);
-
         function sortVideos() {
             const order = sortSelect.value;
             const containers = document.querySelectorAll('.portfolio');
@@ -316,9 +396,21 @@
                 videos.forEach(video => container.appendChild(video));
             });
         }
-
         // Inicialne sortowanie
         sortVideos();
+        // Pokaż więcej
+        const allIframes = document.querySelectorAll('.portfolio iframe');
+        const showMoreBtn = document.querySelector('.show-more');
+        if (allIframes.length > 8) {
+            for (let i = 8; i < allIframes.length; i++) {
+                allIframes[i].classList.add('hidden');
+            }
+            showMoreBtn.style.display = 'block';
+            showMoreBtn.addEventListener('click', () => {
+                allIframes.forEach(iframe => iframe.classList.remove('hidden'));
+                showMoreBtn.style.display = 'none';
+            });
+        }
     </script>
 </body>
 </html>
