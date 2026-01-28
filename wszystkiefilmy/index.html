@@ -27,24 +27,29 @@
             text-decoration: none;
             color: inherit;
         }
-        /* ---- Subtelne przypomnienie o Discordzie ---- */
+        /* Discord reminder – tylko desktop */
         .discord-reminder {
-            position: fixed;
-            top: 68px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(88,101,242,0.14);
-            backdrop-filter: blur(8px);
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 500;
-            z-index: 99;
-            border: 1px solid rgba(88,101,242,0.3);
-            pointer-events: auto;
+            display: none;
         }
-        .discord-reminder:hover {
-            background: rgba(88,101,242,0.24);
+        @media (min-width: 769px) {
+            .discord-reminder {
+                display: block;
+                position: fixed;
+                top: 68px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(88,101,242,0.14);
+                backdrop-filter: blur(8px);
+                padding: 8px 18px;
+                border-radius: 50px;
+                font-size: 14px;
+                font-weight: 500;
+                z-index: 99;
+                border: 1px solid rgba(88,101,242,0.3);
+            }
+            .discord-reminder:hover {
+                background: rgba(88,101,242,0.24);
+            }
         }
         /* ---- Nawigacja ---- */
         nav {
@@ -106,171 +111,106 @@
         }
         /* ---- Sekcje ---- */
         section {
-            max-width: 900px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 100px 20px;
+            padding: 100px 4%;
         }
         h2 {
-            font-size: 40px;
-            margin-bottom: 30px;
+            font-size: 44px;
+            margin-bottom: 35px;
             text-align: center;
-            text-shadow: 1px 1px 8px rgba(0,0,0,0.5);
-            transition: color 0.5s;
+            text-shadow: 1px 1px 10px rgba(0,0,0,0.6);
         }
         h3 {
-            font-size: 28px;
-            margin-bottom: 20px;
+            font-size: 32px;
+            margin: 50px 0 25px;
             text-align: center;
         }
         p {
             font-size: 18px;
             opacity: 0.9;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
-        /* ---- Portfolio ---- */
+        /* ---- Portfolio + filtry ---- */
+        .filters-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .filters-container select {
+            padding: 10px 16px;
+            font-size: 16px;
+            background: #1a1a1a;
+            color: #fff;
+            border: 1px solid #444;
+            border-radius: 10px;
+            margin: 0 10px;
+        }
         .portfolio {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
         }
         .portfolio iframe {
             width: 100%;
-            height: 600px;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
-            transition: transform 0.3s;
+            height: 640px;
+            border-radius: 18px;
+            box-shadow: 0 22px 48px rgba(0,0,0,0.75);
+            transition: transform 0.35s;
         }
             .portfolio iframe:hover {
-                transform: scale(1.05);
+                transform: scale(1.04);
             }
         .sort-container {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         .sort-container select {
-            padding: 10px;
+            padding: 10px 16px;
             font-size: 16px;
             background: #1a1a1a;
             color: #fff;
             border: 1px solid #333;
             border-radius: 8px;
         }
+        .info-text {
+            text-align: center;
+            font-size: 15px;
+            opacity: 0.8;
+            margin: 40px 0 60px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
         .show-more {
             display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
+            margin: 40px auto;
+            padding: 12px 32px;
             background: #ff3b3b;
             color: #fff;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 17px;
             transition: 0.3s;
         }
-        .show-more:hover {
-            background: #ff7b3b;
-        }
+            .show-more:hover {
+                background: #ff5252;
+            }
         iframe.hidden {
             display: none;
         }
-        /* ---- Pricing ---- */
-        .pricing-section {
-            margin-bottom: 40px;
-        }
-        .pricing-header {
-            cursor: pointer;
-            background: #1a1a1a;
-            padding: 15px 20px;
-            border-radius: 12px;
-            font-size: 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            transition: 0.3s, color 0.5s, background 0.5s;
-        }
-            .pricing-header:hover {
-                background: #222;
-            }
-            .pricing-header::after {
-                content: '+';
-                font-size: 28px;
-            }
-            .pricing-header.active::after {
-                content: '−';
-            }
-        .pricing-content {
-            display: none;
-            margin-top: 15px;
-            overflow: hidden;
-            animation: slideDown 0.4s ease forwards;
-        }
-        @keyframes slideDown {
-            0% { height: 0; opacity: 0; }
-            100% { height: auto; opacity: 1; }
-        }
-        .pricing-box {
-            background: linear-gradient(145deg,#1a1a1a,#111);
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-            transition: 0.3s;
-        }
-            .pricing-box:hover {
-                transform: translateY(-6px);
-                box-shadow: 0 15px 40px rgba(255,59,59,0.5);
-            }
-            .pricing-box h3 {
-                margin-top: 0;
-                font-size: 22px;
-                transition: color 0.5s;
-            }
-            .pricing-box ul {
-                padding-left: 20px;
-                margin-top: 10px;
-            }
-            .pricing-box li {
-                margin-bottom: 8px;
-                font-size: 16px;
-            }
-            .pricing-box p {
-                margin-top: 8px;
-                font-size: 14px;
-                opacity: 0.8;
-            }
-        .contact a {
-            transition: 0.3s, color 0.5s;
-        }
-            .contact a:hover {
-                text-decoration: underline;
-            }
-        footer {
-            text-align: center;
-            padding: 25px 20px;
-            opacity: 0.7;
-            font-size: 15px;
-            border-top: 1px solid #333;
-            margin-top: 50px;
-        }
-        .special-offer {
-            color: #ff3b3b;
-            font-weight: bold;
-            font-size: 18px;
-        }
         /* ---- Responsywność ---- */
         @media (max-width: 768px) {
-            nav ul { gap: 20px; padding: 12px 0; }
-            nav a { font-size: 15px; padding: 6px 8px; }
-            section { padding: 80px 15px; }
-            h2 { font-size: 34px; }
-            .pricing-header { font-size: 20px; padding: 12px 15px; }
-            .pricing-box h3 { font-size: 20px; }
-            .portfolio iframe { height: 600px; }
-            /* Hamburger dla mobile */
-            .hamburger {
-                display: block;
+            body { font-size: 13.5px; }
+            section { padding: 80px 5%; }
+            h2 { font-size: 36px; }
+            h3 { font-size: 28px; }
+            .portfolio {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 18px;
             }
+            .portfolio iframe { height: 520px; }
+            .hamburger { display: block; }
             nav ul {
                 display: none;
                 flex-direction: column;
@@ -282,34 +222,20 @@
                 left: 0;
                 width: 100%;
             }
-            nav ul.active {
-                display: flex;
-            }
-            .discord-reminder {
-                top: 80px;
-            }
-            .portfolio {
-                grid-template-columns: 1fr;
-            }
-        }
-        @media (min-width: 769px) {
-            .portfolio {
-                grid-template-columns: repeat(4, 1fr);
-            }
+            nav ul.active { display: flex; }
         }
         @media (max-width: 480px) {
-            h2 { font-size: 30px; }
-            nav ul { flex-direction: column; gap: 10px; }
-            nav a { font-size: 16px; }
             .portfolio { grid-template-columns: 1fr; }
+            h2 { font-size: 32px; }
         }
     </style>
 </head>
 <body>
-    <!-- Subtelne przypomnienie o Discordzie -->
+    <!-- Subtelne przypomnienie o Discordzie – tylko desktop -->
     <div class="discord-reminder">
         Dołącz do naszej społeczności → <strong>discord.gg/YMazKjeg3g</strong>
     </div>
+
     <nav>
         <div class="hamburger">
             <span class="bar"></span>
@@ -324,8 +250,21 @@
             <li><a href="#contact">Kontakt</a></li>
         </ul>
     </nav>
+
     <section id="portfolio">
         <h2>Wszystkie Prace</h2>
+
+        <div class="filters-container">
+            <label for="filter-type">Filtr kategorii:</label>
+            <select id="filter-type">
+                <option value="all">Wszystkie</option>
+                <option value="gaming">Gamingowe</option>
+                <!-- tutaj możesz sam dodawać kolejne opcje -->
+                <!-- <option value="vlog">Vlogi</option> -->
+                <!-- <option value="irl">IRL / IRL challenge</option> -->
+            </select>
+        </div>
+
         <div class="sort-container">
             <label for="sort-order">Sortuj według:</label>
             <select id="sort-order">
@@ -333,20 +272,30 @@
                 <option value="oldest">Od najstarszych</option>
             </select>
         </div>
+
         <h3>Filmy Długie</h3>
-      <div class="portfolio long-films">
-    <iframe data-date="2025-01-04" src="https://www.youtube.com/embed/FafpZ1_jbSU" title="Długi Film 1" allowfullscreen loading="lazy"></iframe>
-    <iframe data-date="2024-12-17" src="https://www.youtube.com/embed/28PyzVIzUYc" title="Długi Film 2" allowfullscreen loading="lazy"></iframe>
-</div>
-<h3>Filmy Krótkie</h3>
-<div class="portfolio short-films">
-    <iframe data-date="2025-12-15" src="https://www.youtube.com/embed/J3iVQNGJ6II" title="Krótki Film 1" allowfullscreen loading="lazy"></iframe>
-    <iframe data-date="2026-01-25" src="https://www.youtube.com/embed/4ASy6gYN8Rg" title="Krótki Film 2" allowfullscreen loading="lazy"></iframe>
-    <iframe data-date="2025-06-11" src="https://www.youtube.com/embed/8GJ1GAJf18o" title="Krótki Film 3" allowfullscreen loading="lazy"></iframe>
-    <iframe data-date="2024-12-30" src="https://www.youtube.com/embed/FzoQpwnChuI" title="Krótki Film 4" allowfullscreen loading="lazy"></iframe>
-</div>
-        <button class="show-more" style="display: none;">Pokaż więcej</button>
+        <div class="portfolio long-films">
+            <iframe data-date="2025-01-04" data-category="all" src="https://www.youtube.com/embed/FafpZ1_jbSU" title="Długi Film 1" allowfullscreen loading="lazy"></iframe>
+            <iframe data-date="2024-12-17" data-category="all" src="https://www.youtube.com/embed/28PyzVIzUYc" title="Długi Film 2" allowfullscreen loading="lazy"></iframe>
+            <!-- dodaj nowe filmy z atrybutem data-category="gaming" lub inną wartością -->
+        </div>
+
+        <h3>Filmy Krótkie</h3>
+        <div class="portfolio short-films">
+            <iframe data-date="2025-12-15" data-category="all" src="https://www.youtube.com/embed/J3iVQNGJ6II" title="Krótki Film 1" allowfullscreen loading="lazy"></iframe>
+            <iframe data-date="2026-01-25" data-category="gaming" src="https://www.youtube.com/embed/4ASy6gYN8Rg" title="Krótki Film 2" allowfullscreen loading="lazy"></iframe>
+            <iframe data-date="2025-06-11" data-category="all" src="https://www.youtube.com/embed/8GJ1GAJf18o" title="Krótki Film 3" allowfullscreen loading="lazy"></iframe>
+            <iframe data-date="2024-12-30" data-category="all" src="https://www.youtube.com/embed/FzoQpwnChuI" title="Krótki Film 4" allowfullscreen loading="lazy"></iframe>
+        </div>
+
+        <button class="show-more" style="display:none;">Pokaż wszystkie filmy</button>
+
+        <div class="info-text">
+            Wszystkie filmy, które wrzucam tutaj na stronę są zmontowane przeze mnie.<br>
+            Tam gdzie mogę – podlinkowuję oryginalne filmy przesłane przez klientów.
+        </div>
     </section>
+
     <section id="contact">
         <h2>Kontakt</h2>
         <p>Gmail: <a href="mailto:krzysztoflesniewskibiznes@gmail.com">krzysztoflesniewskibiznes@gmail.com</a></p>
@@ -358,9 +307,11 @@
             <strong><a href="https://discord.gg/YMazKjeg3g" target="_blank">discord.gg/YMazKjeg3g</a></strong>
         </p>
     </section>
+
     <footer>
         <p>Copyright © 2026 Krzysztof Leśniewski. All Rights Reserved.</p>
     </footer>
+
     <script>
         const headers = document.querySelectorAll('.pricing-header');
         headers.forEach(header => {
@@ -371,6 +322,7 @@
                 header.classList.toggle('active', !isOpen);
             });
         });
+
         // Hamburger menu
         const hamburger = document.querySelector('.hamburger');
         const navUl = document.querySelector('nav ul');
@@ -378,37 +330,62 @@
             hamburger.classList.toggle('active');
             navUl.classList.toggle('active');
         });
-        // Sortowanie
+
+        // Sortowanie + nowy filtr kategorii
         const sortSelect = document.getElementById('sort-order');
-        sortSelect.addEventListener('change', sortVideos);
-        function sortVideos() {
-            const order = sortSelect.value;
-            const containers = document.querySelectorAll('.portfolio');
-            containers.forEach(container => {
+        const filterSelect = document.getElementById('filter-type');
+        const showMoreBtn = document.querySelector('.show-more');
+
+        function updateVideos() {
+            const sortOrder = sortSelect.value;
+            const filterValue = filterSelect.value;
+
+            document.querySelectorAll('.portfolio').forEach(container => {
                 let videos = Array.from(container.querySelectorAll('iframe'));
-                videos.sort((a, b) => {
+
+                // najpierw filtr kategorii
+                videos.forEach(vid => {
+                    if (filterValue === 'all' || vid.dataset.category === filterValue) {
+                        vid.style.display = '';
+                    } else {
+                        vid.style.display = 'none';
+                    }
+                });
+
+                // potem sortowanie (tylko widoczne)
+                let visibleVideos = videos.filter(vid => vid.style.display !== 'none');
+                visibleVideos.sort((a, b) => {
                     const dateA = new Date(a.dataset.date);
                     const dateB = new Date(b.dataset.date);
-                    return order === 'newest' ? dateB - dateA : dateA - dateB;
+                    return sortOrder === 'newest' ? dateB - dateA : dateA - dateB;
                 });
-                videos.forEach(video => container.appendChild(video));
+
+                visibleVideos.forEach(vid => container.appendChild(vid));
             });
-        }
-        // Inicialne sortowanie
-        sortVideos();
-        // Pokaż więcej
-        const allIframes = document.querySelectorAll('.portfolio iframe');
-        const showMoreBtn = document.querySelector('.show-more');
-        if (allIframes.length > 8) {
-            for (let i = 8; i < allIframes.length; i++) {
-                allIframes[i].classList.add('hidden');
-            }
-            showMoreBtn.style.display = 'block';
-            showMoreBtn.addEventListener('click', () => {
-                allIframes.forEach(iframe => iframe.classList.remove('hidden'));
+
+            // Show more logika – liczymy widoczne filmy
+            let allVisible = document.querySelectorAll('.portfolio iframe:not([style*="display: none"])');
+            if (allVisible.length > (window.innerWidth <= 768 ? 2 : 5)) {
+                showMoreBtn.style.display = 'block';
+            } else {
                 showMoreBtn.style.display = 'none';
-            });
+            }
         }
+
+        sortSelect.addEventListener('change', updateVideos);
+        filterSelect.addEventListener('change', updateVideos);
+        window.addEventListener('resize', updateVideos);
+
+        // Show more – pokazuje wszystkie (usuwa ukrywanie)
+        showMoreBtn.addEventListener('click', () => {
+            document.querySelectorAll('.portfolio iframe').forEach(iframe => {
+                iframe.style.display = '';
+            });
+            showMoreBtn.style.display = 'none';
+        });
+
+        // start
+        updateVideos();
     </script>
 </body>
 </html>
