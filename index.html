@@ -22,29 +22,36 @@
             line-height: 1.6;
             overflow-x: hidden;
             transition: background 0.5s, color 0.5s;
+            font-size: 16px; /* baza */
         }
         a {
             text-decoration: none;
             color: inherit;
         }
-        /* ---- Subtelne przypomnienie o Discordzie ---- */
+        /* ---- Subtelne przypomnienie o Discordzie – TYLKO desktop ---- */
         .discord-reminder {
-            position: fixed;
-            top: 68px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(88,101,242,0.14);
-            backdrop-filter: blur(8px);
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 500;
-            z-index: 99;
-            border: 1px solid rgba(88,101,242,0.3);
-            pointer-events: auto;
+            display: none;
         }
-        .discord-reminder:hover {
-            background: rgba(88,101,242,0.24);
+        @media (min-width: 769px) {
+            .discord-reminder {
+                display: block;
+                position: fixed;
+                top: 68px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(88,101,242,0.14);
+                backdrop-filter: blur(8px);
+                padding: 8px 18px;
+                border-radius: 50px;
+                font-size: 14px;
+                font-weight: 500;
+                z-index: 99;
+                border: 1px solid rgba(88,101,242,0.3);
+                pointer-events: auto;
+            }
+            .discord-reminder:hover {
+                background: rgba(88,101,242,0.24);
+            }
         }
         /* ---- Nawigacja ---- */
         nav {
@@ -104,166 +111,129 @@
             background: #fff;
             transition: 0.3s;
         }
-        /* ---- Hero ---- */
+        /* ---- Hero – poszerzony i ładniejszy ---- */
         .hero {
-            padding-top: 180px;
-            padding-bottom: 60px;
+            padding-top: 220px;
+            padding-bottom: 80px;
             text-align: center;
-            background: linear-gradient(120deg,#ff3b3b,#ff7b3b);
-            border-radius: 16px;
-            margin: 20px auto;
-            max-width: 900px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            background: linear-gradient(135deg, #ff3b3b, #ff6b3b, #ff3b3b);
+            border-radius: 24px;
+            margin: 30px 5% 40px 5%;
+            max-width: 1400px;
+            width: 90%;
+            box-shadow: 0 25px 70px rgba(255,59,59,0.3), 0 10px 40px rgba(0,0,0,0.6);
             position: relative;
             overflow: hidden;
-            transition: background 0.5s;
         }
+            .hero::before {
+                content: "";
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+                animation: rotate 25s linear infinite;
+            }
+            @keyframes rotate {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
             .hero h1 {
-                font-size: 60px;
+                font-size: 68px;
                 font-weight: 700;
-                margin-bottom: 12px;
-                text-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+                margin-bottom: 16px;
+                text-shadow: 3px 3px 20px rgba(0,0,0,0.7);
             }
             .hero p {
-                font-size: 24px;
-                opacity: 0.9;
+                font-size: 28px;
+                opacity: 0.95;
+                margin: 8px 0;
             }
             .hero .subtext {
-                font-size: 18px;
-                color: #fff8;
-                margin-top: 6px;
+                font-size: 20px;
+                color: #fff9;
+                margin-top: 8px;
                 font-weight: 500;
             }
         /* ---- Sekcje ---- */
         section {
-            max-width: 900px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 100px 20px;
+            padding: 100px 4%;
         }
         h2 {
-            font-size: 40px;
-            margin-bottom: 30px;
+            font-size: 44px;
+            margin-bottom: 35px;
             text-align: center;
-            text-shadow: 1px 1px 8px rgba(0,0,0,0.5);
-            transition: color 0.5s;
+            text-shadow: 1px 1px 10px rgba(0,0,0,0.6);
         }
         p {
             font-size: 18px;
             opacity: 0.9;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
-        /* ---- Portfolio ---- */
+        /* ---- Portfolio (jedyny film na głównej) ---- */
         .portfolio iframe {
             width: 100%;
-            max-width: 480px;
-            height: 800px;
-            border-radius: 16px;
+            max-width: 520px;
+            height: 880px;
+            border-radius: 20px;
             display: block;
-            margin: 30px auto;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
-            transition: transform 0.3s;
+            margin: 35px auto;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.75);
+            transition: transform 0.35s;
         }
             .portfolio iframe:hover {
-                transform: scale(1.05);
+                transform: scale(1.04);
             }
-        /* ---- Pricing ---- */
-        .pricing-section {
-            margin-bottom: 40px;
-        }
-        .pricing-header {
-            cursor: pointer;
-            background: #1a1a1a;
-            padding: 15px 20px;
-            border-radius: 12px;
-            font-size: 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            transition: 0.3s, color 0.5s, background 0.5s;
-        }
-            .pricing-header:hover {
-                background: #222;
-            }
-            .pricing-header::after {
-                content: '+';
-                font-size: 28px;
-            }
-            .pricing-header.active::after {
-                content: '−';
-            }
-        .pricing-content {
-            display: none;
-            margin-top: 15px;
-            overflow: hidden;
-            animation: slideDown 0.4s ease forwards;
-        }
-        @keyframes slideDown {
-            0% { height: 0; opacity: 0; }
-            100% { height: auto; opacity: 1; }
-        }
-        .pricing-box {
-            background: linear-gradient(145deg,#1a1a1a,#111);
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-            transition: 0.3s;
-        }
-            .pricing-box:hover {
-                transform: translateY(-6px);
-                box-shadow: 0 15px 40px rgba(255,59,59,0.5);
-            }
-            .pricing-box h3 {
-                margin-top: 0;
-                font-size: 22px;
-                transition: color 0.5s;
-            }
-            .pricing-box ul {
-                padding-left: 20px;
-                margin-top: 10px;
-            }
-            .pricing-box li {
-                margin-bottom: 8px;
-                font-size: 16px;
-            }
-            .pricing-box p {
-                margin-top: 8px;
-                font-size: 14px;
-                opacity: 0.8;
-            }
+        /* ---- Kontakt z telefonem i pineską tylko na głównej ---- */
         .contact a {
             transition: 0.3s, color 0.5s;
         }
             .contact a:hover {
                 text-decoration: underline;
             }
+        .city-pin {
+            font-size: 1.15rem;
+            color: #ffeb3b;
+            margin-top: 12px;
+        }
         footer {
             text-align: center;
-            padding: 25px 20px;
+            padding: 30px 20px;
             opacity: 0.7;
             font-size: 15px;
             border-top: 1px solid #333;
-            margin-top: 50px;
+            margin-top: 60px;
         }
         .special-offer {
             color: #ff3b3b;
             font-weight: bold;
             font-size: 18px;
         }
-        /* ---- Responsywność ---- */
+        /* ---- Responsywność + pomniejszenie na mobile o ~20% ---- */
         @media (max-width: 768px) {
+            body {
+                font-size: 13.5px; /* ~15-20% mniejsze */
+            }
             nav ul { gap: 20px; padding: 12px 0; }
-            nav a { font-size: 15px; padding: 6px 8px; }
-            .hero { padding-top: 140px; padding-bottom: 50px; margin: 15px 10px; }
-                .hero h1 { font-size: 48px; }
+            nav a { font-size: 14px; padding: 6px 8px; }
+            .hero {
+                padding-top: 160px;
+                padding-bottom: 50px;
+                margin: 20px 4%;
+                border-radius: 18px;
+            }
+                .hero h1 { font-size: 46px; }
                 .hero p { font-size: 22px; }
                 .hero .subtext { font-size: 17px; }
-            section { padding: 80px 15px; }
+            section { padding: 70px 5%; }
             h2 { font-size: 34px; }
-            .pricing-header { font-size: 20px; padding: 12px 15px; }
-            .pricing-box h3 { font-size: 20px; }
-            .portfolio iframe { height: 600px; }
+            .portfolio iframe {
+                max-width: 100%;
+                height: 620px;
+            }
             /* Hamburger dla mobile */
             .hamburger {
                 display: block;
@@ -282,24 +252,21 @@
             nav ul.active {
                 display: flex;
             }
-            .discord-reminder {
-                top: 80px;
-            }
         }
         @media (max-width: 480px) {
             .hero h1 { font-size: 40px; }
             .hero p { font-size: 20px; }
             h2 { font-size: 30px; }
-            nav ul { flex-direction: column; gap: 10px; }
-            nav a { font-size: 16px; }
+            nav ul { gap: 10px; }
         }
     </style>
 </head>
 <body>
-    <!-- Subtelne przypomnienie o Discordzie -->
+    <!-- Subtelne przypomnienie o Discordzie – tylko desktop -->
     <div class="discord-reminder">
         Dołącz do naszej społeczności → <strong>discord.gg/YMazKjeg3g</strong>
     </div>
+
     <nav>
         <div class="hamburger">
             <span class="bar"></span>
@@ -314,52 +281,52 @@
             <li><a href="#contact">Kontakt</a></li>
         </ul>
     </nav>
+
     <div class="hero">
         <h1>Cześć, jestem Krzysztof</h1>
         <p>Dynamiczny montaż pod TikTok / Shorts / Reels</p>
         <p class="subtext">Pomagam shortom łapać większe zasięgi!!!</p>
     </div>
+
     <section id="about">
        <h2>O mnie</h2>
          <p>Zajmuję się montażem filmów, shortów oraz innych krótkich form wideo. Tworzę głównie z pasji, ale każde zlecenie traktuję profesjonalnie.</p>
          <p>Interesuję się wszystkim, co związane z internetem i komputerami od montażu i animacji po programowanie i tworzenie gier. Dzięki temu mogę podejść do projektu kreatywnie i kompleksowo.</p>
          <p>Dlaczego warto ze mną współpracować? Moje ceny są atrakcyjne w stosunku do jakości, często oferuję zniżki dla nowych klientów, realizacja jest szybka, a każde zlecenie traktuję indywidualnie.</p>
     </section>
+
     <section id="experience">
      <h2>Doświadczenie</h2>
 <p>Mam około 5 lat doświadczenia w montażu wideo. Przez długi czas pracowałem głównie w CapCut, co dało mi solidne podstawy i pozwoliło zrozumieć dynamikę oraz storytelling. Zrezygnowałem z CapCut, szukając bardziej profesjonalnego narzędzia, dlatego od około 2–3 miesięcy intensywnie rozwijam swoje umiejętności w DaVinci Resolve i obecnie większość projektów realizuję w tym programie. Jestem dyspozycyjny w obu programach, ale domyślnie wybieram DaVinci, ponieważ praca w nim jest przyjemniejsza i daje większe możliwości.</p>
 <p>Na swoim koncie mam ponad 50 zrealizowanych rolek oraz kilka dłuższych projektów, a cały czas uczę się nowych technik, aby oferować coraz lepszą jakość.</p>
     </section>
+
     <section id="portfolio">
         <h2> Najlepsze prace (według mnie) więcej na |Wszystkie prace|</h2>
         <div class="portfolio">
             <iframe src="https://www.youtube.com/embed/FzoQpwnChuI" title="Najlepszy Short 1" allowfullscreen loading="lazy"></iframe>
         </div>
     </section>
+
     <section id="contact">
         <h2>Kontakt</h2>
         <p>Gmail: <a href="mailto:krzysztoflesniewskibiznes@gmail.com">krzysztoflesniewskibiznes@gmail.com</a></p>
+        <p>Telefon: <a href="tel:+48794911081">794 911 081</a></p>
         <p>Instagram: <a href="https://www.instagram.com/_lesniuczek_/" target="_blank">@_lesniuczek_</a></p>
         <p>Facebook / Messenger: <a href="https://www.facebook.com/profile.php?id=100086658516095" target="_blank">Profil</a></p>
-        <p>NAJSZYBCIEJ ODPOWIADAM NA IG/MES</p>
+        <p class="city-pin">📌 Głogów</p>
+        <p>NAJSZYBCIEJ ODPOWIADAM NA IG/MES / TEL</p>
         <p style="margin-top: 25px; text-align: center; font-size: 1.1rem; opacity: 0.9;">
             Zapraszam również na naszego Discorda:<br>
             <strong><a href="https://discord.gg/YMazKjeg3g" target="_blank">discord.gg/YMazKjeg3g</a></strong>
         </p>
     </section>
+
     <footer>
         <p>Copyright © 2026 Krzysztof Leśniewski. All Rights Reserved.</p>
     </footer>
+
     <script>
-        const headers = document.querySelectorAll('.pricing-header');
-        headers.forEach(header => {
-            header.addEventListener('click', () => {
-                const content = header.nextElementSibling;
-                const isOpen = content.style.display === 'block';
-                content.style.display = isOpen ? 'none' : 'block';
-                header.classList.toggle('active', !isOpen);
-            });
-        });
         // Hamburger menu
         const hamburger = document.querySelector('.hamburger');
         const navUl = document.querySelector('nav ul');
@@ -370,4 +337,3 @@
     </script>
 </body>
 </html>
-
