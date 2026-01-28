@@ -27,24 +27,29 @@
             text-decoration: none;
             color: inherit;
         }
-        /* ---- Subtelne przypomnienie o Discordzie ---- */
+        /* Discord reminder – tylko desktop */
         .discord-reminder {
-            position: fixed;
-            top: 68px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(88,101,242,0.14);
-            backdrop-filter: blur(8px);
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 500;
-            z-index: 99;
-            border: 1px solid rgba(88,101,242,0.3);
-            pointer-events: auto;
+            display: none;
         }
-        .discord-reminder:hover {
-            background: rgba(88,101,242,0.24);
+        @media (min-width: 769px) {
+            .discord-reminder {
+                display: block;
+                position: fixed;
+                top: 68px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: rgba(88,101,242,0.14);
+                backdrop-filter: blur(8px);
+                padding: 8px 18px;
+                border-radius: 50px;
+                font-size: 14px;
+                font-weight: 500;
+                z-index: 99;
+                border: 1px solid rgba(88,101,242,0.3);
+            }
+            .discord-reminder:hover {
+                background: rgba(88,101,242,0.24);
+            }
         }
         /* ---- Nawigacja ---- */
         nav {
@@ -106,50 +111,41 @@
         }
         /* ---- Sekcje ---- */
         section {
-            max-width: 900px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 100px 20px;
+            padding: 100px 4%;
         }
         h2 {
-            font-size: 40px;
-            margin-bottom: 30px;
+            font-size: 44px;
+            margin-bottom: 35px;
             text-align: center;
-            text-shadow: 1px 1px 8px rgba(0,0,0,0.5);
-            transition: color 0.5s;
+            text-shadow: 1px 1px 10px rgba(0,0,0,0.6);
+        }
+        .update-info {
+            text-align: center;
+            font-size: 15px;
+            opacity: 0.75;
+            margin: -20px 0 40px;
         }
         p {
             font-size: 18px;
             opacity: 0.9;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
-        /* ---- Portfolio ---- */
-        .portfolio iframe {
-            width: 100%;
-            max-width: 480px;
-            height: 800px;
-            border-radius: 16px;
-            display: block;
-            margin: 30px auto;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
-            transition: transform 0.3s;
-        }
-            .portfolio iframe:hover {
-                transform: scale(1.05);
-            }
         /* ---- Pricing ---- */
         .pricing-section {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
         .pricing-header {
             cursor: pointer;
             background: #1a1a1a;
-            padding: 15px 20px;
-            border-radius: 12px;
-            font-size: 24px;
+            padding: 16px 24px;
+            border-radius: 14px;
+            font-size: 26px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
             transition: 0.3s, color 0.5s, background 0.5s;
         }
             .pricing-header:hover {
@@ -157,14 +153,14 @@
             }
             .pricing-header::after {
                 content: '+';
-                font-size: 28px;
+                font-size: 32px;
             }
             .pricing-header.active::after {
                 content: '−';
             }
         .pricing-content {
             display: none;
-            margin-top: 15px;
+            margin-top: 20px;
             overflow: hidden;
             animation: slideDown 0.4s ease forwards;
         }
@@ -175,31 +171,31 @@
         .pricing-box {
             background: linear-gradient(145deg,#1a1a1a,#111);
             border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.6);
             transition: 0.3s;
         }
             .pricing-box:hover {
                 transform: translateY(-6px);
-                box-shadow: 0 15px 40px rgba(255,59,59,0.5);
+                box-shadow: 0 18px 50px rgba(255,59,59,0.4);
             }
             .pricing-box h3 {
                 margin-top: 0;
-                font-size: 22px;
+                font-size: 24px;
                 transition: color 0.5s;
             }
             .pricing-box ul {
-                padding-left: 20px;
-                margin-top: 10px;
+                padding-left: 22px;
+                margin-top: 12px;
             }
             .pricing-box li {
-                margin-bottom: 8px;
-                font-size: 16px;
+                margin-bottom: 10px;
+                font-size: 17px;
             }
             .pricing-box p {
-                margin-top: 8px;
-                font-size: 14px;
+                margin-top: 10px;
+                font-size: 15px;
                 opacity: 0.8;
             }
         .contact a {
@@ -210,30 +206,34 @@
             }
         footer {
             text-align: center;
-            padding: 25px 20px;
+            padding: 30px 20px;
             opacity: 0.7;
             font-size: 15px;
             border-top: 1px solid #333;
-            margin-top: 50px;
+            margin-top: 60px;
         }
         .special-offer {
             color: #ff3b3b;
             font-weight: bold;
             font-size: 18px;
         }
+        .pricing-note-global {
+            text-align: center;
+            font-size: 15px;
+            opacity: 0.8;
+            margin-top: 30px;
+            line-height: 1.5;
+        }
         /* ---- Responsywność ---- */
         @media (max-width: 768px) {
+            body { font-size: 13.5px; }
             nav ul { gap: 20px; padding: 12px 0; }
             nav a { font-size: 15px; padding: 6px 8px; }
-            section { padding: 80px 15px; }
-            h2 { font-size: 34px; }
-            .pricing-header { font-size: 20px; padding: 12px 15px; }
-            .pricing-box h3 { font-size: 20px; }
-            .portfolio iframe { height: 600px; }
-            /* Hamburger dla mobile */
-            .hamburger {
-                display: block;
-            }
+            section { padding: 80px 5%; }
+            h2 { font-size: 36px; }
+            .pricing-header { font-size: 22px; padding: 14px 18px; }
+            .pricing-box h3 { font-size: 21px; }
+            .hamburger { display: block; }
             nav ul {
                 display: none;
                 flex-direction: column;
@@ -245,25 +245,19 @@
                 left: 0;
                 width: 100%;
             }
-            nav ul.active {
-                display: flex;
-            }
-            .discord-reminder {
-                top: 80px;
-            }
+            nav ul.active { display: flex; }
         }
         @media (max-width: 480px) {
-            h2 { font-size: 30px; }
-            nav ul { flex-direction: column; gap: 10px; }
-            nav a { font-size: 16px; }
+            h2 { font-size: 32px; }
         }
     </style>
 </head>
 <body>
-    <!-- Subtelne przypomnienie o Discordzie -->
+    <!-- Subtelne przypomnienie o Discordzie – tylko desktop -->
     <div class="discord-reminder">
         Dołącz do naszej społeczności → <strong>discord.gg/YMazKjeg3g</strong>
     </div>
+
     <nav>
         <div class="hamburger">
             <span class="bar"></span>
@@ -278,8 +272,11 @@
             <li><a href="#contact">Kontakt</a></li>
         </ul>
     </nav>
+
     <section id="pricing">
         <h2>Cennik</h2>
+        <div class="update-info">Ostatnia aktualizacja cennika: 25.01.2026</div>
+
         <!-- Video -->
         <div class="pricing-section">
             <div class="pricing-header">Video</div>
@@ -288,20 +285,12 @@
                     <h3>Filmy</h3>
                     <ul>
                         <li>1 minuta filmu: <s>8 zł</s> → <strong>7 zł</strong></li>
-                        <li>Każda dodatkowa godzina surowego materiału: +20 zł</li>
-                        <li>Napisy automatyczne + korekta: +10 zł</li>
-                        <li>Poprawki po eksporcie: 5 zł za każdą</li>
+                        <li>Każda dodatkowa godzina surowego materiału: +30 zł</li>
+                        <li>Napisy automatyczne + korekta: +15 zł</li>
+                        <li>Poprawki po eksporcie: 10 zł za każdą</li>
+                        <li>Color grading (dodatkowo): +25 zł</li>
                     </ul>
-                </div>
-                <div class="pricing-box">
-                    <h3>Shorty / Rolki <span class="special-offer">TYLKO TERAZ</span></h3>
-                    <ul>
-                        <li><s>30 – 80 zł</s> → <strong>25 - 65 zł</strong></li>
-                        <li>Ustalenia szczegółowe przed rozpoczęciem pracy</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+
         <div class="pricing-box">
             <h3>Zaliczki / płatności</h3>
             <ul>
@@ -311,10 +300,13 @@
                 <li>Płatność: Blik / przelew / PayPal / Skrill</li>
             </ul>
         </div>
+
         <p class="pricing-note-global">
-            Czas realizacji: 3–14 dni roboczych | Ekspres 2–5 dni: +50% ceny końcowej | Finalna kwota ustalana przed rozpoczęciem montażu, zależy od materiału i ilości pracy
+            Czas realizacji: 3–14 dni roboczych | Ekspres 2–5 dni: +50% ceny końcowej<br>
+            Finalna kwota ustalana przed rozpoczęciem montażu, zależy od materiału i ilości pracy
         </p>
     </section>
+
     <section id="contact">
         <h2>Kontakt</h2>
         <p>Gmail: <a href="mailto:krzysztoflesniewskibiznes@gmail.com">krzysztoflesniewskibiznes@gmail.com</a></p>
@@ -326,9 +318,11 @@
             <strong><a href="https://discord.gg/YMazKjeg3g" target="_blank">discord.gg/YMazKjeg3g</a></strong>
         </p>
     </section>
+
     <footer>
         <p>Copyright © 2026 Krzysztof Leśniewski. All Rights Reserved.</p>
     </footer>
+
     <script>
         const headers = document.querySelectorAll('.pricing-header');
         headers.forEach(header => {
@@ -339,6 +333,7 @@
                 header.classList.toggle('active', !isOpen);
             });
         });
+
         // Hamburger menu
         const hamburger = document.querySelector('.hamburger');
         const navUl = document.querySelector('nav ul');
