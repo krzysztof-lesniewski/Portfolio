@@ -9,11 +9,7 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎥</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: 'Poppins', sans-serif;
             background: #0f0f0f;
@@ -23,192 +19,93 @@
         }
         a { text-decoration: none; color: inherit; }
 
-        /* Discord banner – tylko desktop */
-        .discord-reminder {
-            display: none;
-        }
+        .discord-reminder { display: none; }
         @media (min-width: 769px) {
             .discord-reminder {
                 display: block;
-                position: fixed;
-                top: 68px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: rgba(88,101,242,0.18);
-                backdrop-filter: blur(10px);
-                padding: 10px 20px;
-                border-radius: 50px;
-                font-size: 15px;
-                font-weight: 500;
-                z-index: 99;
-                border: 1px solid rgba(88,101,242,0.35);
+                position: fixed; top: 68px; left: 50%; transform: translateX(-50%);
+                background: rgba(88,101,242,0.18); backdrop-filter: blur(10px);
+                padding: 10px 20px; border-radius: 50px; font-size: 15px; font-weight: 500;
+                z-index: 99; border: 1px solid rgba(88,101,242,0.35);
             }
             .discord-reminder:hover { background: rgba(88,101,242,0.28); }
         }
 
-        /* Nawigacja */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(15,15,15,0.96);
-            backdrop-filter: blur(10px);
-            z-index: 100;
-            box-shadow: 0 3px 20px rgba(0,0,0,0.5);
+            position: fixed; top: 0; width: 100%;
+            background: rgba(15,15,15,0.96); backdrop-filter: blur(10px);
+            z-index: 100; box-shadow: 0 3px 20px rgba(0,0,0,0.5);
         }
         nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            padding: 18px 0;
-            flex-wrap: wrap;
+            list-style: none; display: flex; justify-content: center; gap: 40px;
+            padding: 18px 0; flex-wrap: wrap;
         }
         nav a {
-            font-weight: 500;
-            font-size: 16px;
-            padding: 8px 14px;
-            border-radius: 8px;
+            font-weight: 500; font-size: 16px; padding: 8px 14px; border-radius: 8px;
             transition: all 0.25s;
         }
-        nav a:hover {
-            background: #ff3b3b;
-            transform: scale(1.08);
-        }
+        nav a:hover { background: #ff3b3b; transform: scale(1.08); }
 
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            font-size: 26px;
-            padding: 18px;
-            position: absolute;
-            top: 0;
-            right: 16px;
-        }
-        .hamburger .bar {
-            display: block;
-            width: 28px;
-            height: 3.5px;
-            margin: 6px auto;
-            background: #fff;
-            transition: 0.3s;
-        }
+        .hamburger { display: none; cursor: pointer; font-size: 26px; padding: 18px;
+            position: absolute; top: 0; right: 16px; }
+        .hamburger .bar { display: block; width: 28px; height: 3.5px; margin: 6px auto;
+            background: #fff; transition: 0.3s; }
         .hamburger.active .bar:nth-child(2) { opacity: 0; }
         .hamburger.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
         .hamburger.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-        /* Sekcje */
-        section {
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 100px 5%;
-        }
-        h2 {
-            font-size: 3.2rem;
-            margin-bottom: 2.2rem;
-            text-align: center;
-            text-shadow: 0 2px 12px rgba(0,0,0,0.7);
-        }
-        h3 {
-            font-size: 2.1rem;
-            margin: 3.5rem 0 1.6rem;
-            text-align: center;
-        }
+        section { max-width: 1440px; margin: 0 auto; padding: 100px 5%; }
+        h2 { font-size: 3.2rem; margin-bottom: 2.2rem; text-align: center;
+             text-shadow: 0 2px 12px rgba(0,0,0,0.7); }
+        h3 { font-size: 2.1rem; margin: 3.5rem 0 1.6rem; text-align: center; }
         p { font-size: 1.1rem; opacity: 0.92; margin-bottom: 1rem; }
 
-        /* Portfolio */
-        .filters-container, .sort-container {
-            text-align: center;
-            margin-bottom: 1.8rem;
-        }
+        .filters-container, .sort-container { text-align: center; margin-bottom: 1.8rem; }
         select {
-            padding: 12px 20px;
-            font-size: 1.05rem;
-            background: #1e1e1e;
-            color: #fff;
-            border: 1px solid #444;
-            border-radius: 12px;
-            margin: 0 12px;
-            min-width: 220px;
+            padding: 12px 20px; font-size: 1.05rem; background: #1e1e1e; color: #fff;
+            border: 1px solid #444; border-radius: 12px; margin: 0 12px; min-width: 220px;
         }
 
         .video-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 28px;
+            display: grid; grid-template-columns: repeat(5, 1fr); gap: 28px;
         }
-
         .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
-            height: 0;
-            overflow: hidden;
-            border-radius: 18px;
-            box-shadow: 0 20px 44px rgba(0,0,0,0.78);
-            background: #000;
-            transition: transform 0.32s ease;
+            position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+            border-radius: 18px; box-shadow: 0 20px 44px rgba(0,0,0,0.78);
+            background: #000; transition: transform 0.32s ease;
         }
-
         .video-wrapper iframe {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%;
-            height: 100%;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
         }
-
-        /* Hover tylko na urządzeniach z myszką */
         @media (hover: hover) and (pointer: fine) {
-            .video-wrapper:hover {
-                transform: scale(1.035);
-            }
+            .video-wrapper:hover { transform: scale(1.035); }
         }
 
-        .info-text {
-            text-align: center;
-            font-size: 0.95rem;
-            opacity: 0.82;
-            margin: 3rem auto;
-            max-width: 920px;
-        }
-
+        .info-text { text-align: center; font-size: 0.95rem; opacity: 0.82;
+                     margin: 3rem auto; max-width: 920px; }
         .show-more {
-            display: block;
-            margin: 2.8rem auto;
-            padding: 14px 40px;
-            background: #ff3b3b;
-            color: white;
-            border: none;
-            border-radius: 12px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: all 0.25s;
+            display: block; margin: 2.8rem auto; padding: 14px 40px;
+            background: #ff3b3b; color: white; border: none; border-radius: 12px;
+            cursor: pointer; font-size: 1.1rem; font-weight: 500; transition: all 0.25s;
         }
         .show-more:hover { background: #ff4f4f; transform: translateY(-2px); }
 
-        /* ────────────────────────────────────────────── */
-        /* Responsywność – MOBILE PRIORYTET */
+        /* Responsywność */
         @media (max-width: 1024px) { .video-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
         @media (max-width: 768px) {
-            body           { font-size: 16px; }
-            section        { padding: 80px 6% 100px; }
-            h2             { font-size: 2.6rem; }
-            h3             { font-size: 1.9rem; }
-            select         { font-size: 1rem; padding: 10px 16px; min-width: 48%; margin: 8px 4px; }
-            .video-grid    { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-            .hamburger     { display: block; }
-            nav ul         {
-                display: none;
-                flex-direction: column;
-                gap: 24px;
-                padding: 24px 20px;
-                background: rgba(15,15,15,0.98);
-                position: absolute;
-                top: 64px; left: 0;
-                width: 100%;
+            body { font-size: 16px; }
+            section { padding: 80px 6% 100px; }
+            h2 { font-size: 2.6rem; }
+            h3 { font-size: 1.9rem; }
+            select { font-size: 1rem; padding: 10px 16px; min-width: 48%; margin: 8px 4px; }
+            .video-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            .hamburger { display: block; }
+            nav ul {
+                display: none; flex-direction: column; gap: 24px; padding: 24px 20px;
+                background: rgba(15,15,15,0.98); position: absolute; top: 64px; left: 0; width: 100%;
                 box-shadow: 0 8px 24px rgba(0,0,0,0.6);
             }
-            nav ul.active  { display: flex; }
+            nav ul.active { display: flex; }
         }
         @media (max-width: 480px) {
             .video-grid { grid-template-columns: 1fr; gap: 20px; }
@@ -225,9 +122,7 @@
 
     <nav>
         <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </div>
         <ul>
             <li><a href="../">Strona Główna</a></li>
@@ -263,6 +158,7 @@
 
         <h3>Filmy Długie</h3>
         <div class="video-grid long-films">
+            <!-- wszystkie długie zawsze widoczne -->
             <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/FafpZ1_jbSU" title="Fortnite tylko na pociągu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-01-04" data-category="gaming"></iframe></div>
             <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/28PyzVIzUYc" title="Nowości Fortnite" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2024-12-17" data-category="gaming"></iframe></div>
             <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/00v9dNmvUw8" title="Herping Sardinia in November" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-11-27" data-category="travel"></iframe></div>
@@ -271,18 +167,18 @@
 
         <h3>Filmy Krótkie</h3>
         <div class="video-grid short-films">
-            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/_7HaBQk9Tco" title="Bomba słowo na czole" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-12-20" data-category="mos"></iframe></div>
-            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/-emJxKJI7e0" title="Before After 1288" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-12-18" data-category="bf"></iframe></div>
-            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/t2aNPMHqzH8" title="Roblox edit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-12-15" data-category="gaming"></iframe></div>
-            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/J3iVQNGJ6II" title="Film do portfolio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-12-10" data-category="ads"></iframe></div>
-            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/4ASy6gYN8Rg" title="Minecraft random block" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-11-25" data-category="gaming"></iframe></div>
-            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/8GJ1GAJf18o" title="Minecraft – nie mogę dotknąć trawy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-06-11" data-category="gaming"></iframe></div>
-            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/FzoQpwnChuI" title="Fortnite – czy są miłe osoby" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2024-12-30" data-category="gaming"></iframe></div>
-            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/VgegcFwn2R8" title="Minecraft crazy seed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-05-26" data-category="gaming"></iframe></div>
-            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/ioWV0DQ3Yq4" title="Minecraft – najgorsze pułapki" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-04-28" data-category="gaming"></iframe></div>
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/_7HaBQk9Tco"     data-date="2025-12-20" data-category="mos" title="Bomba słowo na czole" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/-emJxKJI7e0"   data-date="2025-12-18" data-category="bf" title="Before After 1288" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/t2aNPMHqzH8"   data-date="2025-12-15" data-category="gaming" title="Roblox edit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/J3iVQNGJ6II"   data-date="2025-12-10" data-category="ads" title="Film do portfolio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/4ASy6gYN8Rg"   data-date="2025-11-25" data-category="gaming" title="Minecraft random block" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/8GJ1GAJf18o"   data-date="2025-06-11" data-category="gaming" title="Minecraft – nie mogę dotknąć trawy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/FzoQpwnChuI"   data-date="2024-12-30" data-category="gaming" title="Fortnite – czy są miłe osoby" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/VgegcFwn2R8"   data-date="2025-05-26" data-category="gaming" title="Minecraft crazy seed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/ioWV0DQ3Yq4"   data-date="2025-04-28" data-category="gaming" title="Minecraft – najgorsze pułapki" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         </div>
 
-        <button class="show-more">Pokaż wszystkie filmy</button>
+        <button class="show-more">Pokaż więcej</button>
 
         <div class="info-text">
             Wszystkie filmy widoczne na tej podstronie zostały przeze mnie zmontowane.<br>
@@ -307,70 +203,86 @@
     </footer>
 
     <script>
-        // Hamburger
-        document.querySelector('.hamburger').addEventListener('click', () => {
-            document.querySelector('.hamburger').classList.toggle('active');
+        // Hamburger menu
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            this.classList.toggle('active');
             document.querySelector('nav ul').classList.toggle('active');
         });
 
-        // Główna logika portfolio
         const sortSelect   = document.getElementById('sort-order');
         const filterSelect = document.getElementById('filter-type');
         const showMoreBtn  = document.querySelector('.show-more');
+        const shortGrid    = document.querySelector('.short-films');
 
-        const INITIAL_VISIBLE_SHORT = 6;
+        let visibleCount = 0;
+        let stepMobile   = 2;
+        let stepDesktop  = 5;
+        let initialMobile   = 2;
+        let initialDesktop  = 10;
 
-        function updateVideos() {
+        function getStep() {
+            return window.innerWidth <= 768 ? stepMobile : stepDesktop;
+        }
+
+        function getInitial() {
+            return window.innerWidth <= 768 ? initialMobile : initialDesktop;
+        }
+
+        function updateVideos(reset = false) {
             const sortOrder = sortSelect.value;
             const filterVal = filterSelect.value;
 
-            document.querySelectorAll('.video-grid').forEach(grid => {
-                let items = Array.from(grid.querySelectorAll('.video-wrapper'));
-
-                // Filtr kategorii
-                items.forEach(item => {
-                    const cat = item.querySelector('iframe').dataset.category;
-                    item.style.display = (filterVal === 'all' || cat === filterVal) ? '' : 'none';
-                });
-
-                // Sortowanie widocznych
-                let visible = items.filter(el => el.style.display !== 'none');
-                visible.sort((a, b) => {
-                    const da = new Date(a.querySelector('iframe').dataset.date);
-                    const db = new Date(b.querySelector('iframe').dataset.date);
-                    return sortOrder === 'newest' ? db - da : da - db;
-                });
-
-                visible.forEach(el => grid.appendChild(el));
-            });
-
-            // Liczymy aktualnie widoczne krótkie filmy
-            const visibleShorts = document.querySelectorAll('.short-films .video-wrapper:not([style*="display: none"])');
-            showMoreBtn.style.display = (visibleShorts.length > INITIAL_VISIBLE_SHORT) ? 'block' : 'none';
-        }
-
-        function initShowMore() {
-            // Na starcie chowamy nadmiar krótkich
-            const shorts = document.querySelectorAll('.short-films .video-wrapper');
-            shorts.forEach((el, i) => {
-                if (i >= INITIAL_VISIBLE_SHORT) el.style.display = 'none';
-            });
-            showMoreBtn.style.display = shorts.length > INITIAL_VISIBLE_SHORT ? 'block' : 'none';
-        }
-
-        showMoreBtn.addEventListener('click', () => {
-            document.querySelectorAll('.video-wrapper').forEach(el => {
+            // wszystkie długie zawsze widoczne (nie paginujemy ich)
+            document.querySelectorAll('.long-films .video-wrapper').forEach(el => {
                 el.style.display = '';
             });
-            showMoreBtn.style.display = 'none';
-        });
 
-        sortSelect.addEventListener('change', updateVideos);
-        filterSelect.addEventListener('change', updateVideos);
-        window.addEventListener('resize', updateVideos);
+            // krótkie – filtr + sort + paginacja
+            let items = Array.from(shortGrid.querySelectorAll('.video-wrapper'));
 
-        // Start
-        initShowMore();
+            // filtr kategorii
+            items.forEach(item => {
+                const cat = item.querySelector('iframe').dataset.category;
+                item.style.display = (filterVal === 'all' || cat === filterVal) ? '' : 'none';
+            });
+
+            // widoczne po filtrze
+            let visibleItems = items.filter(el => el.style.display !== 'none');
+
+            // sortowanie
+            visibleItems.sort((a, b) => {
+                const da = new Date(a.querySelector('iframe').dataset.date);
+                const db = new Date(b.querySelector('iframe').dataset.date);
+                return sortOrder === 'newest' ? db - da : da - db;
+            });
+
+            // kolejność w DOM
+            visibleItems.forEach(el => shortGrid.appendChild(el));
+
+            // reset paginacji po zmianie filtra/sortowania
+            if (reset) visibleCount = 0;
+
+            // ile pokazać teraz
+            let toShow = getInitial() + visibleCount * getStep();
+            visibleItems.forEach((el, i) => {
+                el.style.display = (i < toShow) ? '' : 'none';
+            });
+
+            // czy przycisk potrzebny
+            showMoreBtn.style.display = (toShow < visibleItems.length) ? 'block' : 'none';
+        }
+
+        function loadMore() {
+            visibleCount++;
+            updateVideos();
+        }
+
+        showMoreBtn.addEventListener('click', loadMore);
+        sortSelect.addEventListener('change',   () => updateVideos(true));
+        filterSelect.addEventListener('change', () => updateVideos(true));
+        window.addEventListener('resize',       () => updateVideos(true)); // zmiana kroku po resize
+
+        // start
         updateVideos();
     </script>
 </body>
