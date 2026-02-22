@@ -9,7 +9,6 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎥</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ---- Reset i podstawowe ---- */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -21,13 +20,10 @@
             color: #fff;
             line-height: 1.6;
             overflow-x: hidden;
-            transition: background 0.5s, color 0.5s;
         }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        /* Discord reminder – tylko desktop */
+        a { text-decoration: none; color: inherit; }
+
+        /* Discord banner – tylko desktop */
         .discord-reminder {
             display: none;
         }
@@ -38,202 +34,193 @@
                 top: 68px;
                 left: 50%;
                 transform: translateX(-50%);
-                background: rgba(88,101,242,0.14);
-                backdrop-filter: blur(8px);
-                padding: 8px 18px;
+                background: rgba(88,101,242,0.18);
+                backdrop-filter: blur(10px);
+                padding: 10px 20px;
                 border-radius: 50px;
-                font-size: 14px;
+                font-size: 15px;
                 font-weight: 500;
                 z-index: 99;
-                border: 1px solid rgba(88,101,242,0.3);
+                border: 1px solid rgba(88,101,242,0.35);
             }
-            .discord-reminder:hover {
-                background: rgba(88,101,242,0.24);
-            }
+            .discord-reminder:hover { background: rgba(88,101,242,0.28); }
         }
-        /* ---- Nawigacja ---- */
+
+        /* Nawigacja */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15,15,15,0.95);
-            backdrop-filter: blur(8px);
+            background: rgba(15,15,15,0.96);
+            backdrop-filter: blur(10px);
             z-index: 100;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.4);
-            transition: background 0.5s;
+            box-shadow: 0 3px 20px rgba(0,0,0,0.5);
         }
-            nav ul {
-                list-style: none;
-                display: flex;
-                justify-content: center;
-                gap: 40px;
-                padding: 15px 0;
-                flex-wrap: wrap;
-            }
-            nav a {
-                font-weight: 500;
-                font-size: 16px;
-                padding: 6px 10px;
-                border-radius: 6px;
-                transition: 0.3s;
-            }
-                nav a:hover {
-                    background: #ff3b3b;
-                    color: #fff;
-                    transform: scale(1.1);
-                }
-        /* ---- Hamburger Menu ---- */
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 18px 0;
+            flex-wrap: wrap;
+        }
+        nav a {
+            font-weight: 500;
+            font-size: 16px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            transition: all 0.25s;
+        }
+        nav a:hover {
+            background: #ff3b3b;
+            transform: scale(1.08);
+        }
+
         .hamburger {
             display: none;
             cursor: pointer;
-            font-size: 24px;
-            padding: 15px;
+            font-size: 26px;
+            padding: 18px;
             position: absolute;
             top: 0;
-            right: 20px;
+            right: 16px;
         }
-        .hamburger.active .bar:nth-child(2) {
-            opacity: 0;
-        }
-        .hamburger.active .bar:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-        .hamburger.active .bar:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-        .bar {
+        .hamburger .bar {
             display: block;
-            width: 25px;
-            height: 3px;
-            margin: 5px auto;
+            width: 28px;
+            height: 3.5px;
+            margin: 6px auto;
             background: #fff;
             transition: 0.3s;
         }
-        /* ---- Sekcje ---- */
+        .hamburger.active .bar:nth-child(2) { opacity: 0; }
+        .hamburger.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+        .hamburger.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+        /* Sekcje */
         section {
-            max-width: 1400px;
+            max-width: 1440px;
             margin: 0 auto;
-            padding: 100px 4%;
+            padding: 100px 5%;
         }
         h2 {
-            font-size: 44px;
-            margin-bottom: 35px;
+            font-size: 3.2rem;
+            margin-bottom: 2.2rem;
             text-align: center;
-            text-shadow: 1px 1px 10px rgba(0,0,0,0.6);
+            text-shadow: 0 2px 12px rgba(0,0,0,0.7);
         }
         h3 {
-            font-size: 32px;
-            margin: 50px 0 25px;
+            font-size: 2.1rem;
+            margin: 3.5rem 0 1.6rem;
             text-align: center;
         }
-        p {
-            font-size: 18px;
-            opacity: 0.9;
-            margin-bottom: 14px;
-        }
-        /* ---- Portfolio + filtry ---- */
-        .filters-container {
+        p { font-size: 1.1rem; opacity: 0.92; margin-bottom: 1rem; }
+
+        /* Portfolio */
+        .filters-container, .sort-container {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 1.8rem;
         }
-        .filters-container select {
-            padding: 10px 16px;
-            font-size: 16px;
-            background: #1a1a1a;
+        select {
+            padding: 12px 20px;
+            font-size: 1.05rem;
+            background: #1e1e1e;
             color: #fff;
             border: 1px solid #444;
-            border-radius: 10px;
-            margin: 0 10px;
+            border-radius: 12px;
+            margin: 0 12px;
+            min-width: 220px;
         }
-        .portfolio {
+
+        .video-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 24px;
+            gap: 28px;
         }
-        .portfolio iframe {
-            width: 100%;
-            height: 640px;
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
             border-radius: 18px;
-            box-shadow: 0 22px 48px rgba(0,0,0,0.75);
-            transition: transform 0.35s;
+            box-shadow: 0 20px 44px rgba(0,0,0,0.78);
+            background: #000;
+            transition: transform 0.32s ease;
         }
-            .portfolio iframe:hover {
-                transform: scale(1.04);
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Hover tylko na urządzeniach z myszką */
+        @media (hover: hover) and (pointer: fine) {
+            .video-wrapper:hover {
+                transform: scale(1.035);
             }
-        .sort-container {
-            text-align: center;
-            margin-bottom: 25px;
         }
-        .sort-container select {
-            padding: 10px 16px;
-            font-size: 16px;
-            background: #1a1a1a;
-            color: #fff;
-            border: 1px solid #333;
-            border-radius: 8px;
-        }
+
         .info-text {
             text-align: center;
-            font-size: 15px;
-            opacity: 0.8;
-            margin: 40px 0 60px;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 0.95rem;
+            opacity: 0.82;
+            margin: 3rem auto;
+            max-width: 920px;
         }
+
         .show-more {
             display: block;
-            margin: 40px auto;
-            padding: 12px 32px;
+            margin: 2.8rem auto;
+            padding: 14px 40px;
             background: #ff3b3b;
-            color: #fff;
+            color: white;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             cursor: pointer;
-            font-size: 17px;
-            transition: 0.3s;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.25s;
         }
-            .show-more:hover {
-                background: #ff5252;
-            }
-        iframe.hidden {
-            display: none;
-        }
-        /* ---- Responsywność ---- */
+        .show-more:hover { background: #ff4f4f; transform: translateY(-2px); }
+
+        /* ────────────────────────────────────────────── */
+        /* Responsywność – MOBILE PRIORYTET */
+        @media (max-width: 1024px) { .video-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
         @media (max-width: 768px) {
-            body { font-size: 13.5px; }
-            section { padding: 80px 5%; }
-            h2 { font-size: 36px; }
-            h3 { font-size: 28px; }
-            .portfolio {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 18px;
-            }
-            .portfolio iframe { height: 520px; }
-            .hamburger { display: block; }
-            nav ul {
+            body           { font-size: 16px; }
+            section        { padding: 80px 6% 100px; }
+            h2             { font-size: 2.6rem; }
+            h3             { font-size: 1.9rem; }
+            select         { font-size: 1rem; padding: 10px 16px; min-width: 48%; margin: 8px 4px; }
+            .video-grid    { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            .hamburger     { display: block; }
+            nav ul         {
                 display: none;
                 flex-direction: column;
-                gap: 20px;
-                padding: 20px;
-                background: rgba(15,15,15,0.95);
+                gap: 24px;
+                padding: 24px 20px;
+                background: rgba(15,15,15,0.98);
                 position: absolute;
-                top: 60px;
-                left: 0;
+                top: 64px; left: 0;
                 width: 100%;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.6);
             }
-            nav ul.active { display: flex; }
+            nav ul.active  { display: flex; }
         }
         @media (max-width: 480px) {
-            .portfolio { grid-template-columns: 1fr; }
-            h2 { font-size: 32px; }
+            .video-grid { grid-template-columns: 1fr; gap: 20px; }
+            h2 { font-size: 2.2rem; }
+            select { min-width: 100%; margin: 10px 0; }
         }
     </style>
 </head>
 <body>
-    <!-- Subtelne przypomnienie o Discordzie – tylko desktop -->
+
     <div class="discord-reminder">
-        Dołącz do naszej społeczności → <strong>discord.gg/YMazKjeg3g</strong>
+        Dołącz do społeczności → <strong>discord.gg/YMazKjeg3g</strong>
     </div>
 
     <nav>
@@ -255,22 +242,19 @@
         <h2>Wszystkie Prace</h2>
 
         <div class="filters-container">
-            <label for="filter-type">Filtr kategorii:</label>
+            <label for="filter-type">Kategoria:</label>
             <select id="filter-type">
                 <option value="all">Wszystkie</option>
                 <option value="gaming">Gamingowe</option>
                 <option value="travel">Podróżnicze</option>
                 <option value="ads">Reklama</option>
-                <option value="bf">before after</option>
-                <option value="mos">Marka osobistar</option>
-                <!-- tutaj możesz sam dodawać kolejne opcje -->
-                <!-- <option value="vlog">Vlogi</option> -->
-                <!-- <option value="irl">IRL / IRL challenge</option> -->
+                <option value="bf">Before / After</option>
+                <option value="mos">Marka osobista</option>
             </select>
         </div>
 
         <div class="sort-container">
-            <label for="sort-order">Sortuj według:</label>
+            <label for="sort-order">Sortuj:</label>
             <select id="sort-order">
                 <option value="newest">Od najnowszych</option>
                 <option value="oldest">Od najstarszych</option>
@@ -278,33 +262,31 @@
         </div>
 
         <h3>Filmy Długie</h3>
-        <div class="portfolio long-films">
-            <iframe data-date="2025-01-04" data-category="gaming" src="https://www.youtube.com/embed/FafpZ1_jbSU" title="fortnite tylko na pociągu" allowfullscreen loading="lazy"></iframe>
-            <iframe data-date="2024-12-17" data-category="gaming" src="https://www.youtube.com/embed/28PyzVIzUYc" title="nowości fortnite" allowfullscreen loading="lazy"></iframe>
-            <iframe data-date="2025-11-27" data-category="travel" src="https://www.youtube.com/embed/00v9dNmvUw8" title="Herping Sardinia in November" allowfullscreen loading="lazy"></iframe>
-            <iframe data-date="2025-05-31" data-category="gaming" src="https://www.youtube.com/embed/jcVrsO3lq3M" title="minecraft widz nie wytrzymał" allowfullscreen loading="lazy"></iframe>
-            <!-- dodaj nowe filmy z atrybutem data-category="gaming" lub inną wartością -->
+        <div class="video-grid long-films">
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/FafpZ1_jbSU" title="Fortnite tylko na pociągu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-01-04" data-category="gaming"></iframe></div>
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/28PyzVIzUYc" title="Nowości Fortnite" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2024-12-17" data-category="gaming"></iframe></div>
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/00v9dNmvUw8" title="Herping Sardinia in November" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-11-27" data-category="travel"></iframe></div>
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/jcVrsO3lq3M" title="Minecraft – widz nie wytrzymał" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-05-31" data-category="gaming"></iframe></div>
         </div>
 
         <h3>Filmy Krótkie</h3>
-        <div class="portfolio short-films">
-            <iframe data-date="2026-01-20" data-category="mos" src="https://www.youtube.com/embed/_7HaBQk9Tco" title="bomba slowo na czole" allowfullscreen loading="lazy"></iframe>
-            <iframe data-date="2026-02-18" data-category="bf" src="https://www.youtube.com/embed/-emJxKJI7e0" title="before after 1288" allowfullscreen loading="lazy"></iframe>
-            <iframe data-date="2026-02-15" data-category="gaming" src="https://www.youtube.com/embed/t2aNPMHqzH8" title="Roblox edit" allowfullscreen loading="lazy"></iframe>
-            <iframe data-date="2025-12-15" data-category="ads" src="https://www.youtube.com/embed/J3iVQNGJ6II" title="film do portfolio" allowfullscreen loading="lazy"></iframe>
-            <iframe data-date="2026-01-25" data-category="gaming" src="https://www.youtube.com/embed/4ASy6gYN8Rg" title="minecraft random block" allowfullscreen loading="lazy"></iframe>
-            <iframe data-date="2025-06-11" data-category="gaming" src="https://www.youtube.com/embed/8GJ1GAJf18o" title="minecraft ale nie moge dotknąć trawy" allowfullscreen loading="lazy"></iframe>
-            <iframe data-date="2024-12-30" data-category="gaming" src="https://www.youtube.com/embed/FzoQpwnChuI" title="fortnite czy są miłe osoby" allowfullscreen loading="lazy"></iframe>
-            <iframe data-date="2025-05-26" data-category="gaming" src="https://www.youtube.com/embed/VgegcFwn2R8" title="minecraft crazy seed" allowfullscreen loading="lazy"></iframe>
-            <iframe data-date="2025-04-28" data-category="gaming" src="https://www.youtube.com/embed/ioWV0DQ3Yq4" title="minecraft najgorsze półapki" allowfullscreen loading="lazy"></iframe>
-            
+        <div class="video-grid short-films">
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/_7HaBQk9Tco" title="Bomba słowo na czole" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-12-20" data-category="mos"></iframe></div>
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/-emJxKJI7e0" title="Before After 1288" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-12-18" data-category="bf"></iframe></div>
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/t2aNPMHqzH8" title="Roblox edit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-12-15" data-category="gaming"></iframe></div>
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/J3iVQNGJ6II" title="Film do portfolio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-12-10" data-category="ads"></iframe></div>
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/4ASy6gYN8Rg" title="Minecraft random block" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-11-25" data-category="gaming"></iframe></div>
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/8GJ1GAJf18o" title="Minecraft – nie mogę dotknąć trawy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-06-11" data-category="gaming"></iframe></div>
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/FzoQpwnChuI" title="Fortnite – czy są miłe osoby" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2024-12-30" data-category="gaming"></iframe></div>
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/VgegcFwn2R8" title="Minecraft crazy seed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-05-26" data-category="gaming"></iframe></div>
+            <div class="video-wrapper"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/ioWV0DQ3Yq4" title="Minecraft – najgorsze pułapki" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-date="2025-04-28" data-category="gaming"></iframe></div>
         </div>
 
-        <button class="show-more" style="display:none;">Pokaż wszystkie filmy</button>
+        <button class="show-more">Pokaż wszystkie filmy</button>
 
         <div class="info-text">
-            Wszystkie filmy, które wrzucam tutaj na stronę są zmontowane przeze mnie.<br>
-            Tam gdzie mogę podlinkowuję oryginalne filmy przesłane przez klientów.
+            Wszystkie filmy widoczne na tej podstronie zostały przeze mnie zmontowane.<br>
+            Tam gdzie to możliwe – podlinkowałem oryginalne materiały od klientów.
         </div>
     </section>
 
@@ -313,90 +295,82 @@
         <p>Gmail: <a href="mailto:krzysztoflesniewskibiznes@gmail.com">krzysztoflesniewskibiznes@gmail.com</a></p>
         <p>Instagram: <a href="https://www.instagram.com/_lesniuczek_/" target="_blank">@_lesniuczek_</a></p>
         <p>Facebook / Messenger: <a href="https://www.facebook.com/profile.php?id=100086658516095" target="_blank">Profil</a></p>
-        <p>NAJSZYBCIEJ ODPOWIADAM NA IG/MES</p>
-        <p style="margin-top: 25px; text-align: center; font-size: 1.1rem; opacity: 0.9;">
-            Zapraszam również na naszego Discorda:<br>
+        <p><strong>Najszybciej odpowiadam na IG / Messenger</strong></p>
+        <p style="margin-top: 2rem; text-align:center; font-size:1.15rem; opacity:0.92;">
+            Dołącz do naszej społeczności na Discordzie:<br>
             <strong><a href="https://discord.gg/YMazKjeg3g" target="_blank">discord.gg/YMazKjeg3g</a></strong>
         </p>
     </section>
 
-    <footer>
+    <footer style="text-align:center; padding:3rem 1rem; opacity:0.7; font-size:0.9rem;">
         <p>Copyright © 2026 Krzysztof Leśniewski. All Rights Reserved.</p>
     </footer>
 
     <script>
-        const headers = document.querySelectorAll('.pricing-header');
-        headers.forEach(header => {
-            header.addEventListener('click', () => {
-                const content = header.nextElementSibling;
-                const isOpen = content.style.display === 'block';
-                content.style.display = isOpen ? 'none' : 'block';
-                header.classList.toggle('active', !isOpen);
-            });
+        // Hamburger
+        document.querySelector('.hamburger').addEventListener('click', () => {
+            document.querySelector('.hamburger').classList.toggle('active');
+            document.querySelector('nav ul').classList.toggle('active');
         });
 
-        // Hamburger menu
-        const hamburger = document.querySelector('.hamburger');
-        const navUl = document.querySelector('nav ul');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navUl.classList.toggle('active');
-        });
-
-        // Sortowanie + nowy filtr kategorii
-        const sortSelect = document.getElementById('sort-order');
+        // Główna logika portfolio
+        const sortSelect   = document.getElementById('sort-order');
         const filterSelect = document.getElementById('filter-type');
-        const showMoreBtn = document.querySelector('.show-more');
+        const showMoreBtn  = document.querySelector('.show-more');
+
+        const INITIAL_VISIBLE_SHORT = 6;
 
         function updateVideos() {
             const sortOrder = sortSelect.value;
-            const filterValue = filterSelect.value;
+            const filterVal = filterSelect.value;
 
-            document.querySelectorAll('.portfolio').forEach(container => {
-                let videos = Array.from(container.querySelectorAll('iframe'));
+            document.querySelectorAll('.video-grid').forEach(grid => {
+                let items = Array.from(grid.querySelectorAll('.video-wrapper'));
 
-                // najpierw filtr kategorii
-                videos.forEach(vid => {
-                    if (filterValue === 'all' || vid.dataset.category === filterValue) {
-                        vid.style.display = '';
-                    } else {
-                        vid.style.display = 'none';
-                    }
+                // Filtr kategorii
+                items.forEach(item => {
+                    const cat = item.querySelector('iframe').dataset.category;
+                    item.style.display = (filterVal === 'all' || cat === filterVal) ? '' : 'none';
                 });
 
-                // potem sortowanie (tylko widoczne)
-                let visibleVideos = videos.filter(vid => vid.style.display !== 'none');
-                visibleVideos.sort((a, b) => {
-                    const dateA = new Date(a.dataset.date);
-                    const dateB = new Date(b.dataset.date);
-                    return sortOrder === 'newest' ? dateB - dateA : dateA - dateB;
+                // Sortowanie widocznych
+                let visible = items.filter(el => el.style.display !== 'none');
+                visible.sort((a, b) => {
+                    const da = new Date(a.querySelector('iframe').dataset.date);
+                    const db = new Date(b.querySelector('iframe').dataset.date);
+                    return sortOrder === 'newest' ? db - da : da - db;
                 });
 
-                visibleVideos.forEach(vid => container.appendChild(vid));
+                visible.forEach(el => grid.appendChild(el));
             });
 
-            // Show more logika – liczymy widoczne filmy
-            let allVisible = document.querySelectorAll('.portfolio iframe:not([style*="display: none"])');
-            if (allVisible.length > (window.innerWidth <= 768 ? 2 : 5)) {
-                showMoreBtn.style.display = 'block';
-            } else {
-                showMoreBtn.style.display = 'none';
-            }
+            // Liczymy aktualnie widoczne krótkie filmy
+            const visibleShorts = document.querySelectorAll('.short-films .video-wrapper:not([style*="display: none"])');
+            showMoreBtn.style.display = (visibleShorts.length > INITIAL_VISIBLE_SHORT) ? 'block' : 'none';
         }
+
+        function initShowMore() {
+            // Na starcie chowamy nadmiar krótkich
+            const shorts = document.querySelectorAll('.short-films .video-wrapper');
+            shorts.forEach((el, i) => {
+                if (i >= INITIAL_VISIBLE_SHORT) el.style.display = 'none';
+            });
+            showMoreBtn.style.display = shorts.length > INITIAL_VISIBLE_SHORT ? 'block' : 'none';
+        }
+
+        showMoreBtn.addEventListener('click', () => {
+            document.querySelectorAll('.video-wrapper').forEach(el => {
+                el.style.display = '';
+            });
+            showMoreBtn.style.display = 'none';
+        });
 
         sortSelect.addEventListener('change', updateVideos);
         filterSelect.addEventListener('change', updateVideos);
         window.addEventListener('resize', updateVideos);
 
-        // Show more – pokazuje wszystkie (usuwa ukrywanie)
-        showMoreBtn.addEventListener('click', () => {
-            document.querySelectorAll('.portfolio iframe').forEach(iframe => {
-                iframe.style.display = '';
-            });
-            showMoreBtn.style.display = 'none';
-        });
-
-        // start
+        // Start
+        initShowMore();
         updateVideos();
     </script>
 </body>
