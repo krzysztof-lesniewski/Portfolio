@@ -15,17 +15,17 @@
         nav ul{list-style:none;display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
         nav a{font-weight:500;padding:0.6rem 1.2rem;border-radius:8px}
         nav a:hover{background:rgba(255,90,90,.15)}
-        section{max-width:1100px;margin:0 auto;padding:7rem 1.5rem 4rem}
+        section{max-width:1100px;margin:0 auto;padding:7rem 1.5rem}
         h2{font-size:2.8rem;margin-bottom:1.8rem;position:relative}
         h2:after{content:'';position:absolute;bottom:-.7rem;left:0;width:70px;height:6px;background:#ff5a5a;border-radius:3px}
-        .pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2rem}
-        .card{background:#1a1a1a;border-radius:14px;padding:2rem;transition:.3s}
+        .pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+        .card{background:#1a1a1a;border-radius:16px;padding:2rem;transition:.3s}
         .card:hover{transform:translateY(-8px);box-shadow:0 15px 40px #0009}
-        .card h3{font-size:1.6rem;margin-bottom:1.2rem;color:#ff8888}
-        .card ul{list-style:none;padding:0}
-        .card li{margin:.9rem 0;font-size:1.15rem}
-        .note{text-align:center;margin:3rem 0;opacity:.8;font-size:.95rem}
-        .btn{display:block;width:fit-content;margin:3rem auto;background:#ff5a5a;color:white;padding:1.1rem 3rem;border-radius:50px;font-weight:600}
+        .card h3{font-size:1.6rem;margin-bottom:1rem;color:#ff8888}
+        .card li{margin:1rem 0;font-size:1.2rem}
+        .note{text-align:center;margin:3rem 0;opacity:.8}
+        .btn{display:block;width:fit-content;margin:3rem auto;background:#ff5a5a;color:white;padding:1.1rem 3rem;border-radius:50px;font-weight:600;transition:.3s}
+        .btn:hover{background:#ff3d3d}
         footer{text-align:center;padding:3rem;opacity:.6;border-top:1px solid #222}
         @media (max-width:860px){
             nav ul{gap:1.4rem}
@@ -47,7 +47,6 @@
 <section>
     <h2>Cennik (luty 2026)</h2>
     <p class="note">Ceny orientacyjne finalna kwota po materiale i wytycznych</p>
-
     <div class="pricing">
         <div class="card">
             <h3>Short / Rolka</h3>
@@ -58,7 +57,6 @@
                 <li>priorytet 1–3 dni + opłata</li>
             </ul>
         </div>
-
         <div class="card">
             <h3>Film dłuższy</h3>
             <ul>
@@ -68,19 +66,16 @@
                 <li>Napisy + korekta +20 zł</li>
             </ul>
         </div>
-
         <div class="card">
             <h3>Płatność</h3>
             <ul>
                 <li>Zaliczka 60% (dla stałych klientów)</li>
                 <li>Pełna płatność z góry = szybsza realizacja</li>
-                <li>Blik / przelew </li>
+                <li>Blik / przelew</li>
             </ul>
         </div>
     </div>
-
-    <a href="../index.html#kontakt" class="btn">Zamów montaż</a>
-
+    <a href="../index.html#zamowienie" class="btn">Zamów montaż</a>
     <p class="note">Czas realizacji: 2–14 dni roboczych<br>Priorytety tylko dla stałych za dopłatą</p>
 </section>
 
