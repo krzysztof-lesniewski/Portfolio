@@ -37,6 +37,11 @@
             .about{grid-template-columns:1fr}
             nav ul{gap:1.4rem}
         }
+        /* Formularze */
+        form label{display:block;margin-bottom:0.5rem}
+        form input, form select, form textarea{width:100%;padding:0.8rem;border:1px solid #444;border-radius:8px;background:#222;color:#fff;margin-bottom:1.5rem}
+        form button{background:#ff5a5a;color:#fff;border:none;padding:1rem 2rem;border-radius:50px;cursor:pointer;transition:.3s}
+        form button:hover{background:#ff3d3d}
     </style>
 </head>
 <body>
@@ -68,11 +73,72 @@
         </div>
         <ul class="benefits">
             <li>Szybko – najczęściej 2–5 dni</li>
-            <li>Ceny od 70zł za film!! </li>
+            <li>Ceny od 70zł za film!!</li>
             <li>Dwie Poprawki w cenie!</li>
             <li>Zniżki dla stałych klientów + pakiety!</li>
         </ul>
     </div>
+</section>
+
+<section id="opinie">
+    <h2>Opinie klientów</h2>
+    <p style="text-align:center; opacity:0.8; margin-bottom:2rem;">Wkrótce dodam pierwsze opinie. Masz doświadczenie ze mną? Dodaj swoją!</p>
+    <a href="#dodaj-opinie" class="btn" style="display:block; width:fit-content; margin:0 auto;">Dodaj opinię</a>
+</section>
+
+<section id="zamowienie">
+    <h2>Zamów montaż</h2>
+    <form action="https://formsubmit.co/krzysztoflesniewskibiznes@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nowe zlecenie z portfolio!">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="Imię" placeholder="Imię / nick" required>
+        <input type="email" name="Email" placeholder="Twój email" required>
+        <select name="Platforma" required>
+            <option value="">Gdzie publikujesz?</option>
+            <option value="TikTok">TikTok</option>
+            <option value="Reels">Reels</option>
+            <option value="Shorts">Shorts</option>
+            <option value="Inne">Inne</option>
+        </select>
+        <select name="Typ" required>
+            <option value="">Co montujemy?</option>
+            <option value="Short">Short / rolka</option>
+            <option value="Film">Film dłuższy</option>
+            <option value="Pakiet">Pakiet</option>
+        </select>
+        <textarea name="Opis" placeholder="Opis projektu" required rows="4"></textarea>
+        <textarea name="Inspiracje" placeholder="Linki do inspiracji (opcjonalnie)" rows="2"></textarea>
+        <input type="text" name="Termin" placeholder="Preferowany termin">
+        <input type="text" name="Budżet" placeholder="Przybliżony budżet">
+        <input type="text" name="_gotcha" style="display:none;">
+        <button type="submit">Wyślij brief</button>
+    </form>
+</section>
+
+<section id="dodaj-opinie">
+    <h2>Dodaj opinię</h2>
+    <form action="https://formsubmit.co/krzysztoflesniewskibiznes@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nowa opinia z portfolio!">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="Imię" placeholder="Imię / nick" required>
+        <input type="email" name="Email" placeholder="Email (opcjonalnie)">
+        <select name="Gwiazdki" required>
+            <option value="">Ocena (1-10)</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        <textarea name="Opinia" placeholder="Twoja opinia" required rows="4"></textarea>
+        <input type="text" name="_gotcha" style="display:none;">
+        <button type="submit">Wyślij opinię</button>
+    </form>
 </section>
 
 <section id="kontakt">
@@ -91,5 +157,3 @@
 
 </body>
 </html>
-
-
