@@ -15,17 +15,15 @@
         nav ul{list-style:none;display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
         nav a{font-weight:500;padding:0.6rem 1.2rem;border-radius:8px}
         nav a:hover{background:rgba(255,90,90,.15)}
-        section{max-width:1200px;margin:0 auto;padding:7rem 1.5rem 4rem}
+        section{max-width:1100px;margin:0 auto;padding:7rem 1.5rem}
         h2{font-size:2.8rem;margin-bottom:1.8rem;position:relative}
         h2:after{content:'';position:absolute;bottom:-.7rem;left:0;width:70px;height:6px;background:#ff5a5a;border-radius:3px}
-        .filters{text-align:center;margin:2rem 0}
-        select{background:#222;color:#eee;border:1px solid #444;padding:0.7rem 1.2rem;border-radius:8px;margin:0 1rem}
-        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.8rem}
-        .card{background:#1a1a1a;border-radius:14px;padding:1.8rem;transition:.3s}
+        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+        .card{background:#1a1a1a;border-radius:16px;padding:2rem;transition:.3s}
         .card:hover{transform:translateY(-8px);box-shadow:0 15px 40px #0009}
-        .card h3{font-size:1.4rem;margin-bottom:1rem}
-        .btn{background:#ff5a5a;color:white;padding:0.8rem 1.8rem;border-radius:50px;display:inline-block;margin-top:1.2rem}
-        .note{text-align:center;margin:3rem 0;opacity:.8}
+        .card h3{font-size:1.6rem;margin-bottom:1rem}
+        .btn{display:inline-block;background:#ff5a5a;color:white;padding:1rem 2rem;border-radius:50px;font-weight:600;margin-top:1rem;transition:.3s}
+        .btn:hover{background:#ff3d3d}
         footer{text-align:center;padding:3rem;opacity:.6;border-top:1px solid #222}
         @media (max-width:860px){
             nav ul{gap:1.4rem}
@@ -45,25 +43,21 @@
     </ul>
 </nav>
 
-    </div>
-
+<section>
+    <h2>Wybrane prace</h2>
     <div class="grid">
         <div class="card">
             <h3>Filmy gamingowe!</h3>
             <p>Dynamiczny short z szybkimi cięciami i efektami +280% zasięgów dzieki mojemu montażowi .</p>
             <a href="../index.html#kontakt" class="btn">Napisz i Zyskaj</a>
         </div>
-
         <div class="card">
             <h3>Treści reklamowe i promocyjne!</h3>
             <p>Rolka budująca zaufanie + wysoki watch-time.</p>
             <a href="../index.html#kontakt" class="btn">Zleć swoją i zyskaj klientów!</a>
         </div>
-
-        <!-- dodaj więcej kart wg potrzeb -->
     </div>
-
-    <p class="note">Filmy przedstawiające moje umiejętności już wkrótce</p>
+    <p style="text-align:center; margin-top:3rem; opacity:0.8;">Filmy przedstawiające moje umiejętności już wkrótce</p>
 </section>
 
 <footer>© 2026 Krzysztof Leśniewski</footer>
