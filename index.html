@@ -29,7 +29,14 @@
         .benefits li{margin:1rem 0;font-size:1.2rem;position:relative;padding-left:2rem}
         .benefits li:before{content:'→';position:absolute;left:0;color:#ff5a5a;font-size:1.4rem}
         .contact{text-align:center;background:#1a1a1a;padding:3.5rem;border-radius:16px;margin:4rem 0}
+        .opinia-karta{background:#1a1a1a;border-radius:12px;padding:1.8rem;margin:1.5rem 0;border-left:5px solid #ff5a5a}
+        .opinia-karta p{font-style:italic;opacity:0.9}
+        .stars{color:#ffca28;font-size:1.4rem}
         footer{text-align:center;padding:3rem;opacity:.6;border-top:1px solid #222}
+        form label{display:block;margin-bottom:0.5rem}
+        form input, form select, form textarea{width:100%;padding:0.8rem;border:1px solid #444;border-radius:8px;background:#222;color:#fff;margin-bottom:1.5rem}
+        form button{background:#ff5a5a;color:#fff;border:none;padding:1rem 2rem;border-radius:50px;cursor:pointer;transition:.3s}
+        form button:hover{background:#ff3d3d}
         @media (max-width:860px){
             .hero{min-height:60vh}
             .hero h1{font-size:2.8rem}
@@ -37,11 +44,6 @@
             .about{grid-template-columns:1fr}
             nav ul{gap:1.4rem}
         }
-        /* Formularze */
-        form label{display:block;margin-bottom:0.5rem}
-        form input, form select, form textarea{width:100%;padding:0.8rem;border:1px solid #444;border-radius:8px;background:#222;color:#fff;margin-bottom:1.5rem}
-        form button{background:#ff5a5a;color:#fff;border:none;padding:1rem 2rem;border-radius:50px;cursor:pointer;transition:.3s}
-        form button:hover{background:#ff3d3d}
     </style>
 </head>
 <body>
@@ -60,7 +62,7 @@
     <div class="hero-content">
         <h1>Hej, jestem Krzysztof</h1>
         <p>Montuję shorty i rolki, które realnie podbijają zasięgi na TikToku, Reelsach i Shortsach.</p>
-        <a href="#kontakt" class="btn">Napisz teraz → pierwsza rolka -15%</a>
+        <a href="cennik/index.html" class="btn">Zamów teraz → pierwsza rolka -15%</a>
     </div>
 </div>
 
@@ -69,7 +71,7 @@
     <div class="about">
         <div>
             <p>Montuję głównie w DaVinci Resolve. Mam ~3 lat doświadczenia w krótkich formach wideo.</p>
-            <p>zależy mi, żeby Twój content zarabiał.</p>
+            <p>Zależy mi, żeby Twój content zarabiał.</p>
         </div>
         <ul class="benefits">
             <li>Szybko – najczęściej 2–5 dni</li>
@@ -82,63 +84,37 @@
 
 <section id="opinie">
     <h2>Opinie klientów</h2>
-    <p style="text-align:center; opacity:0.8; margin-bottom:2rem;">Wkrótce dodam pierwsze opinie. Masz doświadczenie ze mną? Dodaj swoją!</p>
-    <a href="#dodaj-opinie" class="btn" style="display:block; width:fit-content; margin:0 auto;">Dodaj opinię</a>
-</section>
+    
+    <div class="opinia-karta">
+        <p>"Wszystko dostarczone tak, jak jest. Co miało być zrobione, zostało zrobione na czas. Tylko, że klient odniósł wrażenie, że ciężko się ze mną współpracuje, ale się dogadał. Było raz nieporozumienie."</p>
+        <div style="margin-top:1rem;">
+            <span class="stars">★★★★☆</span> <strong>4/5</strong>
+            <small style="opacity:0.7; margin-left:1rem;">– Anonimowy klient, luty 2026</small>
+        </div>
+    </div>
 
-<section id="zamowienie">
-    <h2>Zamów montaż</h2>
-    <form action="https://formsubmit.co/krzysztoflesniewskibiznes@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="Nowe zlecenie z portfolio!">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="Imię" placeholder="Imię / nick" required>
-        <input type="email" name="Email" placeholder="Twój email" required>
-        <select name="Platforma" required>
-            <option value="">Gdzie publikujesz?</option>
-            <option value="TikTok">TikTok</option>
-            <option value="Reels">Reels</option>
-            <option value="Shorts">Shorts</option>
-            <option value="Inne">Inne</option>
-        </select>
-        <select name="Typ" required>
-            <option value="">Co montujemy?</option>
-            <option value="Short">Short / rolka</option>
-            <option value="Film">Film dłuższy</option>
-            <option value="Pakiet">Pakiet</option>
-        </select>
-        <textarea name="Opis" placeholder="Opis projektu" required rows="4"></textarea>
-        <textarea name="Inspiracje" placeholder="Linki do inspiracji (opcjonalnie)" rows="2"></textarea>
-        <input type="text" name="Termin" placeholder="Preferowany termin">
-        <input type="text" name="Budżet" placeholder="Przybliżony budżet">
-        <input type="text" name="_gotcha" style="display:none;">
-        <button type="submit">Wyślij brief</button>
-    </form>
-</section>
+    <a href="#dodaj-opinie" class="btn" style="display:block; width:fit-content; margin:2rem auto;">Dodaj opinię</a>
 
-<section id="dodaj-opinie">
-    <h2>Dodaj opinię</h2>
-    <form action="https://formsubmit.co/krzysztoflesniewskibiznes@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="Nowa opinia z portfolio!">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="Imię" placeholder="Imię / nick" required>
-        <input type="email" name="Email" placeholder="Email (opcjonalnie)">
-        <select name="Gwiazdki" required>
-            <option value="">Ocena (1-10)</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-        </select>
-        <textarea name="Opinia" placeholder="Twoja opinia" required rows="4"></textarea>
-        <input type="text" name="_gotcha" style="display:none;">
-        <button type="submit">Wyślij opinię</button>
-    </form>
+    <div id="dodaj-opinie">
+        <h3>Dodaj swoją opinię</h3>
+        <form action="https://formsubmit.co/krzysztoflesniewskibiznes@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Nowa opinia z portfolio">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="Imię / Nick" placeholder="Imię / Nick" required>
+            <select name="Ocena" required>
+                <option value="">Ocena (1–5 gwiazdek)</option>
+                <option value="1">1 ★</option>
+                <option value="2">2 ★★</option>
+                <option value="3">3 ★★★</option>
+                <option value="4">4 ★★★★</option>
+                <option value="5">5 ★★★★★</option>
+            </select>
+            <input type="email" name="Email" placeholder="Email (opcjonalnie)">
+            <textarea name="Opinia" placeholder="Twoja opinia" required rows="5"></textarea>
+            <input type="text" name="_gotcha" style="display:none;">
+            <button type="submit">Wyślij opinię</button>
+        </form>
+    </div>
 </section>
 
 <section id="kontakt">
