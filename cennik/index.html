@@ -26,10 +26,13 @@
         .note{text-align:center;margin:3rem 0;opacity:.8}
         .btn{display:block;width:fit-content;margin:3rem auto;background:#ff5a5a;color:white;padding:1.1rem 3rem;border-radius:50px;font-weight:600;transition:.3s}
         .btn:hover{background:#ff3d3d}
+        .contact{text-align:center;background:#1a1a1a;padding:3.5rem;border-radius:16px;margin:4rem 0}
+        form label{display:block;margin-bottom:0.5rem}
+        form input, form select, form textarea{width:100%;padding:0.8rem;border:1px solid #444;border-radius:8px;background:#222;color:#fff;margin-bottom:1.5rem}
+        form button{background:#ff5a5a;color:#fff;border:none;padding:1rem 2rem;border-radius:50px;cursor:pointer;transition:.3s}
+        form button:hover{background:#ff3d3d}
         footer{text-align:center;padding:3rem;opacity:.6;border-top:1px solid #222}
-        @media (max-width:860px){
-            nav ul{gap:1.4rem}
-        }
+        @media (max-width:860px){nav ul{gap:1.4rem}}
     </style>
 </head>
 <body>
@@ -75,8 +78,48 @@
             </ul>
         </div>
     </div>
-    <a href="../index.html#zamowienie" class="btn">Zamów montaż</a>
     <p class="note">Czas realizacji: 2–14 dni roboczych<br>Priorytety tylko dla stałych za dopłatą</p>
+</section>
+
+<section id="zamowienie">
+    <h2>Zamów montaż</h2>
+    <form action="https://formsubmit.co/krzysztoflesniewskibiznes@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nowe zlecenie z cennika">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="Imię" placeholder="Imię / nick" required>
+        <input type="email" name="Email" placeholder="Twój email" required>
+        <select name="Platforma" required>
+            <option value="">Gdzie publikujesz?</option>
+            <option value="TikTok">TikTok</option>
+            <option value="Reels">Reels</option>
+            <option value="Shorts">Shorts</option>
+            <option value="Inne">Inne</option>
+        </select>
+        <select name="Typ" required>
+            <option value="">Co montujemy?</option>
+            <option value="Short">Short / rolka</option>
+            <option value="Film">Film dłuższy</option>
+            <option value="Pakiet">Pakiet</option>
+        </select>
+        <textarea name="Opis" placeholder="Opis projektu" required rows="4"></textarea>
+        <textarea name="Inspiracje" placeholder="Linki do inspiracji (opcjonalnie)" rows="2"></textarea>
+        <input type="text" name="Termin" placeholder="Preferowany termin">
+        <input type="text" name="Budżet" placeholder="Przybliżony budżet">
+        <input type="text" name="_gotcha" style="display:none;">
+        <button type="submit">Wyślij brief</button>
+    </form>
+</section>
+
+<section id="kontakt">
+    <h2>Kontakt</h2>
+    <div class="contact">
+        <p><strong>Najszybciej:</strong> IG / telefon / Messenger</p>
+        <p>📱 <a href="tel:+48794911081">794 911 081</a></p>
+        <p>IG <a href="https://www.instagram.com/_lesniuczek_/" target="_blank">@_lesniuczek_</a></p>
+        <p>✉️ <a href="mailto:krzysztoflesniewskibiznes@gmail.com">krzysztoflesniewskibiznes@gmail.com</a></p>
+        <p style="margin-top:2rem">Discord: <a href="https://discord.gg/YMazKjeg3g" target="_blank">discord.gg/YMazKjeg3g</a></p>
+        <p>📍 Głogów</p>
+    </div>
 </section>
 
 <footer>© 2026 Krzysztof Leśniewski</footer>
