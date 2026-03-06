@@ -3,83 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Prace Krzysztofa Leśniewskiego - Montaż shortów i filmów. Gaming, podróże, reklamy.">
-    <title>Prace - Krzysztof Leśniewski</title>
+    <title>Prace – Krzysztof</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎥</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Poppins', sans-serif; background: #121212; color: #eee; line-height: 1.4; }
-        nav { position: fixed; top: 0; width: 100%; background: rgba(18,18,18,0.9); backdrop-filter: blur(10px); z-index: 10; padding: 1rem; text-align: center; }
-        nav ul { list-style: none; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
-        nav a { font-weight: 500; padding: 0.5rem 1rem; border-radius: 8px; transition: background 0.3s; }
-        nav a:hover { background: rgba(255,90,90,0.2); }
-        section { padding: 6rem 2rem 4rem; max-width: 1200px; margin: 0 auto; }
-        h2 { font-size: 2.5rem; margin-bottom: 1rem; text-align: left; position: relative; }
-        h2::after { content: ''; width: 50px; height: 4px; background: #ff5a5a; position: absolute; bottom: -0.5rem; left: 0; }
-        .filters { text-align: center; margin-bottom: 2rem; }
-        select { background: #1a1a1a; color: #eee; border: 1px solid #ff5a5a; padding: 0.5rem; border-radius: 8px; margin: 0 1rem; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-        .project { background: #1a1a1a; border-radius: 12px; padding: 1.5rem; clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%); transition: transform 0.3s; }
-        .project:hover { transform: translateY(-5px); }
-        .project h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
-        .project p { opacity: 0.8; font-size: 1rem; }
-        .cta { background: #ff5a5a; color: #fff; padding: 0.8rem 1.5rem; border-radius: 50px; display: inline-block; margin-top: 1rem; }
-        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } nav ul { flex-direction: column; } }
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'Poppins',sans-serif;background:#0f0f0f;color:#eee;line-height:1.5}
+        a{color:#ff5a5a;text-decoration:none}
+        a:hover{color:#ff8a8a}
+        nav{position:fixed;top:0;width:100%;background:rgba(15,15,15,0.92);backdrop-filter:blur(10px);z-index:100;padding:1rem;text-align:center;box-shadow:0 2px 12px #0006}
+        nav ul{list-style:none;display:flex;justify-content:center;gap:1.8rem;flex-wrap:wrap}
+        nav a{font-weight:500;padding:0.5rem 1.1rem;border-radius:8px;transition:.28s}
+        nav a:hover{background:rgba(255,90,90,0.18)}
+        section{max-width:1100px;margin:0 auto;padding:6rem 1.5rem 4rem}
+        h2{font-size:2.6rem;margin-bottom:1.5rem;position:relative}
+        h2:after{content:'';position:absolute;bottom:-0.6rem;left:0;width:60px;height:5px;background:#ff5a5a;border-radius:3px}
+        .filters{text-align:center;margin:2rem 0}
+        select{background:#1a1a1a;color:#eee;border:1px solid #444;padding:0.6rem 1rem;border-radius:8px;margin:0 0.8rem}
+        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.6rem}
+        .card{background:#1a1a1a;border-radius:12px;padding:1.6rem;transition:.3s}
+        .card:hover{transform:translateY(-6px);box-shadow:0 12px 32px #0008}
+        .card h3{font-size:1.35rem;margin-bottom:0.8rem}
+        .btn{background:#ff5a5a;color:white;padding:0.8rem 1.8rem;border-radius:999px;font-weight:600;display:inline-block;margin-top:1rem}
+        footer{text-align:center;padding:2.5rem;opacity:0.6;border-top:1px solid #222}
+        @media (max-width:820px){
+            nav ul{gap:1.2rem}
+            .grid{grid-template-columns:1fr}
+        }
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="../">Główna</a></li>
-            <li><a href="../#about">O mnie</a></li>
-            <li><a href="#">Prace</a></li>
-            <li><a href="../cennik/index.html">Cennik</a></li>
-            <li><a href="../#contact">Kontakt</a></li>
-        </ul>
-    </nav>
-    <section>
-        <h2>Moje Prace</h2>
-        <div class="filters">
-            <label>Kategoria:</label>
-            <select id="filter-type">
-                <option value="all">Wszystkie</option>
-                <option value="gaming">Gaming</option>
-                <option value="travel">Podróże</option>
-                <option value="ads">Reklamy</option>
-                <option value="bf">Before/After</option>
-                <option value="mos">Marka Osobista</option>
-            </select>
-            <label>Sortuj:</label>
-            <select id="sort-order">
-                <option value="newest">Najnowsze</option>
-                <option value="oldest">Najstarsze</option>
-            </select>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Strona główna</a></li>
+        <li><a href="index.html#o-mnie">O mnie</a></li>
+        <li><a href="prace.html">Prace</a></li>
+        <li><a href="cennik.html">Cennik</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+    </ul>
+</nav>
+
+<section>
+    <h2>Wybrane prace</h2>
+
+    <div class="filters">
+        <label>Kategoria:</label>
+        <select>
+            <option>Wszystkie</option>
+            <option>Gaming</option>
+            <option>Podróże</option>
+            <option>Reklama</option>
+            <option>Before/After</option>
+            <option>Marka osobista</option>
+        </select>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Gaming – Fortnite challenge</h3>
+            <p>Short, który podbił zasięgi o ponad 280% w 48 h. Dynamiczny montaż + szybkie cięcia.</p>
+            <a href="index.html#kontakt" class="btn">Chcesz podobny styl?</a>
         </div>
-        <div class="grid" id="projects-grid">
-            <!-- Placeholdery zamiast filmów -->
-            <div class="project" data-category="gaming" data-date="2026-01-04"><h3>Gamingowy Longform</h3><p>Fortnite challenge – pociąg only. Boost zasięgów o 200%. <a href="#contact" class="cta">Chcesz podobne?</a></p></div>
-            <div class="project" data-category="travel" data-date="2025-11-27"><h3>Podróżniczy Film</h3><p>Herping na Sardynii. Dynamiczny montaż z efektami. <a href="#contact" class="cta">Zamów demo</a></p></div>
-            <!-- Dodaj więcej placeholderów jak w oryginale, ale opisowo -->
+
+        <div class="card">
+            <h3>Before / After – 1200%</h3>
+            <p>Transformacja zasięgów po montażu – od 400 do 5200 wyświetleń w 3 dni.</p>
+            <a href="index.html#kontakt" class="btn">Napisz po szczegóły</a>
         </div>
-        <button class="cta" id="load-more" style="display: block; margin: 2rem auto;">Pokaż więcej</button>
-        <p style="text-align: center; opacity: 0.8;">Nowe prace w drodze – skontaktuj się po ekskluzywne demo!</p>
-    </section>
-    <script>
-        // Prosty filtr/sort bez zmian, dostosowany do placeholderów
-        const filter = document.getElementById('filter-type');
-        const sort = document.getElementById('sort-order');
-        const grid = document.getElementById('projects-grid');
-        const moreBtn = document.getElementById('load-more');
-        let page = 1;
-        function update() {
-            let items = Array.from(grid.querySelectorAll('.project'));
-            // Filtr i sort jak w oryginale, ale uproszczony
-            // ... (dodaj logikę z oryginału, ale bez iframe)
-        }
-        filter.onchange = sort.onchange = () => { page = 1; update(); };
-        moreBtn.onclick = () => { page++; update(); };
-        update();
-    </script>
+
+        <div class="card">
+            <h3>Marka osobista – storytelling</h3>
+            <p>Rolka budująca zaufanie + wysoki watch time. Idealna pod sprzedaż.</p>
+            <a href="index.html#kontakt" class="btn">Zleć rolkę</a>
+        </div>
+
+        <!-- dodaj kolejne karty według potrzeb -->
+    </div>
+
+    <p style="text-align:center;margin:3rem 0;opacity:0.8">
+        Nowe projekty w trakcie – napisz, a wyślę Ci aktualne demo prywatnie.
+    </p>
+</section>
+
+<footer>© 2026 Krzysztof Leśniewski</footer>
+
 </body>
 </html>
